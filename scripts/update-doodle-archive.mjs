@@ -192,7 +192,87 @@ async function fetchRemoteDoodles() {
     }
   }
 
-  return Array.from(collected.values());
+  if (collected.size) {
+    return Array.from(collected.values());
+  }
+
+  console.warn('Google monthly archive returned no entries; falling back to doodles.google sitemap.');
+  return fetchDoodlesFromSitemap();
+}
+
+function parseSitemapEntries(sitemap) {
+  return Array.from(
+    sitemap.matchAll(/<loc>https:\/\/(?:www\.)?doodles\.google\/doodle\/([^<]+)\/<\/loc>[\s\S]*?<lastmod>([^<]+)<\/lastmod>/g)
+  ).slice(0, maxEntries).map(match => ({
+    slug: match[1],
+    dateStr: match[2]
+  }));
+}
+
+function metaContent(html, property) {
+  const pattern = new RegExp(`<meta[^>]+property=["']${property}["'][^>]+content=["']([^"']+)["']`, 'i');
+  return html.match(pattern)?.[1] || '';
+}
+
+async function fetchDoodlesFromSitemap() {
+  const response = await fetch('https://doodles.google/sitemap.xml', {
+    headers: {
+      ...headers,
+      Accept: 'application/xml,text/xml,text/plain,*/*'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`doodles.google sitemap returned ${response.status}`);
+  }
+
+  const sitemap = await response.text();
+  const entries = parseSitemapEntries(sitemap);
+  const settled = await Promise.allSettled(entries.map(fetchDoodlePage));
+
+  return settled
+    .filter(result => result.status === 'fulfilled')
+    .map(result => result.value)
+    .filter(doodle => doodle.source_url)
+    .slice(0, maxEntries);
+}
+
+async function fetchDoodlePage(entry) {
+  const response = await fetch(`https://doodles.google/doodle/${entry.slug}/`, {
+    headers: {
+      ...headers,
+      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Doodle page ${entry.slug} returned ${response.status}`);
+  }
+
+  const html = await response.text();
+  const rawTitle = decodeHtml(metaContent(html, 'og:title') || entry.slug)
+    .replace(/ Doodle - Google Doodles$/, '');
+  const shareText = decodeHtml(metaContent(html, 'og:description'));
+  const imageUrl = absoluteDoodleImageUrl(metaContent(html, 'og:image'));
+  const [year, month, day] = entry.dateStr.split('-').map(Number);
+
+  return {
+    name: entry.slug,
+    title: rawTitle,
+    share_text: shareText,
+    run_date_array: [year, month, day],
+    source_url: imageUrl,
+    localized: {
+      en: {
+        title: rawTitle,
+        share_text: shareText
+      },
+      'zh-CN': {
+        title: rawTitle,
+        share_text: shareText
+      }
+    }
+  };
 }
 
 async function downloadImage(doodle) {
