@@ -4,6 +4,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Copy,
+  Download,
   ExternalLink,
   Loader2,
   RefreshCw,
@@ -69,13 +70,17 @@ const copy = {
     languageLabel: '切换语言',
     celebrationPrefix: '节快乐',
     share: '分享',
-    shareWith: '选择分享渠道',
-    systemShare: '系统分享',
+    shareWith: '分享这张图片',
+    systemShare: '分享',
     copyLink: '复制链接',
     copied: '已复制分享链接',
-    shareFallback: '浏览器未打开系统分享，已复制链接。',
+    downloadImage: '下载图片',
+    preparingImage: '正在生成分享图片',
+    imageShared: '已打开系统分享',
+    imageDownloaded: '图片已开始下载',
+    shareFallback: '当前浏览器不支持图片分享，请下载图片。',
     closeShare: '关闭分享',
-    weibo: '微博'
+    shareImageName: '每日 Doodle 分享卡'
   },
   en: {
     appTitle: 'Daily Doodle',
@@ -91,13 +96,17 @@ const copy = {
     languageLabel: 'Switch language',
     celebrationPrefix: 'Happy',
     share: 'Share',
-    shareWith: 'Choose a channel',
-    systemShare: 'System share',
+    shareWith: 'Share this image',
+    systemShare: 'Share',
     copyLink: 'Copy link',
     copied: 'Share link copied',
-    shareFallback: 'System share is unavailable, so the link was copied.',
+    downloadImage: 'Download image',
+    preparingImage: 'Preparing image',
+    imageShared: 'System share opened',
+    imageDownloaded: 'Image download started',
+    shareFallback: 'This browser cannot share image files. Download the image instead.',
     closeShare: 'Close share',
-    weibo: 'Weibo'
+    shareImageName: 'Daily Doodle share card'
   }
 };
 
@@ -749,8 +758,151 @@ export default function App() {
 
   const copyShareLink = async (doodle: Doodle) => {
     const payload = doodleShareText(doodle);
-    await copyToClipboard(`${payload.text}\n${payload.url}`);
+    await copyToClipboard(payload.url);
     setShareStatus(copy[language].copied);
+  };
+
+  const roundedRectPath = (
+    context: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    radius: number
+  ) => {
+    const safeRadius = Math.min(radius, width / 2, height / 2);
+    context.beginPath();
+    context.moveTo(x + safeRadius, y);
+    context.arcTo(x + width, y, x + width, y + height, safeRadius);
+    context.arcTo(x + width, y + height, x, y + height, safeRadius);
+    context.arcTo(x, y + height, x, y, safeRadius);
+    context.arcTo(x, y, x + width, y, safeRadius);
+    context.closePath();
+  };
+
+  const loadBitmapFromBlob = async (blob: Blob) => {
+    if ('createImageBitmap' in window) {
+      return window.createImageBitmap(blob);
+    }
+
+    const image = new Image();
+    const objectUrl = URL.createObjectURL(blob);
+    image.src = objectUrl;
+    await image.decode();
+    URL.revokeObjectURL(objectUrl);
+    return image;
+  };
+
+  const wrapCanvasText = (
+    context: CanvasRenderingContext2D,
+    text: string,
+    maxWidth: number,
+    maxLines: number
+  ) => {
+    const chars = Array.from(text);
+    const lines: string[] = [];
+    let current = '';
+
+    for (const char of chars) {
+      const next = `${current}${char}`;
+      if (context.measureText(next).width <= maxWidth || !current) {
+        current = next;
+        continue;
+      }
+
+      lines.push(current.trim());
+      current = char;
+      if (lines.length >= maxLines) break;
+    }
+
+    if (lines.length < maxLines && current) {
+      lines.push(current.trim());
+    }
+
+    if (lines.length > maxLines) {
+      lines.length = maxLines;
+    }
+
+    const last = lines[lines.length - 1];
+    if (last && chars.join('').length > lines.join('').length) {
+      lines[lines.length - 1] = `${last.replace(/[。,.，、\s]+$/u, '')}...`;
+    }
+
+    return lines;
+  };
+
+  const createShareImageBlob = async (doodle: Doodle) => {
+    setShareStatus(copy[language].preparingImage);
+    const title = doodleTitle(doodle);
+    const imageResponse = await fetch(proxiedImageUrl(doodle));
+    if (!imageResponse.ok) throw new Error(copy[language].shareFallback);
+
+    const imageBlob = await imageResponse.blob();
+    const image = await loadBitmapFromBlob(imageBlob);
+    const metrics = cardMetrics[doodle.name];
+    const canvas = document.createElement('canvas');
+    canvas.width = 1200;
+    canvas.height = 900;
+
+    const context = canvas.getContext('2d');
+    if (!context) throw new Error(copy[language].shareFallback);
+
+    const palette = metrics?.palette ?? activePalette;
+    const baseColor = metrics?.color ?? '#f8f5ee';
+    const background = context.createLinearGradient(0, 0, 1200, 900);
+    background.addColorStop(0, '#fbf7ed');
+    background.addColorStop(0.45, baseColor);
+    background.addColorStop(1, palette[1] ?? '#e7eef5');
+    context.fillStyle = background;
+    context.fillRect(0, 0, 1200, 900);
+
+    context.fillStyle = 'rgba(255,255,255,0.58)';
+    roundedRectPath(context, 78, 70, 1044, 760, 56);
+    context.fill();
+
+    context.strokeStyle = 'rgba(255,255,255,0.9)';
+    context.lineWidth = 3;
+    context.stroke();
+
+    context.fillStyle = 'rgba(255,255,255,0.72)';
+    roundedRectPath(context, 130, 120, 940, 520, 34);
+    context.fill();
+
+    const imageWidth = image.width;
+    const imageHeight = image.height;
+    const maxImageWidth = 840;
+    const maxImageHeight = 420;
+    const scale = Math.min(maxImageWidth / imageWidth, maxImageHeight / imageHeight);
+    const drawWidth = imageWidth * scale;
+    const drawHeight = imageHeight * scale;
+    const drawX = 600 - drawWidth / 2;
+    const drawY = 380 - drawHeight / 2;
+    context.drawImage(image, drawX, drawY, drawWidth, drawHeight);
+
+    context.fillStyle = '#111111';
+    context.textAlign = 'center';
+    context.textBaseline = 'top';
+    context.font = '600 58px "Noto Serif SC", "Songti SC", Georgia, serif';
+    const lines = wrapCanvasText(context, title, 940, 2);
+    lines.forEach((line, index) => {
+      context.fillText(line, 600, 690 + index * 70);
+    });
+
+    context.font = '500 18px "JetBrains Mono", monospace';
+    context.fillStyle = 'rgba(68,64,60,0.66)';
+    context.fillText(copy[language].gallery.toUpperCase(), 600, 810);
+
+    return new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob(blob => {
+        if (blob) resolve(blob);
+        else reject(new Error(copy[language].shareFallback));
+      }, 'image/png', 0.95);
+    });
+  };
+
+  const shareImageFile = async (doodle: Doodle) => {
+    const imageBlob = await createShareImageBlob(doodle);
+    return new File([imageBlob], `${doodle.name}-daily-doodle.png`, { type: 'image/png' });
   };
 
   const openShareSheet = (doodle: Doodle) => {
@@ -764,25 +916,41 @@ export default function App() {
     const payload = doodleShareText(doodle);
 
     try {
-      if (navigator.share) {
-        await navigator.share(payload);
+      const file = await shareImageFile(doodle);
+      if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
+        await navigator.share({
+          title: payload.title,
+          text: payload.text,
+          url: payload.url,
+          files: [file]
+        });
+        setShareStatus(copy[language].imageShared);
         return;
       }
-    } catch {
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') return;
+      setShareStatus(copy[language].shareFallback);
       return;
     }
 
-    await copyShareLink(doodle);
     setShareStatus(copy[language].shareFallback);
   };
 
-  const openShareChannel = (doodle: Doodle, target: 'weibo' | 'x') => {
-    const payload = doodleShareText(doodle);
-    const shareUrl = target === 'weibo'
-      ? `https://service.weibo.com/share/share.php?title=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}`
-      : `https://twitter.com/intent/tweet?text=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}`;
-
-    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  const downloadShareImage = async (doodle: Doodle) => {
+    try {
+      const imageBlob = await createShareImageBlob(doodle);
+      const objectUrl = URL.createObjectURL(imageBlob);
+      const link = document.createElement('a');
+      link.href = objectUrl;
+      link.download = `${doodle.name}-daily-doodle.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+      setShareStatus(copy[language].imageDownloaded);
+    } catch {
+      setShareStatus(copy[language].shareFallback);
+    }
   };
 
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
@@ -1523,13 +1691,9 @@ export default function App() {
                     <Copy className="h-4 w-4" />
                     <span>{copy[language].copyLink}</span>
                   </button>
-                  <button type="button" onClick={() => openShareChannel(shareDoodle, 'weibo')} className="share-action">
-                    <ExternalLink className="h-4 w-4" />
-                    <span>{copy[language].weibo}</span>
-                  </button>
-                  <button type="button" onClick={() => openShareChannel(shareDoodle, 'x')} className="share-action">
-                    <ExternalLink className="h-4 w-4" />
-                    <span>X</span>
+                  <button type="button" onClick={() => downloadShareImage(shareDoodle)} className="share-action">
+                    <Download className="h-4 w-4" />
+                    <span>{copy[language].downloadImage}</span>
                   </button>
                 </div>
                 {shareStatus ? <p className="share-status">{shareStatus}</p> : null}
