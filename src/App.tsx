@@ -44,6 +44,7 @@ interface CardMetrics {
 
 const cardOffsets = [-2, -1, 0, 1, 2];
 const cardViewportRatio = 2.6;
+const shareTitleFontFamily = '"Noto Serif SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Songti SC", "STSong", serif';
 type Language = 'zh-CN' | 'en';
 
 const languageStorageKey = 'doodle-language';
@@ -53,6 +54,24 @@ function storedLanguage(): Language {
 
   const value = window.localStorage.getItem(languageStorageKey);
   return value === 'en' || value === 'zh-CN' ? value : 'zh-CN';
+}
+
+async function waitForShareTitleFont() {
+  if (typeof document === 'undefined' || !('fonts' in document)) return;
+
+  const fontSet = document.fonts;
+  const timeout = new Promise<void>(resolve => {
+    window.setTimeout(resolve, 1600);
+  });
+
+  await Promise.race([
+    Promise.all([
+      fontSet.load(`600 72px ${shareTitleFontFamily}`),
+      fontSet.load(`400 72px ${shareTitleFontFamily}`),
+      fontSet.ready
+    ]).then(() => undefined),
+    timeout
+  ]);
 }
 
 const copy = {
@@ -776,11 +795,39 @@ export default function App() {
     return image;
   };
 
+  const measureCanvasText = (
+    context: CanvasRenderingContext2D,
+    text: string,
+    letterSpacing = 0
+  ) => {
+    const chars = Array.from(text);
+    return chars.reduce((width, char, index) => {
+      return width + context.measureText(char).width + (index > 0 ? letterSpacing : 0);
+    }, 0);
+  };
+
+  const drawCenteredCanvasText = (
+    context: CanvasRenderingContext2D,
+    text: string,
+    centerX: number,
+    y: number,
+    letterSpacing = 0
+  ) => {
+    const chars = Array.from(text);
+    let x = centerX - measureCanvasText(context, text, letterSpacing) / 2;
+
+    for (const char of chars) {
+      context.fillText(char, x, y);
+      x += context.measureText(char).width + letterSpacing;
+    }
+  };
+
   const wrapCanvasText = (
     context: CanvasRenderingContext2D,
     text: string,
     maxWidth: number,
-    maxLines: number
+    maxLines: number,
+    letterSpacing = 0
   ) => {
     const chars = Array.from(text);
     const lines: string[] = [];
@@ -788,7 +835,7 @@ export default function App() {
 
     for (const char of chars) {
       const next = `${current}${char}`;
-      if (context.measureText(next).width <= maxWidth || !current) {
+      if (measureCanvasText(context, next, letterSpacing) <= maxWidth || !current) {
         current = next;
         continue;
       }
@@ -816,6 +863,8 @@ export default function App() {
 
   const createShareImageBlob = async (doodle: Doodle) => {
     const title = doodleTitle(doodle);
+    await waitForShareTitleFont();
+
     const imageResponse = await fetch(proxiedImageUrl(doodle));
     if (!imageResponse.ok) throw new Error(copy[language].shareFallback);
 
@@ -845,10 +894,12 @@ export default function App() {
     context.fillStyle = '#111111';
     context.textAlign = 'center';
     context.textBaseline = 'top';
-    context.font = '700 74px "Noto Serif SC", "Songti SC", Georgia, serif';
-    const lines = wrapCanvasText(context, title, 980, 2);
+    context.font = `600 ${hasChinese(title) ? 70 : 72}px ${shareTitleFontFamily}`;
+    const titleLetterSpacing = hasChinese(title) ? 2 : 0;
+    const titleLineHeight = hasChinese(title) ? 82 : 84;
+    const lines = wrapCanvasText(context, title, 960, 2, titleLetterSpacing);
     lines.forEach((line, index) => {
-      context.fillText(line, 600, 610 + index * 84);
+      drawCenteredCanvasText(context, line, 600, 610 + index * titleLineHeight, titleLetterSpacing);
     });
 
     return new Promise<Blob>((resolve, reject) => {
