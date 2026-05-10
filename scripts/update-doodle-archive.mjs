@@ -59,6 +59,120 @@ function titleFromLocalImageName(name) {
     .join(' ');
 }
 
+function hasChinese(value = '') {
+  return /[\u3400-\u9fff]/u.test(value);
+}
+
+function localizeTitleZh(value = '') {
+  let title = value
+    .replace(/\s+/g, ' ')
+    .replace(/\s+Doodle\s+-\s+Google Doodles$/i, '')
+    .trim();
+
+  title = title.replace(/\((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})\)/gi, (_, monthName, day) => {
+    const months = {
+      jan: 1,
+      feb: 2,
+      mar: 3,
+      apr: 4,
+      may: 5,
+      jun: 6,
+      jul: 7,
+      aug: 8,
+      sep: 9,
+      oct: 10,
+      nov: 11,
+      dec: 12
+    };
+    const month = months[monthName.slice(0, 3).toLowerCase()];
+    return month ? `(${month}月${Number(day)}日)` : `(${monthName} ${day})`;
+  });
+
+  const orderedRules = [
+    [/\bMother's Day\b/gi, '母亲节'],
+    [/\bFather's Day\b/gi, '父亲节'],
+    [/\bTeacher Appreciation Day\b/gi, '教师感谢日'],
+    [/\bInternational Women's Day\b/gi, '国际妇女节'],
+    [/\bWomen's Day\b/gi, '妇女节'],
+    [/\bEarth Day\b/gi, '地球日'],
+    [/\bLabou?r Day\b/gi, '劳动节'],
+    [/\bNew Year's Day\b/gi, '元旦'],
+    [/\bLunar New Year\b/gi, '农历新年'],
+    [/\bSpring Festival\b/gi, '春节'],
+    [/\bMid-Autumn Festival\b/gi, '中秋节'],
+    [/\bDragon Boat Festival\b/gi, '端午节'],
+    [/\bValentine's Day\b/gi, '情人节'],
+    [/\bChristmas\b/gi, '圣诞节'],
+    [/\bHalloween\b/gi, '万圣节'],
+    [/\bThanksgiving\b/gi, '感恩节'],
+    [/\bEaster\b/gi, '复活节'],
+    [/\bNational Day\b/gi, '国庆日'],
+    [/\bRepublic Day\b/gi, '共和国日'],
+    [/\bIndependence Day\b/gi, '独立日'],
+    [/\bFreedom Day\b/gi, '自由日'],
+    [/\bNational Elections?\b/gi, '全国选举'],
+    [/\bLegislative Elections?\b/gi, '立法选举'],
+    [/\bPresidential Election\b/gi, '总统选举'],
+    [/\bElections?\b/gi, '选举'],
+    [/\bCelebrating the\b/gi, '纪念'],
+    [/\bCelebrating\b/gi, '纪念'],
+    [/\bLearning about\b/gi, '学习'],
+    [/\bThe Art of\b/gi, '艺术:'],
+    [/\bWorld\b/gi, '世界'],
+    [/\bDay\b/gi, '日'],
+    [/\bCentennial\b/gi, '百年纪念'],
+    [/\bFinalists?\b/gi, '入围者'],
+    [/\bCzech Republic\b/gi, '捷克共和国'],
+    [/\bSouth Africa\b/gi, '南非'],
+    [/\bTürkiye\b/gi, '土耳其'],
+    [/\bTurkey\b/gi, '土耳其'],
+    [/\bPoland\b/gi, '波兰'],
+    [/\bGermany\b/gi, '德国'],
+    [/\bGerman\b/gi, '德国'],
+    [/\bNetherlands\b/gi, '荷兰'],
+    [/\bArgentina\b/gi, '阿根廷'],
+    [/\bIreland\b/gi, '爱尔兰'],
+    [/\bK-Pop\b/gi, 'K-Pop'],
+    [/\bDance\b/gi, '舞蹈'],
+    [/\bNASA's\b/gi, 'NASA'],
+    [/\bMission\b/gi, '任务'],
+    [/\bMoon\b/gi, '月球'],
+    [/\bPhotosynthesis\b/gi, '光合作用'],
+    [/\bDNA\b/gi, 'DNA'],
+    [/\bQuantum\b/gi, '量子'],
+    [/\bRoute 66\b/gi, '66号公路'],
+    [/\bPAC-MAN\b/gi, '吃豆人'],
+    [/\bFlutes\b/gi, '长笛'],
+    [/\bIdli\b/gi, '伊德利米糕']
+  ];
+
+  for (const [pattern, replacement] of orderedRules) {
+    title = title.replace(pattern, replacement);
+  }
+
+  return title
+    .replace(/\s*:\s*/g, ': ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function withLocalZhFallback(doodle) {
+  const zh = doodle.localized?.['zh-CN'] || {};
+  const title = hasChinese(zh.title) ? zh.title : localizeTitleZh(zh.title || doodle.title || doodle.name);
+  const shareText = hasChinese(zh.share_text) ? zh.share_text : `${title}的 Google Doodle 纪念作品。`;
+
+  return {
+    ...doodle,
+    localized: {
+      ...(doodle.localized || {}),
+      'zh-CN': {
+        title,
+        share_text: shareText
+      }
+    }
+  };
+}
+
 function previousMonth({ year, month }) {
   return month === 1 ? { year: year - 1, month: 12 } : { year, month: month - 1 };
 }
@@ -317,7 +431,7 @@ function sortDoodles(doodles) {
 }
 
 async function writeArchive(doodles) {
-  const sorted = sortDoodles(doodles);
+  const sorted = sortDoodles(doodles.map(withLocalZhFallback));
   const existing = await readExistingManifestPayload();
   const unchanged = JSON.stringify(existing?.doodles || []) === JSON.stringify(sorted);
   const manifest = {

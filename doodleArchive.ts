@@ -15,8 +15,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2026 (May 10) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mother's Day 2026 (May 10)",
-        "share_text": "Learn more about the creation of Mother's Day 2026 (May 10) Doodle and discover the story behind the unique artwork."
+        "title": "母亲节 2026 (5月10日)",
+        "share_text": "母亲节 2026 (5月10日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-05-09_mothers-day-2026-may-10.gif",
@@ -39,8 +39,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of The Art of K-Pop Dance  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "The Art of K-Pop Dance ",
-        "share_text": "Learn more about the creation of The Art of K-Pop Dance  Doodle and discover the story behind the unique artwork."
+        "title": "艺术: K-Pop 舞蹈",
+        "share_text": "艺术: K-Pop 舞蹈的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-05-07_the-art-of-k-pop-dance.gif",
@@ -63,8 +63,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of US Teacher Appreciation Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "US Teacher Appreciation Day 2026",
-        "share_text": "Learn more about the creation of US Teacher Appreciation Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "US 教师感谢日 2026",
+        "share_text": "US 教师感谢日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-05-05_us-teacher-appreciation-day-2026.gif",
@@ -87,8 +87,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Easter 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Easter 2026",
-        "share_text": "Learn more about the creation of Easter 2026 Doodle and discover the story behind the unique artwork."
+        "title": "复活节 2026",
+        "share_text": "复活节 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-04_easter-2026.png",
@@ -111,8 +111,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Route 66 Centennial Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Route 66 Centennial",
-        "share_text": "Learn more about the creation of Celebrating the Route 66 Centennial Doodle and discover the story behind the unique artwork."
+        "title": "纪念 66号公路 百年纪念",
+        "share_text": "纪念 66号公路 百年纪念的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-30_celebrating-the-route-66-centennial.gif",
@@ -135,8 +135,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Labour Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Labour Day 2026",
-        "share_text": "Learn more about the creation of Labour Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "劳动节 2026",
+        "share_text": "劳动节 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-30_labour-day-2026.png",
@@ -159,8 +159,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: David Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Doodle for Google Finalists: David",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: David Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Doodle for Google 入围者: David",
+        "share_text": "纪念 Doodle for Google 入围者: David的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png",
@@ -183,8 +183,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Eric Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Doodle for Google Finalists: Eric",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Eric Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Doodle for Google 入围者: Eric",
+        "share_text": "纪念 Doodle for Google 入围者: Eric的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png",
@@ -207,8 +207,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Lerui Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Doodle for Google Finalists: Lerui",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Lerui Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Doodle for Google 入围者: Lerui",
+        "share_text": "纪念 Doodle for Google 入围者: Lerui的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png",
@@ -231,8 +231,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Olive Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Doodle for Google Finalists: Olive",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Olive Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Doodle for Google 入围者: Olive",
+        "share_text": "纪念 Doodle for Google 入围者: Olive的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-4.png",
@@ -255,8 +255,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Kameirah Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Doodle for Google Finalists: Kameirah",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Kameirah Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Doodle for Google 入围者: Kameirah",
+        "share_text": "纪念 Doodle for Google 入围者: Kameirah的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-5.png",
@@ -279,8 +279,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of South Africa Freedom Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "South Africa Freedom Day 2026",
-        "share_text": "Learn more about the creation of South Africa Freedom Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "南非 自由日 2026",
+        "share_text": "南非 自由日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-26_south-africa-freedom-day-2026.gif",
@@ -303,8 +303,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. George's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. George's Day 2026",
-        "share_text": "Learn more about the creation of St. George's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "St. George's 日 2026",
+        "share_text": "St. George's 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-22_st-georges-day-2026.png",
@@ -327,8 +327,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Earth Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Earth Day 2026",
-        "share_text": "Learn more about the creation of Earth Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "地球日 2026",
+        "share_text": "地球日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-21_earth-day-2026.gif",
@@ -351,8 +351,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of  NBA Playoffs 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": " NBA Playoffs 2026",
-        "share_text": "Learn more about the creation of  NBA Playoffs 2026 Doodle and discover the story behind the unique artwork."
+        "title": "NBA Playoffs 2026",
+        "share_text": "NBA Playoffs 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-18_nba-playoffs-2026-aa.gif",
@@ -375,8 +375,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of World Quantum Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "World Quantum Day 2026",
-        "share_text": "Learn more about the creation of World Quantum Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "世界 量子 日 2026",
+        "share_text": "世界 量子 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-13_world-quantum-day-2026.gif",
@@ -399,8 +399,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of NASA's Artemis II Mission Around the Moon Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "NASA's Artemis II Mission Around the Moon",
-        "share_text": "Learn more about the creation of NASA's Artemis II Mission Around the Moon Doodle and discover the story behind the unique artwork."
+        "title": "NASA Artemis II 任务 Around the 月球",
+        "share_text": "NASA Artemis II 任务 Around the 月球的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif",
@@ -423,8 +423,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of International Women's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "International Women's Day 2026",
-        "share_text": "Learn more about the creation of International Women's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "国际妇女节 2026",
+        "share_text": "国际妇女节 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-07_international-womens-day-2026.gif",
@@ -447,8 +447,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6)  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Winter Sports Begin 2026 (March 6) ",
-        "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6)  Doodle and discover the story behind the unique artwork."
+        "title": "Winter Sports Begin 2026 (3月6日)",
+        "share_text": "Winter Sports Begin 2026 (3月6日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-05_winter-sports-begin-2026-march-6.gif",
@@ -472,7 +472,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Men's Indian Premier League 2026 Begins",
-        "share_text": "Learn more about the creation of Men's Indian Premier League 2026 Begins Doodle and discover the story behind the unique artwork."
+        "share_text": "Men's Indian Premier League 2026 Begins的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-27_mens-indian-premier-league-2026-begins.gif",
@@ -496,7 +496,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Women's College Basketball Championship 2026",
-        "share_text": "Learn more about the creation of Women's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Women's College Basketball Championship 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-20_womens-college-basketball-championship-2026.gif",
@@ -520,7 +520,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Lantern Festival 2026",
-        "share_text": "Learn more about the creation of Lantern Festival 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Lantern Festival 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-02_lantern-festival-2026.gif",
@@ -544,7 +544,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Men's College Basketball Championship 2026",
-        "share_text": "Learn more about the creation of Men's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Men's College Basketball Championship 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-19_mens-college-basketball-championship-2026.gif",
@@ -568,7 +568,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Nowruz 2026",
-        "share_text": "Learn more about the creation of Nowruz 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Nowruz 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-19_nowruz-2026.png",
@@ -591,8 +591,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. Patrick's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. Patrick's Day 2026",
-        "share_text": "Learn more about the creation of St. Patrick's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "St. Patrick's 日 2026",
+        "share_text": "St. Patrick's 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-16_st-patricks-day-2026.png",
@@ -615,8 +615,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Pi Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Pi Day 2026",
-        "share_text": "Learn more about the creation of Pi Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "Pi 日 2026",
+        "share_text": "Pi 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-13_pi-day-2026.gif",
@@ -639,8 +639,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. David's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. David's Day 2026",
-        "share_text": "Learn more about the creation of St. David's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "St. David's 日 2026",
+        "share_text": "St. David's 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-03-01_st-davids-day-2026.png",
@@ -664,7 +664,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Ski Jumping 2026",
-        "share_text": "Learn more about the creation of Ski Jumping 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Ski Jumping 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-09_ski-jumping-2026.gif",
@@ -688,7 +688,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Figure Skating 2026",
-        "share_text": "Learn more about the creation of Figure Skating 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Figure Skating 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-08_figure-skating-2026.gif",
@@ -712,12 +712,36 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Snowboarding 2026",
-        "share_text": "Learn more about the creation of Snowboarding 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Snowboarding 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-07_snowboarding-2026.gif",
     "url": "/doodles/2026-02-07_snowboarding-2026.gif",
     "high_res_url": "/doodles/2026-02-07_snowboarding-2026.gif"
+  },
+  {
+    "name": "icc-mens-t20-world-cup-begins",
+    "title": "ICC Men's T20 World Cup Begins",
+    "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      2,
+      6
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/icc-mens-t20-world-cup-begins-osrp-6753651837111042-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "ICC Men's T20 World Cup Begins",
+        "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "ICC Men's T20 世界 Cup Begins",
+        "share_text": "ICC Men's T20 世界 Cup Begins的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2026-02-06_icc-mens-t20-world-cup-begins.gif",
+    "url": "/doodles/2026-02-06_icc-mens-t20-world-cup-begins.gif",
+    "high_res_url": "/doodles/2026-02-06_icc-mens-t20-world-cup-begins.gif"
   },
   {
     "name": "ice-hockey-2026",
@@ -736,36 +760,12 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Ice Hockey 2026",
-        "share_text": "Learn more about the creation of Ice Hockey 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Ice Hockey 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-06_ice-hockey-2026.gif",
     "url": "/doodles/2026-02-06_ice-hockey-2026.gif",
     "high_res_url": "/doodles/2026-02-06_ice-hockey-2026.gif"
-  },
-  {
-    "name": "icc-mens-t20-world-cup-begins",
-    "title": "ICC Men's T20 World Cup Begins",
-    "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      2,
-      6
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/icc-mens-t20-world-cup-begins-osrp-6753651837111042-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "ICC Men's T20 World Cup Begins",
-        "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "ICC Men's T20 World Cup Begins",
-        "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2026-02-06_icc-mens-t20-world-cup-begins.gif",
-    "url": "/doodles/2026-02-06_icc-mens-t20-world-cup-begins.gif",
-    "high_res_url": "/doodles/2026-02-06_icc-mens-t20-world-cup-begins.gif"
   },
   {
     "name": "winter-sports-2026-begin",
@@ -784,7 +784,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Winter Sports 2026 Begin!",
-        "share_text": "Learn more about the creation of Winter Sports 2026 Begin! Doodle and discover the story behind the unique artwork."
+        "share_text": "Winter Sports 2026 Begin!的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-05_winter-sports-2026-begin.gif",
@@ -808,7 +808,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Curling 2026",
-        "share_text": "Learn more about the creation of Curling 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Curling 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-03_curling-2026.gif",
@@ -831,8 +831,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Winter Sports 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating Winter Sports 2026",
-        "share_text": "Learn more about the creation of Celebrating Winter Sports 2026 Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Winter Sports 2026",
+        "share_text": "纪念 Winter Sports 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-21_celebrating-winter-sports-2026.gif",
@@ -855,8 +855,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of ICC Men's T20 World Cup: Super 8 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "ICC Men's T20 World Cup: Super 8",
-        "share_text": "Learn more about the creation of ICC Men's T20 World Cup: Super 8 Doodle and discover the story behind the unique artwork."
+        "title": "ICC Men's T20 世界 Cup: Super 8",
+        "share_text": "ICC Men's T20 世界 Cup: Super 8的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-20_icc-mens-t20-world-cup-super-8.gif",
@@ -880,7 +880,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Freestyle Skiing 2026",
-        "share_text": "Learn more about the creation of Freestyle Skiing 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Freestyle Skiing 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-16_freestyle-skiing-2026.gif",
@@ -903,8 +903,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Lunar New Year 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Lunar New Year 2026",
-        "share_text": "Learn more about the creation of Lunar New Year 2026 Doodle and discover the story behind the unique artwork."
+        "title": "农历新年 2026",
+        "share_text": "农历新年 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-16_lunar-new-year-2026.gif",
@@ -928,7 +928,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Alpine Skiing 2026",
-        "share_text": "Learn more about the creation of Alpine Skiing 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Alpine Skiing 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-14_alpine-skiing-2026.gif",
@@ -951,8 +951,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Valentine's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Valentine's Day 2026",
-        "share_text": "Learn more about the creation of Valentine's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "情人节 2026",
+        "share_text": "情人节 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-13_valentines-day-2026.gif",
@@ -975,8 +975,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of The Art of Hip-Hop Beat Making  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "The Art of Hip-Hop Beat Making ",
-        "share_text": "Learn more about the creation of The Art of Hip-Hop Beat Making  Doodle and discover the story behind the unique artwork."
+        "title": "艺术: Hip-Hop Beat Making",
+        "share_text": "艺术: Hip-Hop Beat Making的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-02-01_the-art-of-hip-hop-beat-making.gif",
@@ -999,8 +999,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of India Republic Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "India Republic Day 2026",
-        "share_text": "Learn more about the creation of India Republic Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "India 共和国日 2026",
+        "share_text": "India 共和国日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-01-25_india-republic-day-2026.png",
@@ -1023,8 +1023,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Dr. Martin Luther King Jr. Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Dr. Martin Luther King Jr. Day 2026",
-        "share_text": "Learn more about the creation of Dr. Martin Luther King Jr. Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "Dr. Martin Luther King Jr. 日 2026",
+        "share_text": "Dr. Martin Luther King Jr. 日 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2026-01-19_dr-martin-luther-king-jr-day-2026.png",
@@ -1048,36 +1048,12 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Learning the Quadratic Equation",
-        "share_text": "Learn more about the creation of Learning the Quadratic Equation Doodle and discover the story behind the unique artwork."
+        "share_text": "Learning the Quadratic Equation的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-08_learning-the-quadratic-equation.gif",
     "url": "/doodles/2025-09-08_learning-the-quadratic-equation.gif",
     "high_res_url": "/doodles/2025-09-08_learning-the-quadratic-equation.gif"
-  },
-  {
-    "name": "norway-elections",
-    "title": "Norway Elections",
-    "share_text": "Learn more about the creation of Norway Elections Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      7
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/norway-elections-6753651837110855-2x.png",
-    "localized": {
-      "en": {
-        "title": "Norway Elections",
-        "share_text": "Learn more about the creation of Norway Elections Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Norway Elections",
-        "share_text": "Learn more about the creation of Norway Elections Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-07_norway-elections.png",
-    "url": "/doodles/2025-09-07_norway-elections.png",
-    "high_res_url": "/doodles/2025-09-07_norway-elections.png"
   },
   {
     "name": "brazil-independence-day-2025",
@@ -1095,13 +1071,37 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Brazil Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Brazil Independence Day 2025",
-        "share_text": "Learn more about the creation of Brazil Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Brazil 独立日 2025",
+        "share_text": "Brazil 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-07_brazil-independence-day-2025.png",
     "url": "/doodles/2025-09-07_brazil-independence-day-2025.png",
     "high_res_url": "/doodles/2025-09-07_brazil-independence-day-2025.png"
+  },
+  {
+    "name": "norway-elections",
+    "title": "Norway Elections",
+    "share_text": "Learn more about the creation of Norway Elections Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      7
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/norway-elections-6753651837110855-2x.png",
+    "localized": {
+      "en": {
+        "title": "Norway Elections",
+        "share_text": "Learn more about the creation of Norway Elections Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "Norway 选举",
+        "share_text": "Norway 选举的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-07_norway-elections.png",
+    "url": "/doodles/2025-09-07_norway-elections.png",
+    "high_res_url": "/doodles/2025-09-07_norway-elections.png"
   },
   {
     "name": "fathers-day-2025-sept-7",
@@ -1119,8 +1119,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Sept 7) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Father's Day 2025 (Sept 7)",
-        "share_text": "Learn more about the creation of Father's Day 2025 (Sept 7) Doodle and discover the story behind the unique artwork."
+        "title": "父亲节 2025 (9月7日)",
+        "share_text": "父亲节 2025 (9月7日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-06_fathers-day-2025-sept-7.png",
@@ -1143,8 +1143,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Nigeria Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Nigeria Independence Day 2025",
-        "share_text": "Learn more about the creation of Nigeria Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Nigeria 独立日 2025",
+        "share_text": "Nigeria 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-30_nigeria-independence-day-2025.gif",
@@ -1167,8 +1167,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Women's Cricket World Cup 2025 Begins! Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Women's Cricket World Cup 2025 Begins!",
-        "share_text": "Learn more about the creation of Women's Cricket World Cup 2025 Begins! Doodle and discover the story behind the unique artwork."
+        "title": "Women's Cricket 世界 Cup 2025 Begins!",
+        "share_text": "Women's Cricket 世界 Cup 2025 Begins!的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-29_womens-cricket-world-cup-2025-begins.png",
@@ -1192,7 +1192,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Google's 27th Birthday",
-        "share_text": "Learn more about the creation of Google's 27th Birthday Doodle and discover the story behind the unique artwork."
+        "share_text": "Google's 27th Birthday的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-26_googles-27th-birthday.png",
@@ -1215,8 +1215,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Armenia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Armenia Independence Day 2025",
-        "share_text": "Learn more about the creation of Armenia Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Armenia 独立日 2025",
+        "share_text": "Armenia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-20_armenia-independence-day-2025.gif",
@@ -1239,37 +1239,13 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about Photosynthesis",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis Doodle and discover the story behind the unique artwork."
+        "title": "学习 光合作用",
+        "share_text": "学习 光合作用的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-20_learning-about-photosynthesis.gif",
     "url": "/doodles/2025-09-20_learning-about-photosynthesis.gif",
     "high_res_url": "/doodles/2025-09-20_learning-about-photosynthesis.gif"
-  },
-  {
-    "name": "learning-about-photosynthesis-uk",
-    "title": "Learning about Photosynthesis (UK)",
-    "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      18
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/learning-about-photosynthesis-uk-6753651837110911.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Learning about Photosynthesis (UK)",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Learning about Photosynthesis (UK)",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-18_learning-about-photosynthesis-uk.gif",
-    "url": "/doodles/2025-09-18_learning-about-photosynthesis-uk.gif",
-    "high_res_url": "/doodles/2025-09-18_learning-about-photosynthesis-uk.gif"
   },
   {
     "name": "chile-national-day-2025",
@@ -1287,13 +1263,37 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Chile National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Chile National Day 2025",
-        "share_text": "Learn more about the creation of Chile National Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Chile 国庆日 2025",
+        "share_text": "Chile 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-18_chile-national-day-2025.gif",
     "url": "/doodles/2025-09-18_chile-national-day-2025.gif",
     "high_res_url": "/doodles/2025-09-18_chile-national-day-2025.gif"
+  },
+  {
+    "name": "learning-about-photosynthesis-uk",
+    "title": "Learning about Photosynthesis (UK)",
+    "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/learning-about-photosynthesis-uk-6753651837110911.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Learning about Photosynthesis (UK)",
+        "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "学习 光合作用 (UK)",
+        "share_text": "学习 光合作用 (UK)的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-18_learning-about-photosynthesis-uk.gif",
+    "url": "/doodles/2025-09-18_learning-about-photosynthesis-uk.gif",
+    "high_res_url": "/doodles/2025-09-18_learning-about-photosynthesis-uk.gif"
   },
   {
     "name": "learning-about-dna-uk",
@@ -1311,8 +1311,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about DNA (UK) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about DNA (UK)",
-        "share_text": "Learn more about the creation of Learning about DNA (UK) Doodle and discover the story behind the unique artwork."
+        "title": "学习 DNA (UK)",
+        "share_text": "学习 DNA (UK)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-17_learning-about-dna-uk.gif",
@@ -1336,7 +1336,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Learning the Quadratic Equation (UK)",
-        "share_text": "Learn more about the creation of Learning the Quadratic Equation (UK) Doodle and discover the story behind the unique artwork."
+        "share_text": "Learning the Quadratic Equation (UK)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-16_learning-the-quadratic-equation-uk.gif",
@@ -1359,61 +1359,13 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mexico Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mexico Independence Day 2025",
-        "share_text": "Learn more about the creation of Mexico Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Mexico 独立日 2025",
+        "share_text": "Mexico 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-16_mexico-independence-day-2025.gif",
     "url": "/doodles/2025-09-16_mexico-independence-day-2025.gif",
     "high_res_url": "/doodles/2025-09-16_mexico-independence-day-2025.gif"
-  },
-  {
-    "name": "uefa-champions-league-2025",
-    "title": "UEFA Champions  League 2025",
-    "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      15
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/uefa-champions-league-2025-6753651837110856.2-2x.png",
-    "localized": {
-      "en": {
-        "title": "UEFA Champions  League 2025",
-        "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "UEFA Champions  League 2025",
-        "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-15_uefa-champions-league-2025.png",
-    "url": "/doodles/2025-09-15_uefa-champions-league-2025.png",
-    "high_res_url": "/doodles/2025-09-15_uefa-champions-league-2025.png"
-  },
-  {
-    "name": "el-salvador-independence-day-2025",
-    "title": "El Salvador Independence Day 2025",
-    "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      15
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/el-salvador-independence-day-2025-6753651837110731-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "El Salvador Independence Day 2025",
-        "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "El Salvador Independence Day 2025",
-        "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-15_el-salvador-independence-day-2025.gif",
-    "url": "/doodles/2025-09-15_el-salvador-independence-day-2025.gif",
-    "high_res_url": "/doodles/2025-09-15_el-salvador-independence-day-2025.gif"
   },
   {
     "name": "celebrating-salsa-hispanic-heritage-month",
@@ -1431,13 +1383,61 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Salsa (Hispanic Heritage Month)  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating Salsa (Hispanic Heritage Month) ",
-        "share_text": "Learn more about the creation of Celebrating Salsa (Hispanic Heritage Month)  Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Salsa (Hispanic Heritage Month)",
+        "share_text": "纪念 Salsa (Hispanic Heritage Month)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-15_celebrating-salsa-hispanic-heritage-month.gif",
     "url": "/doodles/2025-09-15_celebrating-salsa-hispanic-heritage-month.gif",
     "high_res_url": "/doodles/2025-09-15_celebrating-salsa-hispanic-heritage-month.gif"
+  },
+  {
+    "name": "el-salvador-independence-day-2025",
+    "title": "El Salvador Independence Day 2025",
+    "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      15
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/el-salvador-independence-day-2025-6753651837110731-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "El Salvador Independence Day 2025",
+        "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "El Salvador 独立日 2025",
+        "share_text": "El Salvador 独立日 2025的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-15_el-salvador-independence-day-2025.gif",
+    "url": "/doodles/2025-09-15_el-salvador-independence-day-2025.gif",
+    "high_res_url": "/doodles/2025-09-15_el-salvador-independence-day-2025.gif"
+  },
+  {
+    "name": "uefa-champions-league-2025",
+    "title": "UEFA Champions  League 2025",
+    "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      15
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/uefa-champions-league-2025-6753651837110856.2-2x.png",
+    "localized": {
+      "en": {
+        "title": "UEFA Champions  League 2025",
+        "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "UEFA Champions League 2025",
+        "share_text": "UEFA Champions League 2025的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-15_uefa-champions-league-2025.png",
+    "url": "/doodles/2025-09-15_uefa-champions-league-2025.png",
+    "high_res_url": "/doodles/2025-09-15_uefa-champions-league-2025.png"
   },
   {
     "name": "respect-for-the-aged-day-2025",
@@ -1455,8 +1455,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Respect for the Aged Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Respect for the Aged Day 2025",
-        "share_text": "Learn more about the creation of Respect for the Aged Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Respect for the Aged 日 2025",
+        "share_text": "Respect for the Aged 日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-14_respect-for-the-aged-day-2025.png",
@@ -1480,7 +1480,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "WNBA Playoffs",
-        "share_text": "Learn more about the creation of WNBA Playoffs Doodle and discover the story behind the unique artwork."
+        "share_text": "WNBA Playoffs的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-14_wnba-playoffs.gif",
@@ -1503,61 +1503,13 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about DNA Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about DNA",
-        "share_text": "Learn more about the creation of Learning about DNA Doodle and discover the story behind the unique artwork."
+        "title": "学习 DNA",
+        "share_text": "学习 DNA的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-10_learning-about-dna.gif",
     "url": "/doodles/2025-09-10_learning-about-dna.gif",
     "high_res_url": "/doodles/2025-09-10_learning-about-dna.gif"
-  },
-  {
-    "name": "vietnam-national-day-2025",
-    "title": "Vietnam National Day 2025",
-    "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      1
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/vietnam-national-day-2025-6753651837110671-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Vietnam National Day 2025",
-        "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Vietnam National Day 2025",
-        "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-01_vietnam-national-day-2025.gif",
-    "url": "/doodles/2025-09-01_vietnam-national-day-2025.gif",
-    "high_res_url": "/doodles/2025-09-01_vietnam-national-day-2025.gif"
-  },
-  {
-    "name": "labour-day-2025-canada",
-    "title": "Labour Day 2025 (Canada)",
-    "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      9,
-      1
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/labor-day-2025-copy-6753651837110907-2x.png",
-    "localized": {
-      "en": {
-        "title": "Labour Day 2025 (Canada)",
-        "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Labour Day 2025 (Canada)",
-        "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-09-01_labour-day-2025-canada.png",
-    "url": "/doodles/2025-09-01_labour-day-2025-canada.png",
-    "high_res_url": "/doodles/2025-09-01_labour-day-2025-canada.png"
   },
   {
     "name": "labor-day-2025",
@@ -1575,13 +1527,61 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Labor Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Labor Day 2025",
-        "share_text": "Learn more about the creation of Labor Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "劳动节 2025",
+        "share_text": "劳动节 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-09-01_labor-day-2025.png",
     "url": "/doodles/2025-09-01_labor-day-2025.png",
     "high_res_url": "/doodles/2025-09-01_labor-day-2025.png"
+  },
+  {
+    "name": "labour-day-2025-canada",
+    "title": "Labour Day 2025 (Canada)",
+    "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      1
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/labor-day-2025-copy-6753651837110907-2x.png",
+    "localized": {
+      "en": {
+        "title": "Labour Day 2025 (Canada)",
+        "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "劳动节 2025 (Canada)",
+        "share_text": "劳动节 2025 (Canada)的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-01_labour-day-2025-canada.png",
+    "url": "/doodles/2025-09-01_labour-day-2025-canada.png",
+    "high_res_url": "/doodles/2025-09-01_labour-day-2025-canada.png"
+  },
+  {
+    "name": "vietnam-national-day-2025",
+    "title": "Vietnam National Day 2025",
+    "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      9,
+      1
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/vietnam-national-day-2025-6753651837110671-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Vietnam National Day 2025",
+        "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "Vietnam 国庆日 2025",
+        "share_text": "Vietnam 国庆日 2025的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-09-01_vietnam-national-day-2025.gif",
+    "url": "/doodles/2025-09-01_vietnam-national-day-2025.gif",
+    "high_res_url": "/doodles/2025-09-01_vietnam-national-day-2025.gif"
   },
   {
     "name": "hari-merdeka-2025",
@@ -1600,7 +1600,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Hari Merdeka 2025",
-        "share_text": "Learn more about the creation of Hari Merdeka 2025 Doodle and discover the story behind the unique artwork."
+        "share_text": "Hari Merdeka 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-30_hari-merdeka-2025.gif",
@@ -1623,8 +1623,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Uruguay Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Uruguay Independence Day 2025",
-        "share_text": "Learn more about the creation of Uruguay Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Uruguay 独立日 2025",
+        "share_text": "Uruguay 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-25_uruguay-independence-day-2025.gif",
@@ -1647,8 +1647,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ukraine Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ukraine Independence Day 2025",
-        "share_text": "Learn more about the creation of Ukraine Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Ukraine 独立日 2025",
+        "share_text": "Ukraine 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-23_ukraine-independence-day-2025.gif",
@@ -1671,8 +1671,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Indonesia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Indonesia Independence Day 2025",
-        "share_text": "Learn more about the creation of Indonesia Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Indonesia 独立日 2025",
+        "share_text": "Indonesia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-16_indonesia-independence-day-2025.png",
@@ -1696,7 +1696,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "English Premier League Season 2025-2026 Begins",
-        "share_text": "Learn more about the creation of English Premier League Season 2025-2026 Begins Doodle and discover the story behind the unique artwork."
+        "share_text": "English Premier League Season 2025-2026 Begins的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-15_english-premier-league-season-2025-2026-begins.png",
@@ -1719,8 +1719,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of India Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "India Independence Day 2025",
-        "share_text": "Learn more about the creation of India Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "India 独立日 2025",
+        "share_text": "India 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-14_india-independence-day-2025.png",
@@ -1743,8 +1743,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of South Korea Liberation Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "South Korea Liberation Day 2025",
-        "share_text": "Learn more about the creation of South Korea Liberation Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "South Korea Liberation 日 2025",
+        "share_text": "South Korea Liberation 日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-14_south-korea-liberation-day-2025.gif",
@@ -1767,8 +1767,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Pakistan Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Pakistan Independence Day 2025",
-        "share_text": "Learn more about the creation of Pakistan Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Pakistan 独立日 2025",
+        "share_text": "Pakistan 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-13_pakistan-independence-day-2025.gif",
@@ -1791,8 +1791,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Aug 12) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mother's Day 2025 (Aug 12)",
-        "share_text": "Learn more about the creation of Mother's Day 2025 (Aug 12) Doodle and discover the story behind the unique artwork."
+        "title": "母亲节 2025 (8月12日)",
+        "share_text": "母亲节 2025 (8月12日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-11_mothers-day-2025-aug-12.png",
@@ -1815,8 +1815,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ecuador Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ecuador Independence Day 2025",
-        "share_text": "Learn more about the creation of Ecuador Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Ecuador 独立日 2025",
+        "share_text": "Ecuador 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-10_ecuador-independence-day-2025.gif",
@@ -1839,8 +1839,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Aug 10) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Father's Day 2025 (Aug 10)",
-        "share_text": "Learn more about the creation of Father's Day 2025 (Aug 10) Doodle and discover the story behind the unique artwork."
+        "title": "父亲节 2025 (8月10日)",
+        "share_text": "父亲节 2025 (8月10日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-08-10_fathers-day-2025-aug-10.png",
@@ -1864,7 +1864,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Year in Search 2025 Film",
-        "share_text": "Learn more about the creation of Year in Search 2025 Film Doodle and discover the story behind the unique artwork."
+        "share_text": "Year in Search 2025 Film的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-08_year-in-search-2025-film.gif",
@@ -1887,8 +1887,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Dec 5) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Father's Day 2025 (Dec 5)",
-        "share_text": "Learn more about the creation of Father's Day 2025 (Dec 5) Doodle and discover the story behind the unique artwork."
+        "title": "父亲节 2025 (12月5日)",
+        "share_text": "父亲节 2025 (12月5日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-04_fathers-day-2025-dec-5.png",
@@ -1911,8 +1911,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of New Year's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "New Year's Day 2026",
-        "share_text": "Learn more about the creation of New Year's Day 2026 Doodle and discover the story behind the unique artwork."
+        "title": "元旦 2026",
+        "share_text": "元旦 2026的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-31_new-years-day-2026.gif",
@@ -1936,7 +1936,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "New Year's Eve 2025",
-        "share_text": "Learn more about the creation of New Year's Eve 2025 Doodle and discover the story behind the unique artwork."
+        "share_text": "New Year's Eve 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-30_new-years-eve-2025.gif",
@@ -1959,8 +1959,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Dec 22) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mother's Day 2025 (Dec 22)",
-        "share_text": "Learn more about the creation of Mother's Day 2025 (Dec 22) Doodle and discover the story behind the unique artwork."
+        "title": "母亲节 2025 (12月22日)",
+        "share_text": "母亲节 2025 (12月22日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-21_mothers-day-2025-dec-22.png",
@@ -1983,8 +1983,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Chile Presidential Elections (round 2) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Chile Presidential Elections (round 2)",
-        "share_text": "Learn more about the creation of Chile Presidential Elections (round 2) Doodle and discover the story behind the unique artwork."
+        "title": "Chile Presidential 选举 (round 2)",
+        "share_text": "Chile Presidential 选举 (round 2)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-14_chile-presidential-elections-round-2.png",
@@ -2007,8 +2007,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Kenya Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Kenya Independence Day 2025",
-        "share_text": "Learn more about the creation of Kenya Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Kenya 独立日 2025",
+        "share_text": "Kenya 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-11_kenya-independence-day-2025.gif",
@@ -2031,8 +2031,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of UAE National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "UAE National Day 2025",
-        "share_text": "Learn more about the creation of UAE National Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "UAE 国庆日 2025",
+        "share_text": "UAE 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-12-01_uae-national-day-2025.gif",
@@ -2055,8 +2055,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (EG+SA+ES) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about Photosynthesis (EG+SA+ES)",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis (EG+SA+ES) Doodle and discover the story behind the unique artwork."
+        "title": "学习 光合作用 (EG+SA+ES)",
+        "share_text": "学习 光合作用 (EG+SA+ES)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-09_learning-about-photosynthesis-egsaes.gif",
@@ -2079,8 +2079,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Nov 9) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Father's Day 2025 (Nov 9)",
-        "share_text": "Learn more about the creation of Father's Day 2025 (Nov 9) Doodle and discover the story behind the unique artwork."
+        "title": "父亲节 2025 (11月9日)",
+        "share_text": "父亲节 2025 (11月9日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-08_fathers-day-2025-nov-9.png",
@@ -2104,7 +2104,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Hari Cinta Puspa dan Satwa Nasional",
-        "share_text": "Learn more about the creation of Hari Cinta Puspa dan Satwa Nasional Doodle and discover the story behind the unique artwork."
+        "share_text": "Hari Cinta Puspa dan Satwa Nasional的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-04_hari-cinta-puspa-dan-satwa-nasional.png",
@@ -2127,8 +2127,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Romania National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Romania National Day 2025",
-        "share_text": "Learn more about the creation of Romania National Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Romania 国庆日 2025",
+        "share_text": "Romania 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-30_romania-national-day-2025.gif",
@@ -2151,8 +2151,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. Andrew's Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. Andrew's Day 2025",
-        "share_text": "Learn more about the creation of St. Andrew's Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "St. Andrew's 日 2025",
+        "share_text": "St. Andrew's 日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-30_st-andrews-day-2025.png",
@@ -2175,8 +2175,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Monarch Butterfly Arrival Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating the Monarch Butterfly Arrival",
-        "share_text": "Learn more about the creation of Celebrating the Monarch Butterfly Arrival Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Monarch Butterfly Arrival",
+        "share_text": "纪念 Monarch Butterfly Arrival的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-03_celebrating-the-monarch-butterfly-arrival.gif",
@@ -2199,8 +2199,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Thanksgiving 2025  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Thanksgiving 2025 ",
-        "share_text": "Learn more about the creation of Thanksgiving 2025  Doodle and discover the story behind the unique artwork."
+        "title": "感恩节 2025",
+        "share_text": "感恩节 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-27_thanksgiving-2025.png",
@@ -2223,8 +2223,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Getting Ready for Thanksgiving 2025 with Tiny Chef Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Getting Ready for Thanksgiving 2025 with Tiny Chef",
-        "share_text": "Learn more about the creation of Getting Ready for Thanksgiving 2025 with Tiny Chef Doodle and discover the story behind the unique artwork."
+        "title": "Getting Ready for 感恩节 2025 with Tiny Chef",
+        "share_text": "Getting Ready for 感恩节 2025 with Tiny Chef的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-26_getting-ready-for-thanksgiving-2025-with-tiny-chef.gif",
@@ -2247,8 +2247,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Robert Maza Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating Robert Maza",
-        "share_text": "Learn more about the creation of Celebrating Robert Maza Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Robert Maza",
+        "share_text": "纪念 Robert Maza的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-24_celebrating-robert-maza.png",
@@ -2271,37 +2271,13 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Latvia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Latvia Independence Day 2025",
-        "share_text": "Learn more about the creation of Latvia Independence Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Latvia 独立日 2025",
+        "share_text": "Latvia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-17_latvia-independence-day-2025.gif",
     "url": "/doodles/2025-11-17_latvia-independence-day-2025.gif",
     "high_res_url": "/doodles/2025-11-17_latvia-independence-day-2025.gif"
-  },
-  {
-    "name": "czech-republic-freedom-and-democracy-day-2025",
-    "title": "Czech Republic Freedom and Democracy Day 2025",
-    "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      11,
-      16
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/czech-republic-freedom-and-democracy-day-2025-6753651837110900-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Czech Republic Freedom and Democracy Day 2025",
-        "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Czech Republic Freedom and Democracy Day 2025",
-        "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif",
-    "url": "/doodles/2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif",
-    "high_res_url": "/doodles/2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif"
   },
   {
     "name": "chile-presidential-elections",
@@ -2319,13 +2295,37 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Chile Presidential Elections Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Chile Presidential Elections",
-        "share_text": "Learn more about the creation of Chile Presidential Elections Doodle and discover the story behind the unique artwork."
+        "title": "Chile Presidential 选举",
+        "share_text": "Chile Presidential 选举的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-16_chile-presidential-elections.png",
     "url": "/doodles/2025-11-16_chile-presidential-elections.png",
     "high_res_url": "/doodles/2025-11-16_chile-presidential-elections.png"
+  },
+  {
+    "name": "czech-republic-freedom-and-democracy-day-2025",
+    "title": "Czech Republic Freedom and Democracy Day 2025",
+    "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      11,
+      16
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/czech-republic-freedom-and-democracy-day-2025-6753651837110900-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Czech Republic Freedom and Democracy Day 2025",
+        "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "捷克共和国 Freedom and Democracy 日 2025",
+        "share_text": "捷克共和国 Freedom and Democracy 日 2025的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif",
+    "url": "/doodles/2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif",
+    "high_res_url": "/doodles/2025-11-16_czech-republic-freedom-and-democracy-day-2025.gif"
   },
   {
     "name": "learning-about-photosynthesis-india",
@@ -2343,8 +2343,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (India) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about Photosynthesis (India)",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis (India) Doodle and discover the story behind the unique artwork."
+        "title": "学习 光合作用 (India)",
+        "share_text": "学习 光合作用 (India)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-13_learning-about-photosynthesis-india.gif",
@@ -2367,37 +2367,13 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about DNA (India) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about DNA (India)",
-        "share_text": "Learn more about the creation of Learning about DNA (India) Doodle and discover the story behind the unique artwork."
+        "title": "学习 DNA (India)",
+        "share_text": "学习 DNA (India)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-12_learning-about-dna-india.gif",
     "url": "/doodles/2025-11-12_learning-about-dna-india.gif",
     "high_res_url": "/doodles/2025-11-12_learning-about-dna-india.gif"
-  },
-  {
-    "name": "learning-the-quadratic-equation-india",
-    "title": "Learning the Quadratic Equation (India) ",
-    "share_text": "Learn more about the creation of Learning the Quadratic Equation (India)  Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      11,
-      11
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/learning-the-quadratic-equation-emea-copy-6753651837110920-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Learning the Quadratic Equation (India) ",
-        "share_text": "Learn more about the creation of Learning the Quadratic Equation (India)  Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Learning the Quadratic Equation (India) ",
-        "share_text": "Learn more about the creation of Learning the Quadratic Equation (India)  Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-11-11_learning-the-quadratic-equation-india.gif",
-    "url": "/doodles/2025-11-11_learning-the-quadratic-equation-india.gif",
-    "high_res_url": "/doodles/2025-11-11_learning-the-quadratic-equation-india.gif"
   },
   {
     "name": "fathers-day-2025-nov-12",
@@ -2415,13 +2391,37 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Nov 12) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Father's Day 2025 (Nov 12)",
-        "share_text": "Learn more about the creation of Father's Day 2025 (Nov 12) Doodle and discover the story behind the unique artwork."
+        "title": "父亲节 2025 (11月12日)",
+        "share_text": "父亲节 2025 (11月12日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-11_fathers-day-2025-nov-12.png",
     "url": "/doodles/2025-11-11_fathers-day-2025-nov-12.png",
     "high_res_url": "/doodles/2025-11-11_fathers-day-2025-nov-12.png"
+  },
+  {
+    "name": "learning-the-quadratic-equation-india",
+    "title": "Learning the Quadratic Equation (India) ",
+    "share_text": "Learn more about the creation of Learning the Quadratic Equation (India)  Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      11,
+      11
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/learning-the-quadratic-equation-emea-copy-6753651837110920-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Learning the Quadratic Equation (India) ",
+        "share_text": "Learn more about the creation of Learning the Quadratic Equation (India)  Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "Learning the Quadratic Equation (India)",
+        "share_text": "Learning the Quadratic Equation (India)的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-11-11_learning-the-quadratic-equation-india.gif",
+    "url": "/doodles/2025-11-11_learning-the-quadratic-equation-india.gif",
+    "high_res_url": "/doodles/2025-11-11_learning-the-quadratic-equation-india.gif"
   },
   {
     "name": "veterans-day-2025",
@@ -2439,8 +2439,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Veterans Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Veterans Day 2025",
-        "share_text": "Learn more about the creation of Veterans Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "Veterans 日 2025",
+        "share_text": "Veterans 日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-11_veterans-day-2025.png",
@@ -2463,8 +2463,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Poland National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Poland National Day 2025",
-        "share_text": "Learn more about the creation of Poland National Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "波兰 国庆日 2025",
+        "share_text": "波兰 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-10_poland-national-day-2025.gif",
@@ -2487,8 +2487,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Native American Flutes Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating Native American Flutes",
-        "share_text": "Learn more about the creation of Celebrating Native American Flutes Doodle and discover the story behind the unique artwork."
+        "title": "纪念 Native American 长笛",
+        "share_text": "纪念 Native American 长笛的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-11-01_celebrating-native-american-flutes.png",
@@ -2511,8 +2511,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mid-Autumn Festival 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mid-Autumn Festival 2025",
-        "share_text": "Learn more about the creation of Mid-Autumn Festival 2025 Doodle and discover the story behind the unique artwork."
+        "title": "中秋节 2025",
+        "share_text": "中秋节 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-05_mid-autumn-festival-2025.gif",
@@ -2535,8 +2535,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Day of the Dead 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Day of the Dead 2025",
-        "share_text": "Learn more about the creation of Day of the Dead 2025 Doodle and discover the story behind the unique artwork."
+        "title": "日 of the Dead 2025",
+        "share_text": "日 of the Dead 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-31_day-of-the-dead-2025.png",
@@ -2559,8 +2559,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of PAC-MAN: Halloween 2025 Edition Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "PAC-MAN: Halloween 2025 Edition",
-        "share_text": "Learn more about the creation of PAC-MAN: Halloween 2025 Edition Doodle and discover the story behind the unique artwork."
+        "title": "吃豆人: 万圣节 2025 Edition",
+        "share_text": "吃豆人: 万圣节 2025 Edition的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-29_pac-man-halloween-2025-edition.gif",
@@ -2583,8 +2583,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Netherlands National Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Netherlands National Elections 2025",
-        "share_text": "Learn more about the creation of Netherlands National Elections 2025 Doodle and discover the story behind the unique artwork."
+        "title": "荷兰 全国选举 2025",
+        "share_text": "荷兰 全国选举 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-28_netherlands-national-elections-2025.png",
@@ -2607,8 +2607,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Türkiye Republic Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Türkiye Republic Day 2025",
-        "share_text": "Learn more about the creation of Türkiye Republic Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "土耳其 共和国日 2025",
+        "share_text": "土耳其 共和国日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-28_turkiye-republic-day-2025.gif",
@@ -2631,13 +2631,37 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Argentina Legislative Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Argentina Legislative Elections 2025",
-        "share_text": "Learn more about the creation of Argentina Legislative Elections 2025 Doodle and discover the story behind the unique artwork."
+        "title": "阿根廷 立法选举 2025",
+        "share_text": "阿根廷 立法选举 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-26_argentina-legislative-elections-2025.png",
     "url": "/doodles/2025-10-26_argentina-legislative-elections-2025.png",
     "high_res_url": "/doodles/2025-10-26_argentina-legislative-elections-2025.png"
+  },
+  {
+    "name": "celebrating-ruby-hunter",
+    "title": "Celebrating Ruby Hunter ",
+    "share_text": "Learn more about the creation of Celebrating Ruby Hunter  Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2025,
+      10,
+      23
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2025/celebrating-ruby-hunter-6753651837110799-2x.png",
+    "localized": {
+      "en": {
+        "title": "Celebrating Ruby Hunter ",
+        "share_text": "Learn more about the creation of Celebrating Ruby Hunter  Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "纪念 Ruby Hunter",
+        "share_text": "纪念 Ruby Hunter的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2025-10-23_celebrating-ruby-hunter.png",
+    "url": "/doodles/2025-10-23_celebrating-ruby-hunter.png",
+    "high_res_url": "/doodles/2025-10-23_celebrating-ruby-hunter.png"
   },
   {
     "name": "ireland-presidential-election-2025",
@@ -2655,8 +2679,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ireland Presidential Election 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ireland Presidential Election 2025",
-        "share_text": "Learn more about the creation of Ireland Presidential Election 2025 Doodle and discover the story behind the unique artwork."
+        "title": "爱尔兰 总统选举 2025",
+        "share_text": "爱尔兰 总统选举 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-23_ireland-presidential-election-2025.png",
@@ -2679,8 +2703,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (EMEA) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about Photosynthesis (EMEA)",
-        "share_text": "Learn more about the creation of Learning about Photosynthesis (EMEA) Doodle and discover the story behind the unique artwork."
+        "title": "学习 光合作用 (EMEA)",
+        "share_text": "学习 光合作用 (EMEA)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-23_learning-about-photosynthesis-emea.gif",
@@ -2704,36 +2728,12 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "MLB Fall Classic 2025",
-        "share_text": "Learn more about the creation of MLB Fall Classic 2025 Doodle and discover the story behind the unique artwork."
+        "share_text": "MLB Fall Classic 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-23_mlb-fall-classic-2025.png",
     "url": "/doodles/2025-10-23_mlb-fall-classic-2025.png",
     "high_res_url": "/doodles/2025-10-23_mlb-fall-classic-2025.png"
-  },
-  {
-    "name": "celebrating-ruby-hunter",
-    "title": "Celebrating Ruby Hunter ",
-    "share_text": "Learn more about the creation of Celebrating Ruby Hunter  Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2025,
-      10,
-      23
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2025/celebrating-ruby-hunter-6753651837110799-2x.png",
-    "localized": {
-      "en": {
-        "title": "Celebrating Ruby Hunter ",
-        "share_text": "Learn more about the creation of Celebrating Ruby Hunter  Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Celebrating Ruby Hunter ",
-        "share_text": "Learn more about the creation of Celebrating Ruby Hunter  Doodle and discover the story behind the unique artwork."
-      }
-    },
-    "fileName": "2025-10-23_celebrating-ruby-hunter.png",
-    "url": "/doodles/2025-10-23_celebrating-ruby-hunter.png",
-    "high_res_url": "/doodles/2025-10-23_celebrating-ruby-hunter.png"
   },
   {
     "name": "learning-about-dna-emea",
@@ -2751,8 +2751,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about DNA (EMEA) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Learning about DNA (EMEA)",
-        "share_text": "Learn more about the creation of Learning about DNA (EMEA) Doodle and discover the story behind the unique artwork."
+        "title": "学习 DNA (EMEA)",
+        "share_text": "学习 DNA (EMEA)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-22_learning-about-dna-emea.gif",
@@ -2776,7 +2776,7 @@ export const localDoodleArchive = [
       },
       "zh-CN": {
         "title": "Learning the Quadratic Equation (EMEA)",
-        "share_text": "Learn more about the creation of Learning the Quadratic Equation (EMEA) Doodle and discover the story behind the unique artwork."
+        "share_text": "Learning the Quadratic Equation (EMEA)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-21_learning-the-quadratic-equation-emea.gif",
@@ -2799,8 +2799,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Czech Republic Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Czech Republic Elections 2025",
-        "share_text": "Learn more about the creation of Czech Republic Elections 2025 Doodle and discover the story behind the unique artwork."
+        "title": "捷克共和国 选举 2025",
+        "share_text": "捷克共和国 选举 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-02_czech-republic-elections-2025.png",
@@ -2823,8 +2823,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of German Unity Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "German Unity Day 2025",
-        "share_text": "Learn more about the creation of German Unity Day 2025 Doodle and discover the story behind the unique artwork."
+        "title": "德国 Unity 日 2025",
+        "share_text": "德国 Unity 日 2025的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-02_german-unity-day-2025.png",
@@ -2847,8 +2847,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Oct 19) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mother's Day 2025 (Oct 19)",
-        "share_text": "Learn more about the creation of Mother's Day 2025 (Oct 19) Doodle and discover the story behind the unique artwork."
+        "title": "母亲节 2025 (10月19日)",
+        "share_text": "母亲节 2025 (10月19日)的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-19_mothers-day-2025-oct-19.png",
@@ -2871,8 +2871,8 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Idli Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Celebrating Idli",
-        "share_text": "Learn more about the creation of Celebrating Idli Doodle and discover the story behind the unique artwork."
+        "title": "纪念 伊德利米糕",
+        "share_text": "纪念 伊德利米糕的 Google Doodle 纪念作品。"
       }
     },
     "fileName": "2025-10-10_celebrating-idli.gif",
