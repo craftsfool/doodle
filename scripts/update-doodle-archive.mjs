@@ -1,5 +1,6 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
 
 const rootDir = process.cwd();
 const doodleDir = path.join(rootDir, 'public', 'doodles');
@@ -7,12 +8,18 @@ const manifestPath = path.join(doodleDir, 'manifest.json');
 const translationCachePath = path.join(doodleDir, 'translations.zh-CN.json');
 const archiveModulePath = path.join(rootDir, 'doodleArchive.ts');
 const monthsToFetch = Number(process.env.DOODLE_MONTHS || 12);
-const maxEntries = Number(process.env.DOODLE_LIMIT || 120);
+const maxEntries = Number(process.env.DOODLE_LIMIT || 30);
 const offlineOnly = process.env.DOODLE_OFFLINE === '1';
 const onlineTranslate = process.env.DOODLE_TRANSLATE !== '0' && !offlineOnly;
 const refreshTranslations = process.env.DOODLE_TRANSLATE_REFRESH === '1';
 let translationCache = {};
 let translationCacheDirty = false;
+
+const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
+if (proxyUrl) {
+  setGlobalDispatcher(new ProxyAgent({ uri: proxyUrl }));
+  console.log(`Using proxy for doodle update: ${proxyUrl}`);
+}
 
 const headers = {
   'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36',
