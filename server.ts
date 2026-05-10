@@ -43,6 +43,30 @@ export async function createApp() {
       .replace(/&rdquo;/g, '”');
   }
 
+  function cleanText(value = '') {
+    return value.replace(/\s+/g, ' ').trim();
+  }
+
+  function meaningfulShareText(value = '', title = '') {
+    const text = cleanText(decodeHtml(value));
+    const cleanTitle = cleanText(title);
+
+    if (!text) return '';
+    if (text === cleanTitle) return '';
+    if (text.length <= cleanTitle.length + 8 && text.includes(cleanTitle)) return '';
+
+    return text;
+  }
+
+  function fallbackShareText(title = '') {
+    const cleanTitle = cleanText(title);
+    return `Learn more about the creation of ${cleanTitle} Doodle and discover the story behind the unique artwork.`;
+  }
+
+  function englishShareText(value = '', title = '') {
+    return meaningfulShareText(value, title) || fallbackShareText(title);
+  }
+
   function hasChinese(value = '') {
     return /[\u3400-\u9fff]/.test(value);
   }
@@ -360,18 +384,19 @@ export async function createApp() {
         const [, year, month, day, name] = match;
         const title = titleFromLocalImageName(name);
         const localUrl = `/doodles/${fileName}`;
+        const shareText = englishShareText('', title);
 
         return {
           name,
           title,
           url: localUrl,
           high_res_url: localUrl,
-          share_text: title,
+          share_text: shareText,
           run_date_array: [Number(year), Number(month), Number(day)],
           localized: {
             en: {
               title,
-              share_text: title
+              share_text: shareText
             },
             'zh-CN': {
               title,
@@ -517,12 +542,18 @@ export async function createApp() {
           title: decodeHtml(doodle.title || doodle.name),
           url: imageUrl,
           high_res_url: imageUrl,
-          share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
+          share_text: englishShareText(
+            doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '',
+            doodle.title || doodle.name
+          ),
           run_date_array: doodle.run_date_array,
           localized: {
             en: {
               title: decodeHtml(doodle.title || doodle.name),
-              share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
+              share_text: englishShareText(
+                doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '',
+                doodle.title || doodle.name
+              )
             },
             'zh-CN': {
               title: decodeHtml(zh?.title || doodle.title || doodle.name),
@@ -574,7 +605,7 @@ export async function createApp() {
 
     const [year, month, day] = entry.dateStr.split('-').map(Number);
 
-    const shareText = shareTextMatch ? decodeHtml(shareTextMatch[1]) : '';
+    const shareText = englishShareText(shareTextMatch ? shareTextMatch[1] : '', title);
     const archiveLocalization = await fetchArchiveLocalization(entry);
     const [translatedTitle, translatedShareText] = await Promise.all([
       translateToSimplifiedChinese(archiveLocalization?.title || title),
@@ -656,7 +687,12 @@ export async function createApp() {
       return recentDoodles();
     }
 
-    if (process.env.VERCEL === '1' || process.env.DOODLE_SOURCE === 'local') {
+    const preferLocalDoodles =
+      process.env.VERCEL === '1' ||
+      process.env.DOODLE_SOURCE === 'local' ||
+      process.env.NODE_ENV !== 'production';
+
+    if (preferLocalDoodles) {
       const fallback = await useLocalFallback();
       if (fallback?.length) return fallback;
     }
