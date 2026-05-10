@@ -3,7 +3,7 @@ import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { mkdir, readFile, writeFile } from 'fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'fs/promises';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,7 +16,12 @@ export async function createApp() {
   const CACHE_TTL_MS = 1000 * 60 * 60; // revalidate at most once per hour
   const RECENT_DOODLE_LIMIT = 30;
   const imageCache = new Map<string, { body: Buffer; contentType: string; fetchedAt: number }>();
-  const localImageDir = path.join(process.cwd(), 'public', 'doodles');
+  const localImageDirs = Array.from(new Set([
+    path.join(process.cwd(), 'public', 'doodles'),
+    path.join(process.cwd(), 'dist', 'doodles'),
+    path.join(__dirname, 'public', 'doodles'),
+    path.join(__dirname, 'dist', 'doodles')
+  ]));
   const translationCache = new Map<string, string>();
   const timeZoneCache = new Map<string, { timeZone: string | null; fetchedAt: number }>();
 
@@ -149,6 +154,35 @@ export async function createApp() {
     });
   }
 
+  async function requestHead(url: string, timeoutMs = 10000) {
+    return new Promise<{ statusCode: number; contentType: string }>((resolve, reject) => {
+      import('https').then(https => {
+        const req = https.request(url, {
+          method: 'HEAD',
+          ...(proxyAgent ? { agent: proxyAgent } : {})
+        }, (res) => {
+          if (res.statusCode && res.statusCode >= 400) {
+            reject(new Error(`${url} returned ${res.statusCode}`));
+            res.resume();
+            return;
+          }
+
+          resolve({
+            statusCode: res.statusCode || 0,
+            contentType: String(res.headers['content-type'] || '')
+          });
+          res.resume();
+        });
+
+        req.setTimeout(timeoutMs, () => {
+          req.destroy(new Error(`${url} timed out after ${timeoutMs}ms`));
+        });
+        req.on('error', reject);
+        req.end();
+      });
+    });
+  }
+
   function isAllowedDoodleImage(url: string) {
     try {
       const parsed = new URL(url);
@@ -209,18 +243,20 @@ export async function createApp() {
   async function readLocalDoodleImage(baseName: string) {
     const extensions = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'];
 
-    for (const extension of extensions) {
-      const filePath = path.join(localImageDir, `${baseName}${extension}`);
+    for (const directory of localImageDirs) {
+      for (const extension of extensions) {
+        const filePath = path.join(directory, `${baseName}${extension}`);
 
-      try {
-        const body = await readFile(filePath);
-        return {
-          body,
-          contentType: contentTypeFromExtension(extension),
-          filePath
-        };
-      } catch {
-        // Try the next extension.
+        try {
+          const body = await readFile(filePath);
+          return {
+            body,
+            contentType: contentTypeFromExtension(extension),
+            filePath
+          };
+        } catch {
+          // Try the next extension/directory.
+        }
       }
     }
 
@@ -229,12 +265,83 @@ export async function createApp() {
 
   async function writeLocalDoodleImage(baseName: string, imageUrl: string, image: { body: Buffer; contentType: string }) {
     const extension = extensionFromUrl(imageUrl) || extensionFromContentType(image.contentType);
-    const filePath = path.join(localImageDir, `${baseName}${extension}`);
+    const filePath = path.join(localImageDirs[0], `${baseName}${extension}`);
 
-    await mkdir(localImageDir, { recursive: true });
+    await mkdir(localImageDirs[0], { recursive: true });
     await writeFile(filePath, image.body);
 
     return filePath;
+  }
+
+  async function localDoodleImageFiles() {
+    const files = new Map<string, string>();
+
+    for (const directory of localImageDirs) {
+      try {
+        const entries = await readdir(directory);
+        for (const fileName of entries) {
+          const extension = path.extname(fileName).toLowerCase();
+          if (!['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'].includes(extension)) continue;
+          files.set(path.basename(fileName, extension), fileName);
+        }
+      } catch {
+        // The directory may not exist in every runtime; try the next one.
+      }
+    }
+
+    return files;
+  }
+
+  function titleFromLocalImageName(name: string) {
+    return name
+      .split('-')
+      .filter(Boolean)
+      .map(part => {
+        if (/^\d+$/.test(part)) return part;
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      })
+      .join(' ');
+  }
+
+  async function localDoodleFallback() {
+    const files = await localDoodleImageFiles();
+    const doodles = Array.from(files.entries())
+      .map(([baseName, fileName]) => {
+        const match = baseName.match(/^(\d{4})-(\d{2})-(\d{2})_(.+)$/);
+        if (!match) return null;
+
+        const [, year, month, day, name] = match;
+        const title = titleFromLocalImageName(name);
+        const localUrl = `/doodles/${fileName}`;
+
+        return {
+          name,
+          title,
+          url: localUrl,
+          high_res_url: localUrl,
+          share_text: title,
+          run_date_array: [Number(year), Number(month), Number(day)],
+          localized: {
+            en: {
+              title,
+              share_text: title
+            },
+            'zh-CN': {
+              title,
+              share_text: title
+            }
+          }
+        };
+      })
+      .filter(Boolean)
+      .sort((a: any, b: any) => {
+        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
+        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
+        return dateB.localeCompare(dateA);
+      })
+      .slice(0, RECENT_DOODLE_LIMIT);
+
+    return doodles as any[];
   }
 
   function parseSitemapEntries(sitemap: string) {
@@ -279,8 +386,16 @@ export async function createApp() {
     return value;
   }
 
-  function monthKey(year: number, month: number) {
-    return `${year}-${String(month).padStart(2, '0')}`;
+  function errorMessage(error: unknown) {
+    return error instanceof Error ? error.message : String(error);
+  }
+
+  function canRefresh(req: express.Request) {
+    const secret = process.env.CRON_SECRET || process.env.DOODLE_REFRESH_SECRET;
+    if (!secret) return true;
+
+    const authorization = String(req.headers.authorization || '');
+    return authorization === `Bearer ${secret}` || req.query.secret === secret;
   }
 
   function previousMonth(year: number, month: number) {
@@ -291,70 +406,82 @@ export async function createApp() {
     return { year, month: month - 1 };
   }
 
-  async function fetchArchiveMonth(year: number, month: number, language: 'en' | 'zh-CN') {
+  function recentMonths(count: number) {
+    const months: Array<{ year: number; month: number }> = [];
+    const now = new Date();
+    let year = now.getUTCFullYear();
+    let month = now.getUTCMonth() + 1;
+
+    while (months.length < count) {
+      months.push({ year, month });
+      const previous = previousMonth(year, month);
+      year = previous.year;
+      month = previous.month;
+    }
+
+    return months;
+  }
+
+  async function fetchArchiveMonth(year: number, month: number, language: 'en' | 'zh-CN', timeoutMs = 15000) {
     const url = `https://www.google.com/doodles/json/${year}/${month}?hl=${language}`;
-    const text = await requestText(url, 15000);
+    const text = await requestText(url, timeoutMs);
     const payload = JSON.parse(text);
     return Array.isArray(payload) ? payload : [];
   }
 
-  async function fetchRecentArchiveDoodles() {
+  async function fetchRecentArchiveDoodles(maxMonths = 18, timeoutMs = 15000) {
     const collected = new Map<string, any>();
-    const now = new Date();
-    let year = now.getUTCFullYear();
-    let month = now.getUTCMonth() + 1;
-    let checkedMonths = 0;
-
-    while (collected.size < RECENT_DOODLE_LIMIT && checkedMonths < 18) {
-      try {
+    const settledMonths = await Promise.allSettled(
+      recentMonths(maxMonths).map(async ({ year, month }) => {
         const [enArchive, zhArchive] = await Promise.all([
-          fetchArchiveMonth(year, month, 'en'),
-          fetchArchiveMonth(year, month, 'zh-CN')
+          fetchArchiveMonth(year, month, 'en', timeoutMs),
+          fetchArchiveMonth(year, month, 'zh-CN', timeoutMs)
         ]);
 
-        const zhByName = new Map<string, any>();
-        for (const doodle of zhArchive) {
-          if (doodle?.name) {
-            zhByName.set(doodle.name, doodle);
-          }
-        }
+        return { year, month, enArchive, zhArchive };
+      })
+    );
 
-        for (const doodle of enArchive) {
-          if (!doodle?.name || collected.has(doodle.name)) continue;
-
-          const zh = zhByName.get(doodle.name);
-          const imageUrl = absoluteDoodleImageUrl(doodle.high_res_url || doodle.url || doodle.alternate_url || '');
-          if (!imageUrl) continue;
-
-          collected.set(doodle.name, {
-            name: doodle.name,
-            title: decodeHtml(doodle.title || doodle.name),
-            url: imageUrl,
-            high_res_url: imageUrl,
-            share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
-            run_date_array: doodle.run_date_array,
-            localized: {
-              en: {
-                title: decodeHtml(doodle.title || doodle.name),
-                share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
-              },
-              'zh-CN': {
-                title: decodeHtml(zh?.title || doodle.title || doodle.name),
-                share_text: decodeHtml(zh?.share_text || zh?.translated_blog_posts?.[0]?.title || doodle.share_text || '')
-              }
-            }
-          });
-
-          if (collected.size >= RECENT_DOODLE_LIMIT) break;
-        }
-      } catch (error) {
-        console.error(`Failed to fetch archive month ${monthKey(year, month)}:`, error);
+    for (const result of settledMonths) {
+      if (result.status === 'rejected') {
+        console.warn(`Failed to fetch archive month: ${errorMessage(result.reason)}`);
+        continue;
       }
 
-      const previous = previousMonth(year, month);
-      year = previous.year;
-      month = previous.month;
-      checkedMonths += 1;
+      const { enArchive, zhArchive } = result.value;
+      const zhByName = new Map<string, any>();
+      for (const doodle of zhArchive) {
+        if (doodle?.name) {
+          zhByName.set(doodle.name, doodle);
+        }
+      }
+
+      for (const doodle of enArchive) {
+        if (!doodle?.name || collected.has(doodle.name)) continue;
+
+        const zh = zhByName.get(doodle.name);
+        const imageUrl = absoluteDoodleImageUrl(doodle.high_res_url || doodle.url || doodle.alternate_url || '');
+        if (!imageUrl) continue;
+
+        collected.set(doodle.name, {
+          name: doodle.name,
+          title: decodeHtml(doodle.title || doodle.name),
+          url: imageUrl,
+          high_res_url: imageUrl,
+          share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
+          run_date_array: doodle.run_date_array,
+          localized: {
+            en: {
+              title: decodeHtml(doodle.title || doodle.name),
+              share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
+            },
+            'zh-CN': {
+              title: decodeHtml(zh?.title || doodle.title || doodle.name),
+              share_text: decodeHtml(zh?.share_text || zh?.translated_blog_posts?.[0]?.title || doodle.share_text || '')
+            }
+          }
+        });
+      }
     }
 
     return Array.from(collected.values())
@@ -425,39 +552,71 @@ export async function createApp() {
       }
     };
   }
+
+  async function fetchRemoteDoodleHistory(maxMonths = 6, timeoutMs = 12000) {
+    const archiveDoodles = await fetchRecentArchiveDoodles(maxMonths, timeoutMs);
+
+    if (archiveDoodles.length) {
+      return archiveDoodles;
+    }
+
+    const sitemap = await requestText('https://doodles.google/sitemap.xml', timeoutMs);
+    const entries = parseSitemapEntries(sitemap);
+
+    if (!entries.length) return [];
+
+    const settled = await Promise.allSettled(entries.map(fetchDoodle));
+    return settled
+      .filter(result => result.status === 'fulfilled')
+      .map(result => result.value)
+      .filter(doodle => doodle.url)
+      .sort((a, b) => {
+        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
+        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
+        return dateB.localeCompare(dateA);
+      })
+      .slice(0, RECENT_DOODLE_LIMIT);
+  }
+
+  async function refreshRemoteDoodleCache() {
+    const remoteDoodles = await fetchRemoteDoodleHistory();
+
+    if (!remoteDoodles.length) {
+      throw new Error('Remote Doodle archive returned no usable entries');
+    }
+
+    mergeDoodleCache(remoteDoodles);
+    lastFetchTime = Date.now();
+    return recentDoodles();
+  }
+
+  async function useLocalFallback() {
+    const fallbackDoodles = await localDoodleFallback();
+
+    if (fallbackDoodles.length) {
+      mergeDoodleCache(fallbackDoodles);
+      lastFetchTime = Date.now();
+      return recentDoodles();
+    }
+
+    return doodleCache?.length ? recentDoodles() : null;
+  }
   
   async function fetchDoodleHistory() {
     if (doodleCache?.length && (Date.now() - lastFetchTime < CACHE_TTL_MS)) {
       return recentDoodles();
     }
 
+    if (process.env.VERCEL === '1' || process.env.DOODLE_SOURCE === 'local') {
+      const fallback = await useLocalFallback();
+      if (fallback?.length) return fallback;
+    }
+
     try {
-      const archiveDoodles = await fetchRecentArchiveDoodles();
-
-      if (archiveDoodles.length) {
-        mergeDoodleCache(archiveDoodles);
-        lastFetchTime = Date.now();
-        return recentDoodles();
-      }
-
-      const sitemap = await requestText('https://doodles.google/sitemap.xml', 20000);
-      const entries = parseSitemapEntries(sitemap);
-
-      if (!entries.length) return doodleCache?.length ? recentDoodles() : null;
-
-      const settled = await Promise.allSettled(entries.map(fetchDoodle));
-      const fetchedDoodles = settled
-        .filter(result => result.status === 'fulfilled')
-        .map(result => result.value)
-        .filter(doodle => doodle.url);
-
-      mergeDoodleCache(fetchedDoodles);
-      lastFetchTime = Date.now();
-      
-      return recentDoodles();
+      return await refreshRemoteDoodleCache();
     } catch (error) {
       console.error('Failed to fetch doodle:', error);
-      return doodleCache?.length ? recentDoodles() : null;
+      return useLocalFallback();
     }
   }
 
@@ -481,16 +640,118 @@ export async function createApp() {
     }
   });
 
+  app.get('/api/doodle/health', async (req, res) => {
+    const startedAt = Date.now();
+    const checkedAt = new Date().toISOString();
+    const localDoodles = await localDoodleFallback();
+    const remoteArchive = {
+      ok: false,
+      count: 0,
+      latest: null as string | null,
+      error: null as string | null
+    };
+    const sampleImage = {
+      ok: false,
+      statusCode: 0,
+      contentType: '',
+      url: null as string | null,
+      error: null as string | null
+    };
+
+    try {
+      const remoteDoodles = await fetchRemoteDoodleHistory(3, 8000);
+      remoteArchive.count = remoteDoodles.length;
+      remoteArchive.latest = remoteDoodles[0]?.name || null;
+      remoteArchive.ok = remoteDoodles.length > 0;
+
+      const imageUrl = absoluteDoodleImageUrl(remoteDoodles[0]?.high_res_url || remoteDoodles[0]?.url || '');
+      sampleImage.url = imageUrl;
+
+      if (imageUrl && isAllowedDoodleImage(imageUrl)) {
+        const imageCheck = await requestHead(imageUrl);
+        sampleImage.statusCode = imageCheck.statusCode;
+        sampleImage.contentType = imageCheck.contentType;
+        sampleImage.ok = imageCheck.contentType.startsWith('image/');
+      } else if (imageUrl) {
+        sampleImage.error = 'Sample image URL is not an allowed Google Doodle image URL';
+      } else {
+        sampleImage.error = 'Remote archive returned no sample image URL';
+      }
+    } catch (error) {
+      remoteArchive.error = errorMessage(error);
+      sampleImage.error = sampleImage.error || 'Skipped because remote archive check failed';
+    }
+
+    const cacheAgeSeconds = lastFetchTime ? Math.round((Date.now() - lastFetchTime) / 1000) : null;
+    const localFallback = {
+      ok: localDoodles.length > 0,
+      count: localDoodles.length,
+      latest: localDoodles[0]?.name || null
+    };
+    const ok = remoteArchive.ok || localFallback.ok;
+
+    res.status(ok ? 200 : 503).json({
+      ok,
+      checkedAt,
+      environment: {
+        vercel: process.env.VERCEL === '1',
+        sourcePreference: process.env.DOODLE_SOURCE || (process.env.VERCEL === '1' ? 'local-on-vercel' : 'remote-first')
+      },
+      source: remoteArchive.ok ? 'remote' : localFallback.ok ? 'local-fallback' : 'none',
+      remoteArchive,
+      sampleImage,
+      localFallback,
+      cache: {
+        count: recentDoodles().length,
+        ageSeconds: cacheAgeSeconds
+      },
+      durationMs: Date.now() - startedAt
+    });
+  });
+
+  app.all('/api/doodle/refresh', async (req, res) => {
+    if (!canRefresh(req)) {
+      res.status(401).json({ ok: false, error: 'Unauthorized refresh request' });
+      return;
+    }
+
+    const startedAt = Date.now();
+
+    try {
+      const doodles = await refreshRemoteDoodleCache();
+      res.json({
+        ok: true,
+        source: 'remote',
+        refreshedAt: new Date(lastFetchTime).toISOString(),
+        count: doodles.length,
+        latest: doodles[0]?.name || null,
+        durationMs: Date.now() - startedAt
+      });
+    } catch (error) {
+      const localDoodles = await localDoodleFallback();
+      res.status(502).json({
+        ok: false,
+        source: localDoodles.length ? 'local-fallback' : 'none',
+        error: errorMessage(error),
+        localFallback: {
+          ok: localDoodles.length > 0,
+          count: localDoodles.length,
+          latest: localDoodles[0]?.name || null
+        },
+        cache: {
+          count: recentDoodles().length,
+          ageSeconds: lastFetchTime ? Math.round((Date.now() - lastFetchTime) / 1000) : null
+        },
+        durationMs: Date.now() - startedAt
+      });
+    }
+  });
+
   app.get('/api/doodle/image', async (req, res) => {
     const imageUrl = String(req.query.url || '');
     const imageName = String(req.query.name || 'doodle');
     const imageDate = String(req.query.date || 'undated');
     const imageBaseName = localImageBaseName(imageDate, imageName);
-
-    if (!isAllowedDoodleImage(imageUrl)) {
-      res.status(400).json({ error: 'Unsupported doodle image URL' });
-      return;
-    }
 
     try {
       const localImage = await readLocalDoodleImage(imageBaseName);
@@ -503,6 +764,11 @@ export async function createApp() {
         return;
       }
 
+      if (!isAllowedDoodleImage(imageUrl)) {
+        res.status(400).json({ error: 'Unsupported doodle image URL' });
+        return;
+      }
+
       const cached = imageCache.get(imageUrl);
       const fresh = cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS;
       const image = fresh ? cached : await requestBinary(imageUrl);
@@ -511,7 +777,11 @@ export async function createApp() {
         imageCache.set(imageUrl, { ...image, fetchedAt: Date.now() });
       }
 
-      await writeLocalDoodleImage(imageBaseName, imageUrl, image);
+      try {
+        await writeLocalDoodleImage(imageBaseName, imageUrl, image);
+      } catch (error) {
+        console.warn('Failed to persist doodle image cache:', error);
+      }
 
       res.setHeader('Content-Type', image.contentType);
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
