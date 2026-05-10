@@ -38,6 +38,30 @@ function decodeHtml(value = '') {
     .replace(/&rdquo;/g, '”');
 }
 
+function cleanText(value = '') {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function meaningfulShareText(value = '', title = '') {
+  const text = cleanText(decodeHtml(value));
+  const cleanTitle = cleanText(title);
+
+  if (!text) return '';
+  if (text === cleanTitle) return '';
+  if (text.length <= cleanTitle.length + 8 && text.includes(cleanTitle)) return '';
+
+  return text;
+}
+
+function fallbackShareText(title = '') {
+  const cleanTitle = cleanText(title);
+  return `Learn more about the creation of ${cleanTitle} Doodle and discover the story behind the unique artwork.`;
+}
+
+function englishShareText(value = '', title = '') {
+  return meaningfulShareText(value, title) || fallbackShareText(title);
+}
+
 function safeFilePart(value = '') {
   return value
     .toLowerCase()
@@ -429,13 +453,19 @@ async function fetchRemoteDoodles() {
       collected.set(doodle.name, {
         name: doodle.name,
         title: decodeHtml(doodle.title || doodle.name),
-        share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
+        share_text: englishShareText(
+          doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '',
+          doodle.title || doodle.name
+        ),
         run_date_array: doodle.run_date_array,
         source_url: imageUrl,
         localized: {
           en: {
             title: decodeHtml(doodle.title || doodle.name),
-            share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
+            share_text: englishShareText(
+              doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '',
+              doodle.title || doodle.name
+            )
           },
           'zh-CN': {
             title: decodeHtml(zh?.title || doodle.title || doodle.name),
@@ -506,7 +536,8 @@ async function fetchDoodlePage(entry) {
   const html = await response.text();
   const rawTitle = decodeHtml(metaContent(html, 'og:title') || entry.slug)
     .replace(/ Doodle - Google Doodles$/, '');
-  const shareText = decodeHtml(metaContent(html, 'og:description'));
+  const rawShareText = metaContent(html, 'og:description');
+  const shareText = englishShareText(rawShareText, rawTitle);
   const imageUrl = absoluteDoodleImageUrl(metaContent(html, 'og:image'));
   const [year, month, day] = entry.dateStr.split('-').map(Number);
 

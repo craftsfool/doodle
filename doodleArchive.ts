@@ -26,7 +26,7 @@ export const localDoodleArchive = [
   {
     "name": "the-art-of-k-pop-dance",
     "title": "The Art of K-Pop Dance ",
-    "share_text": "Learn more about the creation of The Art of K-Pop Dance  Doodle and discover the story behind the unique artwork.",
+    "share_text": "Learn more about the creation of The Art of K-Pop Dance Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       5,
@@ -36,7 +36,7 @@ export const localDoodleArchive = [
     "localized": {
       "en": {
         "title": "The Art of K-Pop Dance ",
-        "share_text": "Learn more about the creation of The Art of K-Pop Dance  Doodle and discover the story behind the unique artwork."
+        "share_text": "Learn more about the creation of The Art of K-Pop Dance Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
         "title": "韩国流行舞蹈艺术",
@@ -338,7 +338,7 @@ export const localDoodleArchive = [
   {
     "name": "nba-playoffs-2026-aa",
     "title": " NBA Playoffs 2026",
-    "share_text": "Learn more about the creation of  NBA Playoffs 2026 Doodle and discover the story behind the unique artwork.",
+    "share_text": "Learn more about the creation of NBA Playoffs 2026 Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       4,
@@ -348,7 +348,7 @@ export const localDoodleArchive = [
     "localized": {
       "en": {
         "title": " NBA Playoffs 2026",
-        "share_text": "Learn more about the creation of  NBA Playoffs 2026 Doodle and discover the story behind the unique artwork."
+        "share_text": "Learn more about the creation of NBA Playoffs 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
         "title": "2026年 NBA 季后赛",
@@ -434,7 +434,7 @@ export const localDoodleArchive = [
   {
     "name": "winter-sports-begin-2026-march-6",
     "title": "Winter Sports Begin 2026 (March 6) ",
-    "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6)  Doodle and discover the story behind the unique artwork.",
+    "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6) Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       3,
@@ -444,7 +444,7 @@ export const localDoodleArchive = [
     "localized": {
       "en": {
         "title": "Winter Sports Begin 2026 (March 6) ",
-        "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6)  Doodle and discover the story behind the unique artwork."
+        "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
         "title": "2026年冬季运动开始（3月6日）",
