@@ -111,7 +111,11 @@ a {
     position: fixed;
     inset: 0;
     width: 100%;
-    touch-action: none;
+  }
+
+  [data-copy-scroll="true"] {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 
   .doodle-min-card {

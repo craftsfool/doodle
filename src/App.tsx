@@ -606,6 +606,7 @@ export default function App() {
 
     const preventPageDrag = (event: TouchEvent) => {
       if (shareDoodle) return;
+      if (event.target instanceof Element && event.target.closest('[data-copy-scroll="true"]')) return;
       event.preventDefault();
     };
 
@@ -1503,7 +1504,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                className="relative order-2 mx-auto flex h-full w-full max-w-xl min-w-0 flex-col md:order-1 md:max-h-[calc(100vh-205px)] md:overflow-hidden md:pb-20"
+                className="relative order-2 mx-auto flex min-h-0 w-full max-w-xl min-w-0 flex-col overflow-hidden md:order-1 md:h-full md:max-h-[calc(100vh-205px)] md:pb-20"
               >
                 <div className="mb-4 flex items-center gap-3 md:mb-[clamp(1rem,2.2vh,2rem)] md:gap-4">
                   <span className="h-px w-12 bg-stone-400" />
@@ -1519,7 +1520,8 @@ export default function App() {
                     animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                     exit={{ opacity: 0, y: -16, filter: 'blur(8px)' }}
                     transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-                    className="scrollbar-hide min-h-0 md:block md:flex-1 md:overflow-y-auto md:pb-8 md:pr-3 md:[mask-image:linear-gradient(to_bottom,black_calc(100%-64px),transparent)]"
+                    data-copy-scroll="true"
+                    className="scrollbar-hide min-h-0 max-h-[clamp(8rem,calc(100svh-520px),22rem)] overflow-y-auto pb-7 pr-1 [mask-image:linear-gradient(to_bottom,black_calc(100%-34px),transparent)] md:block md:max-h-none md:flex-1 md:pb-8 md:pr-3 md:[mask-image:linear-gradient(to_bottom,black_calc(100%-64px),transparent)]"
                     onWheel={event => event.stopPropagation()}
                   >
                     <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-stone-500 md:mb-[clamp(0.75rem,1.6vh,1.25rem)] md:text-[clamp(0.66rem,0.85vw,0.75rem)] md:tracking-[0.28em]">
@@ -1532,7 +1534,7 @@ export default function App() {
                       href={`https://www.bing.com/search?cc=US&setlang=en-US&q=${encodeURIComponent(activeSearchText)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="scrollbar-hide mt-3 block max-h-[calc(100svh-560px)] min-h-[2.8rem] max-w-lg overflow-y-auto break-words font-serif text-[0.95rem] leading-[1.48] text-stone-600 transition active:text-stone-950 md:hidden"
+                      className="mt-3 block max-w-lg break-words font-serif text-[0.95rem] leading-[1.48] text-stone-600 transition active:text-stone-950 md:hidden"
                     >
                       {excerpt(activeDoodle, language)}
                     </a>
