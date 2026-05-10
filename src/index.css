@@ -264,6 +264,12 @@ a {
   transform: translateY(-1px);
 }
 
+.share-action:disabled {
+  cursor: wait;
+  opacity: 0.45;
+  transform: none;
+}
+
 .share-status {
   margin-top: 12px;
   color: #57534e;

@@ -461,6 +461,7 @@ export default function App() {
   const [isMobilePortrait, setIsMobilePortrait] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
   const [shareDoodle, setShareDoodle] = useState<Doodle | null>(null);
+  const [shareImageFile, setShareImageFile] = useState<File | null>(null);
   const [shareStatus, setShareStatus] = useState('');
   const gesture = useRef({
     active: false,
@@ -475,6 +476,7 @@ export default function App() {
   const wheelResetTimer = useRef<number | null>(null);
   const longPressTimer = useRef<number | null>(null);
   const longPressTriggered = useRef(false);
+  const sharePrepareId = useRef(0);
 
   const activeDoodle = doodles[activeIndex];
   const activeText = activeDoodle ? localizedText(activeDoodle, language) : null;
@@ -621,8 +623,7 @@ export default function App() {
       if (shareDoodle) {
         if (event.key === 'Escape') {
           event.preventDefault();
-          setShareDoodle(null);
-          setShareStatus('');
+          closeShareSheet();
         }
         return;
       }
@@ -762,24 +763,6 @@ export default function App() {
     setShareStatus(copy[language].copied);
   };
 
-  const roundedRectPath = (
-    context: CanvasRenderingContext2D,
-    x: number,
-    y: number,
-    width: number,
-    height: number,
-    radius: number
-  ) => {
-    const safeRadius = Math.min(radius, width / 2, height / 2);
-    context.beginPath();
-    context.moveTo(x + safeRadius, y);
-    context.arcTo(x + width, y, x + width, y + height, safeRadius);
-    context.arcTo(x + width, y + height, x, y + height, safeRadius);
-    context.arcTo(x, y + height, x, y, safeRadius);
-    context.arcTo(x, y, x + width, y, safeRadius);
-    context.closePath();
-  };
-
   const loadBitmapFromBlob = async (blob: Blob) => {
     if ('createImageBitmap' in window) {
       return window.createImageBitmap(blob);
@@ -832,65 +815,41 @@ export default function App() {
   };
 
   const createShareImageBlob = async (doodle: Doodle) => {
-    setShareStatus(copy[language].preparingImage);
     const title = doodleTitle(doodle);
     const imageResponse = await fetch(proxiedImageUrl(doodle));
     if (!imageResponse.ok) throw new Error(copy[language].shareFallback);
 
     const imageBlob = await imageResponse.blob();
     const image = await loadBitmapFromBlob(imageBlob);
-    const metrics = cardMetrics[doodle.name];
     const canvas = document.createElement('canvas');
     canvas.width = 1200;
-    canvas.height = 900;
+    canvas.height = 800;
 
     const context = canvas.getContext('2d');
     if (!context) throw new Error(copy[language].shareFallback);
 
-    const palette = metrics?.palette ?? activePalette;
-    const baseColor = metrics?.color ?? '#f8f5ee';
-    const background = context.createLinearGradient(0, 0, 1200, 900);
-    background.addColorStop(0, '#fbf7ed');
-    background.addColorStop(0.45, baseColor);
-    background.addColorStop(1, palette[1] ?? '#e7eef5');
-    context.fillStyle = background;
-    context.fillRect(0, 0, 1200, 900);
-
-    context.fillStyle = 'rgba(255,255,255,0.58)';
-    roundedRectPath(context, 78, 70, 1044, 760, 56);
-    context.fill();
-
-    context.strokeStyle = 'rgba(255,255,255,0.9)';
-    context.lineWidth = 3;
-    context.stroke();
-
-    context.fillStyle = 'rgba(255,255,255,0.72)';
-    roundedRectPath(context, 130, 120, 940, 520, 34);
-    context.fill();
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, 1200, 800);
 
     const imageWidth = image.width;
     const imageHeight = image.height;
-    const maxImageWidth = 840;
-    const maxImageHeight = 420;
+    const maxImageWidth = 920;
+    const maxImageHeight = 430;
     const scale = Math.min(maxImageWidth / imageWidth, maxImageHeight / imageHeight);
     const drawWidth = imageWidth * scale;
     const drawHeight = imageHeight * scale;
     const drawX = 600 - drawWidth / 2;
-    const drawY = 380 - drawHeight / 2;
+    const drawY = 305 - drawHeight / 2;
     context.drawImage(image, drawX, drawY, drawWidth, drawHeight);
 
     context.fillStyle = '#111111';
     context.textAlign = 'center';
     context.textBaseline = 'top';
-    context.font = '600 58px "Noto Serif SC", "Songti SC", Georgia, serif';
-    const lines = wrapCanvasText(context, title, 940, 2);
+    context.font = '700 74px "Noto Serif SC", "Songti SC", Georgia, serif';
+    const lines = wrapCanvasText(context, title, 980, 2);
     lines.forEach((line, index) => {
-      context.fillText(line, 600, 690 + index * 70);
+      context.fillText(line, 600, 610 + index * 84);
     });
-
-    context.font = '500 18px "JetBrains Mono", monospace';
-    context.fillStyle = 'rgba(68,64,60,0.66)';
-    context.fillText(copy[language].gallery.toUpperCase(), 600, 810);
 
     return new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
@@ -900,30 +859,55 @@ export default function App() {
     });
   };
 
-  const shareImageFile = async (doodle: Doodle) => {
+  const buildShareImageFile = async (doodle: Doodle) => {
     const imageBlob = await createShareImageBlob(doodle);
     return new File([imageBlob], `${doodle.name}-daily-doodle.png`, { type: 'image/png' });
   };
 
+  const prepareShareImage = async (doodle: Doodle) => {
+    const requestId = sharePrepareId.current + 1;
+    sharePrepareId.current = requestId;
+    setShareImageFile(null);
+    setShareStatus(copy[language].preparingImage);
+
+    try {
+      const file = await buildShareImageFile(doodle);
+      if (sharePrepareId.current !== requestId) return;
+      setShareImageFile(file);
+      setShareStatus('');
+    } catch {
+      if (sharePrepareId.current !== requestId) return;
+      setShareStatus(copy[language].shareFallback);
+    }
+  };
+
+  const closeShareSheet = () => {
+    sharePrepareId.current += 1;
+    setShareDoodle(null);
+    setShareImageFile(null);
+    setShareStatus('');
+  };
+
   const openShareSheet = (doodle: Doodle) => {
     setShareDoodle(doodle);
+    setShareImageFile(null);
     setShareStatus('');
     setShowCelebration(false);
     vibrate([12, 20, 12]);
+    void prepareShareImage(doodle);
   };
 
   const shareViaSystem = async (doodle: Doodle) => {
-    const payload = doodleShareText(doodle);
+    const file = shareDoodle?.name === doodle.name ? shareImageFile : null;
+
+    if (!file) {
+      setShareStatus(copy[language].preparingImage);
+      return;
+    }
 
     try {
-      const file = await shareImageFile(doodle);
       if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
-        await navigator.share({
-          title: payload.title,
-          text: payload.text,
-          url: payload.url,
-          files: [file]
-        });
+        await navigator.share({ files: [file] });
         setShareStatus(copy[language].imageShared);
         return;
       }
@@ -937,20 +921,22 @@ export default function App() {
   };
 
   const downloadShareImage = async (doodle: Doodle) => {
-    try {
-      const imageBlob = await createShareImageBlob(doodle);
-      const objectUrl = URL.createObjectURL(imageBlob);
-      const link = document.createElement('a');
-      link.href = objectUrl;
-      link.download = `${doodle.name}-daily-doodle.png`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
-      setShareStatus(copy[language].imageDownloaded);
-    } catch {
-      setShareStatus(copy[language].shareFallback);
+    const file = shareDoodle?.name === doodle.name ? shareImageFile : null;
+
+    if (!file) {
+      setShareStatus(copy[language].preparingImage);
+      return;
     }
+
+    const objectUrl = URL.createObjectURL(file);
+    const link = document.createElement('a');
+    link.href = objectUrl;
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+    setShareStatus(copy[language].imageDownloaded);
   };
 
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
@@ -1470,7 +1456,7 @@ export default function App() {
                       href={`https://www.bing.com/search?cc=US&setlang=en-US&q=${encodeURIComponent(activeSearchText)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="scrollbar-hide mt-3 block max-h-[calc(100svh-610px)] min-h-[2.8rem] max-w-lg overflow-y-auto break-words font-serif text-[0.95rem] leading-[1.48] text-stone-600 transition [mask-image:linear-gradient(to_bottom,black_calc(100%-22px),transparent)] active:text-stone-950 md:hidden"
+                      className="scrollbar-hide mt-3 block max-h-[calc(100svh-560px)] min-h-[2.8rem] max-w-lg overflow-y-auto break-words font-serif text-[0.95rem] leading-[1.48] text-stone-600 transition active:text-stone-950 md:hidden"
                     >
                       {excerpt(activeDoodle, language)}
                     </a>
@@ -1624,6 +1610,7 @@ export default function App() {
           const title = doodleTitle(shareDoodle);
           const imageUrl = proxiedImageUrl(shareDoodle);
           const metrics = cardMetrics[shareDoodle.name];
+          const isShareImageReady = Boolean(shareImageFile?.name.startsWith(`${shareDoodle.name}-`));
 
           return (
             <motion.div
@@ -1632,10 +1619,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => {
-                setShareDoodle(null);
-                setShareStatus('');
-              }}
+              onClick={closeShareSheet}
               onWheel={event => event.stopPropagation()}
             >
               <motion.div
@@ -1652,10 +1636,7 @@ export default function App() {
                 <button
                   type="button"
                   aria-label={copy[language].closeShare}
-                  onClick={() => {
-                    setShareDoodle(null);
-                    setShareStatus('');
-                  }}
+                  onClick={closeShareSheet}
                   className="share-close"
                 >
                   <X className="h-4 w-4" />
@@ -1683,7 +1664,12 @@ export default function App() {
 
                 <p className="share-channel-title">{copy[language].shareWith}</p>
                 <div className="share-actions">
-                  <button type="button" onClick={() => shareViaSystem(shareDoodle)} className="share-action">
+                  <button
+                    type="button"
+                    onClick={() => shareViaSystem(shareDoodle)}
+                    disabled={!isShareImageReady}
+                    className="share-action"
+                  >
                     <Share2 className="h-4 w-4" />
                     <span>{copy[language].systemShare}</span>
                   </button>
@@ -1691,7 +1677,12 @@ export default function App() {
                     <Copy className="h-4 w-4" />
                     <span>{copy[language].copyLink}</span>
                   </button>
-                  <button type="button" onClick={() => downloadShareImage(shareDoodle)} className="share-action">
+                  <button
+                    type="button"
+                    onClick={() => downloadShareImage(shareDoodle)}
+                    disabled={!isShareImageReady}
+                    className="share-action"
+                  >
                     <Download className="h-4 w-4" />
                     <span>{copy[language].downloadImage}</span>
                   </button>
