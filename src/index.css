@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  background: #f4f0e8;
+}
+
+body {
+  min-width: 320px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ambient-bg {
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--bg-color-1, #d8b568) 52%, white), transparent 34%),
+    radial-gradient(circle at 86% 22%, color-mix(in srgb, var(--bg-color-2, #8fb7dc) 48%, white), transparent 38%),
+    radial-gradient(circle at 52% 92%, color-mix(in srgb, var(--bg-color-3, #d98c7b) 46%, white), transparent 44%),
+    linear-gradient(135deg, rgba(250, 247, 239, 0.94), rgba(235, 228, 214, 0.86));
+  background-size: 120% 120%, 120% 120%, 130% 130%, 100% 100%;
+  animation: ambient-drift 16s ease-in-out infinite alternate;
+  transition: background 700ms ease;
+}
+
+.grain {
+  background-image:
+    linear-gradient(115deg, rgba(78, 60, 39, 0.10), transparent 38%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.doodle-min-card {
+  width: min(88vw, 720px);
+  aspect-ratio: 2.05;
+  border: 1px solid rgba(120, 113, 108, 0.14);
+  border-radius: 26px;
+  background: var(--edge-bg, #ffffff);
+  cursor: grab;
+  overflow: hidden;
+  transition: background-color 280ms ease, border-color 280ms ease;
+}
+
+@media (min-width: 768px) {
+  .doodle-min-card {
+    width: min(100%, 720px);
+  }
+}
+
+.doodle-min-card:active {
+  cursor: grabbing;
+}
+
+.doodle-crop {
+  position: relative;
+  width: calc(100% - clamp(18px, 4vw, 34px));
+  height: calc(100% - clamp(18px, 4vw, 34px));
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--edge-bg, #ffffff);
+}
+
+.doodle-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--image-width, auto);
+  height: var(--image-height, auto);
+  max-width: var(--image-max-width, 96%);
+  max-height: var(--image-max-height, 94%);
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  object-position: center;
+  background: var(--edge-bg, #ffffff);
+}
+
+
+@media (max-width: 767px) {
+  .doodle-min-card {
+    width: min(86vw, calc((100svh - 390px) * 1.86), 390px);
+    min-width: min(300px, 82vw);
+    aspect-ratio: 1.86;
+    border-radius: 22px;
+    box-shadow: 0 18px 54px rgba(50, 38, 28, 0.18);
+  }
+
+  .doodle-crop {
+    width: calc(100% - 24px);
+    height: calc(100% - 24px);
+    border-radius: 16px;
+  }
+
+  .doodle-image {
+    max-width: var(--image-max-width, 95%);
+    max-height: var(--image-max-height, 92%);
+  }
+}
+
+
+.page-blur {
+  filter: blur(10px) saturate(0.92);
+  transform: scale(1.012);
+  transition: filter 360ms ease, transform 360ms ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.32), rgba(40, 28, 24, 0.34));
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.celebration-caption {
+  position: relative;
+  z-index: 4;
+  max-width: min(960px, 88vw);
+  text-align: center;
+  color: #111111;
+  text-shadow: 0 8px 30px rgba(255, 255, 255, 0.56);
+}
+
+.celebration-caption p {
+  margin-bottom: 18px;
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 1.4vw, 14px);
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.celebration-caption h2 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 10vw, 118px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.firework {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  box-shadow:
+    0 -72px 0 2px rgba(255, 244, 190, 0.95),
+    50px -50px 0 1px rgba(255, 166, 138, 0.95),
+    72px 0 0 2px rgba(190, 224, 255, 0.9),
+    50px 50px 0 1px rgba(255, 238, 153, 0.9),
+    0 72px 0 2px rgba(255, 255, 255, 0.86),
+    -50px 50px 0 1px rgba(214, 168, 255, 0.9),
+    -72px 0 0 2px rgba(255, 201, 143, 0.95),
+    -50px -50px 0 1px rgba(160, 219, 255, 0.95);
+  animation: firework-pop 1.3s ease-out infinite;
+}
+
+.firework-a {
+  left: 18%;
+  top: 28%;
+}
+
+.firework-b {
+  right: 20%;
+  top: 24%;
+  animation-delay: 0.28s;
+  transform: scale(0.88);
+}
+
+.firework-c {
+  left: 50%;
+  bottom: 22%;
+  animation-delay: 0.55s;
+  transform: scale(0.72);
+}
+
+.confetti {
+  position: absolute;
+  left: var(--x, 50%);
+  top: -16px;
+  width: 8px;
+  height: 18px;
+  border-radius: 2px;
+  background: hsl(calc(var(--i) * 31) 82% 68%);
+  opacity: 0.86;
+  animation: confetti-fall 3.4s linear infinite;
+  animation-delay: calc(var(--i) * -0.13s);
+}
+
+@keyframes firework-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.18);
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: translate3d(var(--drift, 0px), 112vh, 0) rotate(720deg);
+  }
+}
+
+.avatar-link {
+  isolation: isolate;
+}
+
+.avatar-link::before {
+  position: absolute;
+  inset: -5px;
+  z-index: -1;
+  content: "";
+  border-radius: 999px;
+  background: conic-gradient(from 150deg, rgba(255, 255, 255, 0.86), rgba(120, 94, 70, 0.34), rgba(255, 255, 255, 0.72));
+  opacity: 0;
+  transform: scale(0.86);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.avatar-link:hover::before,
+.avatar-link:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes ambient-drift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0 0;
+    filter: saturate(0.9);
+  }
+
+  100% {
+    background-position: 18% 8%, 82% 18%, 42% 88%, 0 0;
+    filter: saturate(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-bg,
+  .firework,
+  .confetti {
+    animation: none;
+  }
+}

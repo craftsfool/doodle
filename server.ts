@@ -1,0 +1,561 @@
+import { HttpsProxyAgent } from "https-proxy-agent";
+import express from 'express';
+import { createServer as createViteServer } from 'vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { mkdir, readFile, writeFile } from 'fs/promises';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export async function createApp() {
+  const app = express();
+  // Doodle Cache Strategy
+  let doodleCache: any[] | null = null;
+  let lastFetchTime: number = 0;
+  const CACHE_TTL_MS = 1000 * 60 * 60; // revalidate at most once per hour
+  const RECENT_DOODLE_LIMIT = 30;
+  const imageCache = new Map<string, { body: Buffer; contentType: string; fetchedAt: number }>();
+  const localImageDir = path.join(process.cwd(), 'public', 'doodles');
+  const translationCache = new Map<string, string>();
+  const timeZoneCache = new Map<string, { timeZone: string | null; fetchedAt: number }>();
+
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.ALL_PROXY;
+  const proxyAgent = proxyUrl ? new HttpsProxyAgent(proxyUrl) : undefined;
+
+  if (proxyUrl) {
+    console.log(`Using outbound proxy: ${proxyUrl}`);
+  }
+
+  function decodeHtml(value = '') {
+    return value
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&')
+      .replace(/&rsquo;/g, '’')
+      .replace(/&lsquo;/g, '‘')
+      .replace(/&ldquo;/g, '“')
+      .replace(/&rdquo;/g, '”');
+  }
+
+  function hasChinese(value = '') {
+    return /[\u3400-\u9fff]/.test(value);
+  }
+
+  function clientIp(req: express.Request) {
+    const forwarded = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+    const raw = forwarded || String(req.headers['cf-connecting-ip'] || '') || req.socket.remoteAddress || '';
+    const ip = raw.replace(/^::ffff:/, '');
+    if (!ip || ip === '::1' || ip === '127.0.0.1' || ip.startsWith('10.') || ip.startsWith('192.168.')) {
+      return null;
+    }
+    return ip;
+  }
+
+  async function fetchTimeZoneForIp(ip: string | null) {
+    if (!ip) return null;
+
+    const cached = timeZoneCache.get(ip);
+    if (cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS) {
+      return cached.timeZone;
+    }
+
+    try {
+      const response = await requestText(`https://ipapi.co/${encodeURIComponent(ip)}/json/`, 10000);
+      const payload = JSON.parse(response);
+      const timeZone = typeof payload?.timezone === 'string' ? payload.timezone : null;
+      timeZoneCache.set(ip, { timeZone, fetchedAt: Date.now() });
+      return timeZone;
+    } catch {
+      timeZoneCache.set(ip, { timeZone: null, fetchedAt: Date.now() });
+      return null;
+    }
+  }
+
+  async function translateToSimplifiedChinese(value = '') {
+    const text = value.trim();
+    if (!text || hasChinese(text)) return text;
+    if (translationCache.has(text)) return translationCache.get(text) || text;
+
+    try {
+      const url = new URL('https://translate.googleapis.com/translate_a/single');
+      url.searchParams.set('client', 'gtx');
+      url.searchParams.set('sl', 'en');
+      url.searchParams.set('tl', 'zh-CN');
+      url.searchParams.set('dt', 't');
+      url.searchParams.set('q', text);
+
+      const response = await requestText(url.toString(), 12000);
+      const payload = JSON.parse(response);
+      const translated = Array.isArray(payload?.[0])
+        ? payload[0].map((part: any[]) => part?.[0] || '').join('').trim()
+        : text;
+
+      translationCache.set(text, translated || text);
+      return translated || text;
+    } catch (error) {
+      console.error('Failed to translate doodle text:', error);
+      translationCache.set(text, text);
+      return text;
+    }
+  }
+  
+  async function requestText(url: string, timeoutMs = 15000) {
+    return new Promise<string>((resolve, reject) => {
+      import('https').then(https => {
+        const req = https.get(url, proxyAgent ? { agent: proxyAgent } : {}, (res) => {
+          if (res.statusCode && res.statusCode >= 400) {
+            reject(new Error(`${url} returned ${res.statusCode}`));
+            res.resume();
+            return;
+          }
+
+          let data = '';
+          res.on('data', chunk => data += chunk);
+          res.on('end', () => resolve(data));
+        });
+
+        req.setTimeout(timeoutMs, () => {
+          req.destroy(new Error(`${url} timed out after ${timeoutMs}ms`));
+        });
+        req.on('error', reject);
+      });
+    });
+  }
+
+  async function requestBinary(url: string, timeoutMs = 20000) {
+    return new Promise<{ body: Buffer; contentType: string }>((resolve, reject) => {
+      import('https').then(https => {
+        const req = https.get(url, proxyAgent ? { agent: proxyAgent } : {}, (res) => {
+          if (res.statusCode && res.statusCode >= 400) {
+            reject(new Error(`${url} returned ${res.statusCode}`));
+            res.resume();
+            return;
+          }
+
+          const chunks: Buffer[] = [];
+          res.on('data', chunk => chunks.push(Buffer.from(chunk)));
+          res.on('end', () => resolve({
+            body: Buffer.concat(chunks),
+            contentType: res.headers['content-type'] || 'application/octet-stream'
+          }));
+        });
+
+        req.setTimeout(timeoutMs, () => {
+          req.destroy(new Error(`${url} timed out after ${timeoutMs}ms`));
+        });
+        req.on('error', reject);
+      });
+    });
+  }
+
+  function isAllowedDoodleImage(url: string) {
+    try {
+      const parsed = new URL(url);
+      return parsed.protocol === 'https:' &&
+        parsed.hostname === 'www.google.com' &&
+        parsed.pathname.startsWith('/logos/doodles/');
+    } catch {
+      return false;
+    }
+  }
+
+  function safeFilePart(value = '') {
+    return value
+      .toLowerCase()
+      .replace(/[^a-z0-9\u4e00-\u9fff]+/giu, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 96) || 'doodle';
+  }
+
+  function contentTypeFromExtension(extension: string) {
+    switch (extension) {
+      case '.jpg':
+      case '.jpeg':
+        return 'image/jpeg';
+      case '.webp':
+        return 'image/webp';
+      case '.gif':
+        return 'image/gif';
+      case '.svg':
+        return 'image/svg+xml';
+      case '.png':
+      default:
+        return 'image/png';
+    }
+  }
+
+  function extensionFromContentType(contentType = '') {
+    if (contentType.includes('jpeg')) return '.jpg';
+    if (contentType.includes('webp')) return '.webp';
+    if (contentType.includes('gif')) return '.gif';
+    if (contentType.includes('svg')) return '.svg';
+    return '.png';
+  }
+
+  function extensionFromUrl(url: string) {
+    try {
+      const extension = path.extname(new URL(url).pathname).toLowerCase();
+      return ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'].includes(extension) ? extension : '';
+    } catch {
+      return '';
+    }
+  }
+
+  function localImageBaseName(date: string, name: string) {
+    return `${safeFilePart(date)}_${safeFilePart(name)}`;
+  }
+
+  async function readLocalDoodleImage(baseName: string) {
+    const extensions = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'];
+
+    for (const extension of extensions) {
+      const filePath = path.join(localImageDir, `${baseName}${extension}`);
+
+      try {
+        const body = await readFile(filePath);
+        return {
+          body,
+          contentType: contentTypeFromExtension(extension),
+          filePath
+        };
+      } catch {
+        // Try the next extension.
+      }
+    }
+
+    return null;
+  }
+
+  async function writeLocalDoodleImage(baseName: string, imageUrl: string, image: { body: Buffer; contentType: string }) {
+    const extension = extensionFromUrl(imageUrl) || extensionFromContentType(image.contentType);
+    const filePath = path.join(localImageDir, `${baseName}${extension}`);
+
+    await mkdir(localImageDir, { recursive: true });
+    await writeFile(filePath, image.body);
+
+    return filePath;
+  }
+
+  function parseSitemapEntries(sitemap: string) {
+    return Array.from(
+      sitemap.matchAll(/<loc>https:\/\/doodles\.google\/doodle\/([^<]+)\/<\/loc>[\s\S]*?<lastmod>([^<]+)<\/lastmod>/g)
+    ).slice(0, RECENT_DOODLE_LIMIT).map(match => ({
+      slug: match[1],
+      dateStr: match[2]
+    }));
+  }
+
+  function recentDoodles() {
+    return (doodleCache ?? []).slice(0, RECENT_DOODLE_LIMIT);
+  }
+
+  function mergeDoodleCache(fetchedDoodles: any[]) {
+    const merged = new Map<string, any>();
+
+    for (const doodle of fetchedDoodles) {
+      if (doodle?.name) {
+        merged.set(doodle.name, doodle);
+      }
+    }
+
+    for (const doodle of doodleCache ?? []) {
+      if (doodle?.name && !merged.has(doodle.name)) {
+        merged.set(doodle.name, doodle);
+      }
+    }
+
+    doodleCache = Array.from(merged.values()).sort((a, b) => {
+      const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
+      const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
+      return dateB.localeCompare(dateA);
+    });
+  }
+
+  function absoluteDoodleImageUrl(value = '') {
+    if (!value) return null;
+    if (value.startsWith('//')) return `https:${value}`;
+    if (value.startsWith('/')) return `https://www.google.com${value}`;
+    return value;
+  }
+
+  function monthKey(year: number, month: number) {
+    return `${year}-${String(month).padStart(2, '0')}`;
+  }
+
+  function previousMonth(year: number, month: number) {
+    if (month === 1) {
+      return { year: year - 1, month: 12 };
+    }
+
+    return { year, month: month - 1 };
+  }
+
+  async function fetchArchiveMonth(year: number, month: number, language: 'en' | 'zh-CN') {
+    const url = `https://www.google.com/doodles/json/${year}/${month}?hl=${language}`;
+    const text = await requestText(url, 15000);
+    const payload = JSON.parse(text);
+    return Array.isArray(payload) ? payload : [];
+  }
+
+  async function fetchRecentArchiveDoodles() {
+    const collected = new Map<string, any>();
+    const now = new Date();
+    let year = now.getUTCFullYear();
+    let month = now.getUTCMonth() + 1;
+    let checkedMonths = 0;
+
+    while (collected.size < RECENT_DOODLE_LIMIT && checkedMonths < 18) {
+      try {
+        const [enArchive, zhArchive] = await Promise.all([
+          fetchArchiveMonth(year, month, 'en'),
+          fetchArchiveMonth(year, month, 'zh-CN')
+        ]);
+
+        const zhByName = new Map<string, any>();
+        for (const doodle of zhArchive) {
+          if (doodle?.name) {
+            zhByName.set(doodle.name, doodle);
+          }
+        }
+
+        for (const doodle of enArchive) {
+          if (!doodle?.name || collected.has(doodle.name)) continue;
+
+          const zh = zhByName.get(doodle.name);
+          const imageUrl = absoluteDoodleImageUrl(doodle.high_res_url || doodle.url || doodle.alternate_url || '');
+          if (!imageUrl) continue;
+
+          collected.set(doodle.name, {
+            name: doodle.name,
+            title: decodeHtml(doodle.title || doodle.name),
+            url: imageUrl,
+            high_res_url: imageUrl,
+            share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
+            run_date_array: doodle.run_date_array,
+            localized: {
+              en: {
+                title: decodeHtml(doodle.title || doodle.name),
+                share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
+              },
+              'zh-CN': {
+                title: decodeHtml(zh?.title || doodle.title || doodle.name),
+                share_text: decodeHtml(zh?.share_text || zh?.translated_blog_posts?.[0]?.title || doodle.share_text || '')
+              }
+            }
+          });
+
+          if (collected.size >= RECENT_DOODLE_LIMIT) break;
+        }
+      } catch (error) {
+        console.error(`Failed to fetch archive month ${monthKey(year, month)}:`, error);
+      }
+
+      const previous = previousMonth(year, month);
+      year = previous.year;
+      month = previous.month;
+      checkedMonths += 1;
+    }
+
+    return Array.from(collected.values())
+      .sort((a, b) => {
+        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
+        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
+        return dateB.localeCompare(dateA);
+      })
+      .slice(0, RECENT_DOODLE_LIMIT);
+  }
+
+  async function fetchArchiveLocalization(entry: { slug: string; dateStr: string }) {
+    const [year, month] = entry.dateStr.split('-').map(Number);
+    const url = `https://www.google.com/doodles/json/${year}/${month}?hl=zh-CN`;
+
+    try {
+      const text = await requestText(url, 12000);
+      const payload = JSON.parse(text);
+      if (!Array.isArray(payload)) return null;
+
+      const match = payload.find((doodle: any) => doodle?.name === entry.slug);
+      if (!match) return null;
+
+      return {
+        title: decodeHtml(match.title || ''),
+        share_text: decodeHtml(match.share_text || match.translated_blog_posts?.[0]?.title || '')
+      };
+    } catch {
+      return null;
+    }
+  }
+
+  async function fetchDoodle(entry: { slug: string; dateStr: string }) {
+    const html = await requestText(`https://doodles.google/doodle/${entry.slug}/?hl=zh-CN`);
+    const titleMatch = html.match(/<title>([^<]+)<\/title>/);
+    const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/);
+    const shareTextMatch = html.match(/<meta property="og:description" content="([^"]+)"/);
+
+    let title = titleMatch ? decodeHtml(titleMatch[1]) : entry.slug;
+    title = title.replace(/ Doodle - Google Doodles$/, '');
+
+    const [year, month, day] = entry.dateStr.split('-').map(Number);
+
+    const shareText = shareTextMatch ? decodeHtml(shareTextMatch[1]) : '';
+    const archiveLocalization = await fetchArchiveLocalization(entry);
+    const [translatedTitle, translatedShareText] = await Promise.all([
+      translateToSimplifiedChinese(archiveLocalization?.title || title),
+      translateToSimplifiedChinese(archiveLocalization?.share_text || shareText)
+    ]);
+    const titleZh = archiveLocalization?.title || translatedTitle;
+    const shareTextZh = archiveLocalization?.share_text || translatedShareText;
+
+    return {
+      name: entry.slug,
+      title,
+      url: ogImageMatch ? decodeHtml(ogImageMatch[1]) : null,
+      share_text: shareText,
+      run_date_array: [year, month, day],
+      localized: {
+        en: {
+          title,
+          share_text: shareText
+        },
+        'zh-CN': {
+          title: titleZh,
+          share_text: shareTextZh
+        }
+      }
+    };
+  }
+  
+  async function fetchDoodleHistory() {
+    if (doodleCache?.length && (Date.now() - lastFetchTime < CACHE_TTL_MS)) {
+      return recentDoodles();
+    }
+
+    try {
+      const archiveDoodles = await fetchRecentArchiveDoodles();
+
+      if (archiveDoodles.length) {
+        mergeDoodleCache(archiveDoodles);
+        lastFetchTime = Date.now();
+        return recentDoodles();
+      }
+
+      const sitemap = await requestText('https://doodles.google/sitemap.xml', 20000);
+      const entries = parseSitemapEntries(sitemap);
+
+      if (!entries.length) return doodleCache?.length ? recentDoodles() : null;
+
+      const settled = await Promise.allSettled(entries.map(fetchDoodle));
+      const fetchedDoodles = settled
+        .filter(result => result.status === 'fulfilled')
+        .map(result => result.value)
+        .filter(doodle => doodle.url);
+
+      mergeDoodleCache(fetchedDoodles);
+      lastFetchTime = Date.now();
+      
+      return recentDoodles();
+    } catch (error) {
+      console.error('Failed to fetch doodle:', error);
+      return doodleCache?.length ? recentDoodles() : null;
+    }
+  }
+
+  // API Routes
+  app.get('/api/doodle/latest', async (req, res) => {
+    const doodles = await fetchDoodleHistory();
+    const doodle = doodles?.[0];
+    if (doodle) {
+      res.json(doodle);
+    } else {
+      res.status(404).json({ error: 'No doodles found' });
+    }
+  });
+
+  app.get('/api/doodle/history', async (req, res) => {
+    const doodles = await fetchDoodleHistory();
+    if (doodles?.length) {
+      res.json(doodles);
+    } else {
+      res.status(404).json({ error: 'No doodles found' });
+    }
+  });
+
+  app.get('/api/doodle/image', async (req, res) => {
+    const imageUrl = String(req.query.url || '');
+    const imageName = String(req.query.name || 'doodle');
+    const imageDate = String(req.query.date || 'undated');
+    const imageBaseName = localImageBaseName(imageDate, imageName);
+
+    if (!isAllowedDoodleImage(imageUrl)) {
+      res.status(400).json({ error: 'Unsupported doodle image URL' });
+      return;
+    }
+
+    try {
+      const localImage = await readLocalDoodleImage(imageBaseName);
+
+      if (localImage) {
+        res.setHeader('Content-Type', localImage.contentType);
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.setHeader('X-Doodle-Image-Source', 'local-file');
+        res.send(localImage.body);
+        return;
+      }
+
+      const cached = imageCache.get(imageUrl);
+      const fresh = cached && Date.now() - cached.fetchedAt < CACHE_TTL_MS;
+      const image = fresh ? cached : await requestBinary(imageUrl);
+
+      if (!fresh) {
+        imageCache.set(imageUrl, { ...image, fetchedAt: Date.now() });
+      }
+
+      await writeLocalDoodleImage(imageBaseName, imageUrl, image);
+
+      res.setHeader('Content-Type', image.contentType);
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.setHeader('X-Doodle-Image-Source', 'downloaded-and-saved');
+      res.send(image.body);
+    } catch (error) {
+      console.error('Failed to proxy doodle image:', error);
+      res.status(502).json({ error: 'Failed to load doodle image' });
+    }
+  });
+
+  app.get('/api/visitor-timezone', async (req, res) => {
+    const ip = clientIp(req);
+    const timeZone = await fetchTimeZoneForIp(ip);
+    res.json({ timeZone, source: timeZone ? 'ip' : 'browser-fallback' });
+  });
+
+  // Vite middleware for development
+  if (process.env.NODE_ENV !== "production") {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: "spa",
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  }
+
+  return app;
+}
+
+async function startServer() {
+  const PORT = Number(process.env.PORT || 3000);
+  const app = await createApp();
+
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+if (process.env.VERCEL !== '1') {
+  startServer();
+}

@@ -1,0 +1,5 @@
+node_modules/
+.DS_Store
+data/latest-doodle.json
+public/mirror/*
+!public/mirror/.gitkeep
