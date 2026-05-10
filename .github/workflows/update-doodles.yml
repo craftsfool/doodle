@@ -26,6 +26,8 @@ jobs:
         run: npm ci
 
       - name: Update archive
+        env:
+          DOODLE_TRANSLATE: '1'
         run: npm run doodles:update
 
       - name: Commit archive changes

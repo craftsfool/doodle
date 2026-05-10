@@ -122,7 +122,9 @@ function localizedText(doodle: Doodle, language: Language) {
     return local;
   }
 
-  const title = hasChinese(local.title) ? local.title : localizeTitleZh(local.title || doodle.title || doodle.name);
+  const title = hasChinese(local.title)
+    ? normalizeLocalizedZhTitle(local.title)
+    : localizeTitleZh(local.title || doodle.title || doodle.name);
   const shareText = hasChinese(local.share_text) ? local.share_text : `${title}的 Google Doodle 纪念作品。`;
 
   return {
@@ -133,6 +135,37 @@ function localizedText(doodle: Doodle, language: Language) {
 
 function hasChinese(value = '') {
   return /[\u3400-\u9fff]/u.test(value);
+}
+
+function normalizeLocalizedZhTitle(value = '') {
+  let title = value
+    .replace(/\((\d{1,2})月(\d{1,2})日\)/gu, '（$1月$2日）')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const trailingYear = title.match(/^(.+?)\s+(20\d{2})(\s*（[^）]+）)?$/u);
+  if (trailingYear) {
+    const [, name, year, date = ''] = trailingYear;
+    title = `${year} 年${name.trim()}${date.trim()}`;
+  }
+
+  return title
+    .replace(/\bUS\b/giu, '美国')
+    .replace(/日 of the Dead/giu, '亡灵节')
+    .replace(/Unity 日/giu, '统一日')
+    .replace(/Veterans 日/giu, '退伍军人节')
+    .replace(/Native American/giu, '美洲原住民')
+    .replace(/Around the/giu, '环绕')
+    .replace(/Edition/giu, '特别版')
+    .replace(/Playoffs/giu, '季后赛')
+    .replace(/Fall Classic/giu, '秋季经典赛')
+    .replace(/(.+?)(20\d{2})(特别版)$/u, '$2年$1$3')
+    .replace(/([\u3400-\u9fff])\s+([\u3400-\u9fff])/gu, '$1$2')
+    .replace(/([\u3400-\u9fff])\s+(\d)/gu, '$1$2')
+    .replace(/(\d)\s+([\u3400-\u9fff])/gu, '$1$2')
+    .replace(/\s+（/g, '（')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function localizeTitleZh(value = '') {
@@ -147,6 +180,8 @@ function localizeTitleZh(value = '') {
   });
 
   const orderedRules: Array<[RegExp, string]> = [
+    [/\bDay of the Dead\b/gi, '亡灵节'],
+    [/\bGerman Unity Day\b/gi, '德国统一日'],
     [/\bMother's Day\b/gi, '母亲节'],
     [/\bFather's Day\b/gi, '父亲节'],
     [/\bTeacher Appreciation Day\b/gi, '教师感谢日'],
@@ -180,6 +215,7 @@ function localizeTitleZh(value = '') {
     [/\bDay\b/gi, '日'],
     [/\bCentennial\b/gi, '百年纪念'],
     [/\bFinalists?\b/gi, '入围者'],
+    [/\bNative American\b/gi, '美洲原住民'],
     [/\bCzech Republic\b/gi, '捷克共和国'],
     [/\bSouth Africa\b/gi, '南非'],
     [/\bTürkiye\b/gi, '土耳其'],
@@ -191,15 +227,18 @@ function localizeTitleZh(value = '') {
     [/\bArgentina\b/gi, '阿根廷'],
     [/\bIreland\b/gi, '爱尔兰'],
     [/\bK-Pop\b/gi, 'K-Pop'],
+    [/\bUS\b/gi, '美国'],
     [/\bDance\b/gi, '舞蹈'],
     [/\bNASA's\b/gi, 'NASA'],
     [/\bMission\b/gi, '任务'],
+    [/\bAround the\b/gi, '环绕'],
     [/\bMoon\b/gi, '月球'],
     [/\bPhotosynthesis\b/gi, '光合作用'],
     [/\bDNA\b/gi, 'DNA'],
     [/\bQuantum\b/gi, '量子'],
     [/\bRoute 66\b/gi, '66号公路'],
     [/\bPAC-MAN\b/gi, '吃豆人'],
+    [/\bEdition\b/gi, '特别版'],
     [/\bFlutes\b/gi, '长笛'],
     [/\bIdli\b/gi, '伊德利米糕']
   ];
@@ -208,9 +247,8 @@ function localizeTitleZh(value = '') {
     title = title.replace(pattern, replacement);
   }
 
-  return title
+  return normalizeLocalizedZhTitle(title)
     .replace(/\s*:\s*/g, ': ')
-    .replace(/\s+/g, ' ')
     .trim();
 }
 

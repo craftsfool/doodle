@@ -4,10 +4,15 @@ import path from 'node:path';
 const rootDir = process.cwd();
 const doodleDir = path.join(rootDir, 'public', 'doodles');
 const manifestPath = path.join(doodleDir, 'manifest.json');
+const translationCachePath = path.join(doodleDir, 'translations.zh-CN.json');
 const archiveModulePath = path.join(rootDir, 'doodleArchive.ts');
 const monthsToFetch = Number(process.env.DOODLE_MONTHS || 12);
 const maxEntries = Number(process.env.DOODLE_LIMIT || 120);
 const offlineOnly = process.env.DOODLE_OFFLINE === '1';
+const onlineTranslate = process.env.DOODLE_TRANSLATE !== '0' && !offlineOnly;
+const refreshTranslations = process.env.DOODLE_TRANSLATE_REFRESH === '1';
+let translationCache = {};
+let translationCacheDirty = false;
 
 const headers = {
   'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36',
@@ -63,6 +68,37 @@ function hasChinese(value = '') {
   return /[\u3400-\u9fff]/u.test(value);
 }
 
+function normalizeLocalizedZhTitle(value = '') {
+  let title = value
+    .replace(/\((\d{1,2})月(\d{1,2})日\)/gu, '（$1月$2日）')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const trailingYear = title.match(/^(.+?)\s+(20\d{2})(\s*（[^）]+）)?$/u);
+  if (trailingYear) {
+    const [, name, year, date = ''] = trailingYear;
+    title = `${year} 年${name.trim()}${date.trim()}`;
+  }
+
+  return title
+    .replace(/\bUS\b/giu, '美国')
+    .replace(/日 of the Dead/giu, '亡灵节')
+    .replace(/Unity 日/giu, '统一日')
+    .replace(/Veterans 日/giu, '退伍军人节')
+    .replace(/Native American/giu, '美洲原住民')
+    .replace(/Around the/giu, '环绕')
+    .replace(/Edition/giu, '特别版')
+    .replace(/Playoffs/giu, '季后赛')
+    .replace(/Fall Classic/giu, '秋季经典赛')
+    .replace(/(.+?)(20\d{2})(特别版)$/u, '$2年$1$3')
+    .replace(/([\u3400-\u9fff])\s+([\u3400-\u9fff])/gu, '$1$2')
+    .replace(/([\u3400-\u9fff])\s+(\d)/gu, '$1$2')
+    .replace(/(\d)\s+([\u3400-\u9fff])/gu, '$1$2')
+    .replace(/\s+（/g, '（')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function localizeTitleZh(value = '') {
   let title = value
     .replace(/\s+/g, ' ')
@@ -89,6 +125,8 @@ function localizeTitleZh(value = '') {
   });
 
   const orderedRules = [
+    [/\bDay of the Dead\b/gi, '亡灵节'],
+    [/\bGerman Unity Day\b/gi, '德国统一日'],
     [/\bMother's Day\b/gi, '母亲节'],
     [/\bFather's Day\b/gi, '父亲节'],
     [/\bTeacher Appreciation Day\b/gi, '教师感谢日'],
@@ -122,6 +160,7 @@ function localizeTitleZh(value = '') {
     [/\bDay\b/gi, '日'],
     [/\bCentennial\b/gi, '百年纪念'],
     [/\bFinalists?\b/gi, '入围者'],
+    [/\bNative American\b/gi, '美洲原住民'],
     [/\bCzech Republic\b/gi, '捷克共和国'],
     [/\bSouth Africa\b/gi, '南非'],
     [/\bTürkiye\b/gi, '土耳其'],
@@ -133,15 +172,18 @@ function localizeTitleZh(value = '') {
     [/\bArgentina\b/gi, '阿根廷'],
     [/\bIreland\b/gi, '爱尔兰'],
     [/\bK-Pop\b/gi, 'K-Pop'],
+    [/\bUS\b/gi, '美国'],
     [/\bDance\b/gi, '舞蹈'],
     [/\bNASA's\b/gi, 'NASA'],
     [/\bMission\b/gi, '任务'],
+    [/\bAround the\b/gi, '环绕'],
     [/\bMoon\b/gi, '月球'],
     [/\bPhotosynthesis\b/gi, '光合作用'],
     [/\bDNA\b/gi, 'DNA'],
     [/\bQuantum\b/gi, '量子'],
     [/\bRoute 66\b/gi, '66号公路'],
     [/\bPAC-MAN\b/gi, '吃豆人'],
+    [/\bEdition\b/gi, '特别版'],
     [/\bFlutes\b/gi, '长笛'],
     [/\bIdli\b/gi, '伊德利米糕']
   ];
@@ -150,25 +192,97 @@ function localizeTitleZh(value = '') {
     title = title.replace(pattern, replacement);
   }
 
-  return title
+  return normalizeLocalizedZhTitle(title)
     .replace(/\s*:\s*/g, ': ')
-    .replace(/\s+/g, ' ')
     .trim();
 }
 
-function withLocalZhFallback(doodle) {
+async function translateTextZh(value = '') {
+  const text = value.trim();
+  if (!text) return text;
+
+  const url = new URL('https://translate.googleapis.com/translate_a/single');
+  url.searchParams.set('client', 'gtx');
+  url.searchParams.set('sl', 'en');
+  url.searchParams.set('tl', 'zh-CN');
+  url.searchParams.set('dt', 't');
+  url.searchParams.set('q', text);
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 12000);
+
+  try {
+    const response = await fetch(url, { headers, signal: controller.signal });
+    if (!response.ok) {
+      throw new Error(`Google Translate returned ${response.status}`);
+    }
+
+    const payload = await response.json();
+    const translated = Array.isArray(payload?.[0])
+      ? payload[0].map(part => part?.[0] || '').join('').trim()
+      : '';
+
+    if (!translated) {
+      throw new Error('Google Translate returned an empty translation');
+    }
+
+    return decodeHtml(translated);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function translateDoodleZh(doodle) {
+  const cached = translationCache[doodle.name];
+  const sourceTitle = doodle.title || doodle.name;
+
+  if (cached?.title && !refreshTranslations && (!cached.source_title || cached.source_title === sourceTitle)) {
+    return {
+      title: normalizeLocalizedZhTitle(cached.title),
+      share_text: cached.share_text || `${normalizeLocalizedZhTitle(cached.title)}的 Google Doodle 纪念作品。`
+    };
+  }
+
+  if (onlineTranslate) {
+    try {
+      const [translatedTitle, translatedShareText] = await Promise.all([
+        translateTextZh(sourceTitle),
+        translateTextZh(doodle.share_text || sourceTitle)
+      ]);
+      const title = normalizeLocalizedZhTitle(translatedTitle);
+      const shareText = translatedShareText || `${title}的 Google Doodle 纪念作品。`;
+
+      translationCache[doodle.name] = {
+        title,
+        share_text: shareText,
+        source_title: sourceTitle,
+        updated_at: new Date().toISOString()
+      };
+      translationCacheDirty = true;
+
+      return { title, share_text: shareText };
+    } catch (error) {
+      console.warn(`Google Translate unavailable for ${doodle.name}: ${error instanceof Error ? error.message : error}`);
+    }
+  }
+
   const zh = doodle.localized?.['zh-CN'] || {};
-  const title = hasChinese(zh.title) ? zh.title : localizeTitleZh(zh.title || doodle.title || doodle.name);
+  const title = hasChinese(zh.title)
+    ? normalizeLocalizedZhTitle(zh.title)
+    : localizeTitleZh(zh.title || doodle.title || doodle.name);
   const shareText = hasChinese(zh.share_text) ? zh.share_text : `${title}的 Google Doodle 纪念作品。`;
+
+  return { title, share_text: shareText };
+}
+
+async function withLocalZhFallback(doodle) {
+  const zh = await translateDoodleZh(doodle);
 
   return {
     ...doodle,
     localized: {
       ...(doodle.localized || {}),
-      'zh-CN': {
-        title,
-        share_text: shareText
-      }
+      'zh-CN': zh
     }
   };
 }
@@ -207,6 +321,25 @@ async function readExistingManifestPayload() {
   } catch {
     return null;
   }
+}
+
+async function readTranslationCache() {
+  try {
+    const raw = await readFile(translationCachePath, 'utf8');
+    const payload = JSON.parse(raw);
+    return payload && typeof payload === 'object' ? payload : {};
+  } catch {
+    return {};
+  }
+}
+
+async function writeTranslationCache() {
+  if (!translationCacheDirty) return;
+
+  const sorted = Object.fromEntries(
+    Object.entries(translationCache).sort(([a], [b]) => a.localeCompare(b))
+  );
+  await writeFile(translationCachePath, `${JSON.stringify(sorted, null, 2)}\n`);
 }
 
 async function scanLocalImages() {
@@ -431,7 +564,13 @@ function sortDoodles(doodles) {
 }
 
 async function writeArchive(doodles) {
-  const sorted = sortDoodles(doodles.map(withLocalZhFallback));
+  const localized = [];
+
+  for (const doodle of doodles) {
+    localized.push(await withLocalZhFallback(doodle));
+  }
+
+  const sorted = sortDoodles(localized);
   const existing = await readExistingManifestPayload();
   const unchanged = JSON.stringify(existing?.doodles || []) === JSON.stringify(sorted);
   const manifest = {
@@ -441,6 +580,7 @@ async function writeArchive(doodles) {
   };
 
   await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  await writeTranslationCache();
   await writeFile(
     archiveModulePath,
     `export const localDoodleArchive = ${JSON.stringify(sorted, null, 2)} as const;\n\n` +
@@ -451,6 +591,7 @@ async function writeArchive(doodles) {
 }
 
 async function main() {
+  translationCache = await readTranslationCache();
   const existing = await readExistingManifest();
   const local = await scanLocalImages();
   const byName = new Map([...local, ...existing].map(doodle => [doodle.name, doodle]));

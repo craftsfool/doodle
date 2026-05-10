@@ -15,7 +15,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2026 (May 10) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "母亲节 2026 (5月10日)",
+        "title": "2026年母亲节（5月10日）",
         "share_text": "母亲节 2026 (5月10日)的 Google Doodle 纪念作品。"
       }
     },
@@ -63,7 +63,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of US Teacher Appreciation Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "US 教师感谢日 2026",
+        "title": "2026年美国教师感谢日",
         "share_text": "US 教师感谢日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -87,7 +87,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Easter 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "复活节 2026",
+        "title": "2026年复活节",
         "share_text": "复活节 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -111,7 +111,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating the Route 66 Centennial Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "纪念 66号公路 百年纪念",
+        "title": "纪念66号公路百年纪念",
         "share_text": "纪念 66号公路 百年纪念的 Google Doodle 纪念作品。"
       }
     },
@@ -135,7 +135,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Labour Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "劳动节 2026",
+        "title": "2026年劳动节",
         "share_text": "劳动节 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -279,7 +279,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of South Africa Freedom Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "南非 自由日 2026",
+        "title": "2026年南非自由日",
         "share_text": "南非 自由日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -303,7 +303,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. George's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. George's 日 2026",
+        "title": "2026年St. George's 日",
         "share_text": "St. George's 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -327,7 +327,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Earth Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "地球日 2026",
+        "title": "2026年地球日",
         "share_text": "地球日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -351,7 +351,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of  NBA Playoffs 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "NBA Playoffs 2026",
+        "title": "2026年NBA 季后赛",
         "share_text": "NBA Playoffs 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -375,7 +375,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of World Quantum Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "世界 量子 日 2026",
+        "title": "2026年世界量子日",
         "share_text": "世界 量子 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -399,7 +399,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of NASA's Artemis II Mission Around the Moon Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "NASA Artemis II 任务 Around the 月球",
+        "title": "NASA Artemis II 任务环绕月球",
         "share_text": "NASA Artemis II 任务 Around the 月球的 Google Doodle 纪念作品。"
       }
     },
@@ -423,7 +423,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of International Women's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "国际妇女节 2026",
+        "title": "2026年国际妇女节",
         "share_text": "国际妇女节 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -447,7 +447,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6)  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Winter Sports Begin 2026 (3月6日)",
+        "title": "2026年Winter Sports Begin（3月6日）",
         "share_text": "Winter Sports Begin 2026 (3月6日)的 Google Doodle 纪念作品。"
       }
     },
@@ -495,7 +495,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Women's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Women's College Basketball Championship 2026",
+        "title": "2026年Women's College Basketball Championship",
         "share_text": "Women's College Basketball Championship 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -519,7 +519,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Lantern Festival 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Lantern Festival 2026",
+        "title": "2026年Lantern Festival",
         "share_text": "Lantern Festival 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -543,7 +543,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Men's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Men's College Basketball Championship 2026",
+        "title": "2026年Men's College Basketball Championship",
         "share_text": "Men's College Basketball Championship 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -567,7 +567,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Nowruz 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Nowruz 2026",
+        "title": "2026年Nowruz",
         "share_text": "Nowruz 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -591,7 +591,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. Patrick's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. Patrick's 日 2026",
+        "title": "2026年St. Patrick's 日",
         "share_text": "St. Patrick's 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -615,7 +615,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Pi Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Pi 日 2026",
+        "title": "2026年Pi 日",
         "share_text": "Pi 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -639,7 +639,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. David's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. David's 日 2026",
+        "title": "2026年St. David's 日",
         "share_text": "St. David's 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -663,7 +663,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ski Jumping 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ski Jumping 2026",
+        "title": "2026年Ski Jumping",
         "share_text": "Ski Jumping 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -687,7 +687,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Figure Skating 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Figure Skating 2026",
+        "title": "2026年Figure Skating",
         "share_text": "Figure Skating 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -711,7 +711,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Snowboarding 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Snowboarding 2026",
+        "title": "2026年Snowboarding",
         "share_text": "Snowboarding 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -735,7 +735,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of ICC Men's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "ICC Men's T20 世界 Cup Begins",
+        "title": "ICC Men's T20世界 Cup Begins",
         "share_text": "ICC Men's T20 世界 Cup Begins的 Google Doodle 纪念作品。"
       }
     },
@@ -759,7 +759,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ice Hockey 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ice Hockey 2026",
+        "title": "2026年Ice Hockey",
         "share_text": "Ice Hockey 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -807,7 +807,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Curling 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Curling 2026",
+        "title": "2026年Curling",
         "share_text": "Curling 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -831,7 +831,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Winter Sports 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "纪念 Winter Sports 2026",
+        "title": "2026年纪念 Winter Sports",
         "share_text": "纪念 Winter Sports 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -855,7 +855,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of ICC Men's T20 World Cup: Super 8 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "ICC Men's T20 世界 Cup: Super 8",
+        "title": "ICC Men's T20世界 Cup: Super 8",
         "share_text": "ICC Men's T20 世界 Cup: Super 8的 Google Doodle 纪念作品。"
       }
     },
@@ -879,7 +879,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Freestyle Skiing 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Freestyle Skiing 2026",
+        "title": "2026年Freestyle Skiing",
         "share_text": "Freestyle Skiing 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -903,7 +903,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Lunar New Year 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "农历新年 2026",
+        "title": "2026年农历新年",
         "share_text": "农历新年 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -927,7 +927,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Alpine Skiing 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Alpine Skiing 2026",
+        "title": "2026年Alpine Skiing",
         "share_text": "Alpine Skiing 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -951,7 +951,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Valentine's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "情人节 2026",
+        "title": "2026年情人节",
         "share_text": "情人节 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -999,7 +999,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of India Republic Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "India 共和国日 2026",
+        "title": "2026年India 共和国日",
         "share_text": "India 共和国日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -1023,7 +1023,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Dr. Martin Luther King Jr. Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Dr. Martin Luther King Jr. 日 2026",
+        "title": "2026年Dr. Martin Luther King Jr. 日",
         "share_text": "Dr. Martin Luther King Jr. 日 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -1071,7 +1071,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Brazil Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Brazil 独立日 2025",
+        "title": "2025年Brazil 独立日",
         "share_text": "Brazil 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1119,7 +1119,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Sept 7) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "父亲节 2025 (9月7日)",
+        "title": "2025年父亲节（9月7日）",
         "share_text": "父亲节 2025 (9月7日)的 Google Doodle 纪念作品。"
       }
     },
@@ -1143,7 +1143,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Nigeria Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Nigeria 独立日 2025",
+        "title": "2025年Nigeria 独立日",
         "share_text": "Nigeria 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1215,7 +1215,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Armenia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Armenia 独立日 2025",
+        "title": "2025年Armenia 独立日",
         "share_text": "Armenia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1239,7 +1239,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "学习 光合作用",
+        "title": "学习光合作用",
         "share_text": "学习 光合作用的 Google Doodle 纪念作品。"
       }
     },
@@ -1263,7 +1263,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Chile National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Chile 国庆日 2025",
+        "title": "2025年Chile 国庆日",
         "share_text": "Chile 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1287,7 +1287,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (UK) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "学习 光合作用 (UK)",
+        "title": "学习光合作用 (UK)",
         "share_text": "学习 光合作用 (UK)的 Google Doodle 纪念作品。"
       }
     },
@@ -1359,7 +1359,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mexico Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Mexico 独立日 2025",
+        "title": "2025年Mexico 独立日",
         "share_text": "Mexico 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1407,7 +1407,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of El Salvador Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "El Salvador 独立日 2025",
+        "title": "2025年El Salvador 独立日",
         "share_text": "El Salvador 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1431,7 +1431,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of UEFA Champions  League 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "UEFA Champions League 2025",
+        "title": "2025年UEFA Champions League",
         "share_text": "UEFA Champions League 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1455,7 +1455,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Respect for the Aged Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Respect for the Aged 日 2025",
+        "title": "2025年Respect for the Aged 日",
         "share_text": "Respect for the Aged 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1479,7 +1479,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of WNBA Playoffs Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "WNBA Playoffs",
+        "title": "WNBA 季后赛",
         "share_text": "WNBA Playoffs的 Google Doodle 纪念作品。"
       }
     },
@@ -1527,7 +1527,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Labor Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "劳动节 2025",
+        "title": "2025年劳动节",
         "share_text": "劳动节 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1551,7 +1551,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Labour Day 2025 (Canada) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "劳动节 2025 (Canada)",
+        "title": "劳动节2025 (Canada)",
         "share_text": "劳动节 2025 (Canada)的 Google Doodle 纪念作品。"
       }
     },
@@ -1575,7 +1575,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Vietnam National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Vietnam 国庆日 2025",
+        "title": "2025年Vietnam 国庆日",
         "share_text": "Vietnam 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1599,7 +1599,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Hari Merdeka 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Hari Merdeka 2025",
+        "title": "2025年Hari Merdeka",
         "share_text": "Hari Merdeka 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1623,7 +1623,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Uruguay Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Uruguay 独立日 2025",
+        "title": "2025年Uruguay 独立日",
         "share_text": "Uruguay 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1647,7 +1647,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ukraine Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ukraine 独立日 2025",
+        "title": "2025年Ukraine 独立日",
         "share_text": "Ukraine 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1671,7 +1671,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Indonesia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Indonesia 独立日 2025",
+        "title": "2025年Indonesia 独立日",
         "share_text": "Indonesia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1719,7 +1719,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of India Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "India 独立日 2025",
+        "title": "2025年India 独立日",
         "share_text": "India 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1743,7 +1743,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of South Korea Liberation Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "South Korea Liberation 日 2025",
+        "title": "2025年South Korea Liberation 日",
         "share_text": "South Korea Liberation 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1767,7 +1767,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Pakistan Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Pakistan 独立日 2025",
+        "title": "2025年Pakistan 独立日",
         "share_text": "Pakistan 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1791,7 +1791,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Aug 12) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "母亲节 2025 (8月12日)",
+        "title": "2025年母亲节（8月12日）",
         "share_text": "母亲节 2025 (8月12日)的 Google Doodle 纪念作品。"
       }
     },
@@ -1815,7 +1815,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ecuador Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Ecuador 独立日 2025",
+        "title": "2025年Ecuador 独立日",
         "share_text": "Ecuador 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1839,7 +1839,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Aug 10) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "父亲节 2025 (8月10日)",
+        "title": "2025年父亲节（8月10日）",
         "share_text": "父亲节 2025 (8月10日)的 Google Doodle 纪念作品。"
       }
     },
@@ -1887,7 +1887,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Dec 5) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "父亲节 2025 (12月5日)",
+        "title": "2025年父亲节（12月5日）",
         "share_text": "父亲节 2025 (12月5日)的 Google Doodle 纪念作品。"
       }
     },
@@ -1911,7 +1911,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of New Year's Day 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "元旦 2026",
+        "title": "2026年元旦",
         "share_text": "元旦 2026的 Google Doodle 纪念作品。"
       }
     },
@@ -1935,7 +1935,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of New Year's Eve 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "New Year's Eve 2025",
+        "title": "2025年New Year's Eve",
         "share_text": "New Year's Eve 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -1959,7 +1959,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Dec 22) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "母亲节 2025 (12月22日)",
+        "title": "2025年母亲节（12月22日）",
         "share_text": "母亲节 2025 (12月22日)的 Google Doodle 纪念作品。"
       }
     },
@@ -2007,7 +2007,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Kenya Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Kenya 独立日 2025",
+        "title": "2025年Kenya 独立日",
         "share_text": "Kenya 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2031,7 +2031,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of UAE National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "UAE 国庆日 2025",
+        "title": "2025年UAE 国庆日",
         "share_text": "UAE 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2055,7 +2055,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (EG+SA+ES) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "学习 光合作用 (EG+SA+ES)",
+        "title": "学习光合作用 (EG+SA+ES)",
         "share_text": "学习 光合作用 (EG+SA+ES)的 Google Doodle 纪念作品。"
       }
     },
@@ -2079,7 +2079,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Nov 9) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "父亲节 2025 (11月9日)",
+        "title": "2025年父亲节（11月9日）",
         "share_text": "父亲节 2025 (11月9日)的 Google Doodle 纪念作品。"
       }
     },
@@ -2127,7 +2127,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Romania National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Romania 国庆日 2025",
+        "title": "2025年Romania 国庆日",
         "share_text": "Romania 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2151,7 +2151,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of St. Andrew's Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "St. Andrew's 日 2025",
+        "title": "2025年St. Andrew's 日",
         "share_text": "St. Andrew's 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2199,7 +2199,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Thanksgiving 2025  Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "感恩节 2025",
+        "title": "2025年感恩节",
         "share_text": "感恩节 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2223,7 +2223,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Getting Ready for Thanksgiving 2025 with Tiny Chef Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Getting Ready for 感恩节 2025 with Tiny Chef",
+        "title": "Getting Ready for 感恩节2025 with Tiny Chef",
         "share_text": "Getting Ready for 感恩节 2025 with Tiny Chef的 Google Doodle 纪念作品。"
       }
     },
@@ -2271,7 +2271,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Latvia Independence Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Latvia 独立日 2025",
+        "title": "2025年Latvia 独立日",
         "share_text": "Latvia 独立日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2319,7 +2319,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Czech Republic Freedom and Democracy Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "捷克共和国 Freedom and Democracy 日 2025",
+        "title": "2025年捷克共和国 Freedom and Democracy 日",
         "share_text": "捷克共和国 Freedom and Democracy 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2343,7 +2343,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (India) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "学习 光合作用 (India)",
+        "title": "学习光合作用 (India)",
         "share_text": "学习 光合作用 (India)的 Google Doodle 纪念作品。"
       }
     },
@@ -2391,7 +2391,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Father's Day 2025 (Nov 12) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "父亲节 2025 (11月12日)",
+        "title": "2025年父亲节（11月12日）",
         "share_text": "父亲节 2025 (11月12日)的 Google Doodle 纪念作品。"
       }
     },
@@ -2439,7 +2439,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Veterans Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "Veterans 日 2025",
+        "title": "2025年退伍军人节",
         "share_text": "Veterans 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2463,7 +2463,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Poland National Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "波兰 国庆日 2025",
+        "title": "2025年波兰国庆日",
         "share_text": "波兰 国庆日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2487,7 +2487,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Native American Flutes Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "纪念 Native American 长笛",
+        "title": "纪念美洲原住民长笛",
         "share_text": "纪念 Native American 长笛的 Google Doodle 纪念作品。"
       }
     },
@@ -2511,7 +2511,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mid-Autumn Festival 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "中秋节 2025",
+        "title": "2025年中秋节",
         "share_text": "中秋节 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2535,7 +2535,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Day of the Dead 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "日 of the Dead 2025",
+        "title": "2025年亡灵节",
         "share_text": "日 of the Dead 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2559,7 +2559,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of PAC-MAN: Halloween 2025 Edition Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "吃豆人: 万圣节 2025 Edition",
+        "title": "2025年吃豆人: 万圣节特别版",
         "share_text": "吃豆人: 万圣节 2025 Edition的 Google Doodle 纪念作品。"
       }
     },
@@ -2583,7 +2583,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Netherlands National Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "荷兰 全国选举 2025",
+        "title": "2025年荷兰全国选举",
         "share_text": "荷兰 全国选举 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2607,7 +2607,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Türkiye Republic Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "土耳其 共和国日 2025",
+        "title": "2025年土耳其共和国日",
         "share_text": "土耳其 共和国日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2631,7 +2631,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Argentina Legislative Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "阿根廷 立法选举 2025",
+        "title": "2025年阿根廷立法选举",
         "share_text": "阿根廷 立法选举 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2679,7 +2679,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Ireland Presidential Election 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "爱尔兰 总统选举 2025",
+        "title": "2025年爱尔兰总统选举",
         "share_text": "爱尔兰 总统选举 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2703,7 +2703,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Learning about Photosynthesis (EMEA) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "学习 光合作用 (EMEA)",
+        "title": "学习光合作用 (EMEA)",
         "share_text": "学习 光合作用 (EMEA)的 Google Doodle 纪念作品。"
       }
     },
@@ -2727,7 +2727,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of MLB Fall Classic 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "MLB Fall Classic 2025",
+        "title": "2025年MLB 秋季经典赛",
         "share_text": "MLB Fall Classic 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2799,7 +2799,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Czech Republic Elections 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "捷克共和国 选举 2025",
+        "title": "2025年捷克共和国选举",
         "share_text": "捷克共和国 选举 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2823,7 +2823,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of German Unity Day 2025 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "德国 Unity 日 2025",
+        "title": "2025年德国统一日",
         "share_text": "德国 Unity 日 2025的 Google Doodle 纪念作品。"
       }
     },
@@ -2847,7 +2847,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Mother's Day 2025 (Oct 19) Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "母亲节 2025 (10月19日)",
+        "title": "2025年母亲节（10月19日）",
         "share_text": "母亲节 2025 (10月19日)的 Google Doodle 纪念作品。"
       }
     },
@@ -2871,7 +2871,7 @@ export const localDoodleArchive = [
         "share_text": "Learn more about the creation of Celebrating Idli Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "纪念 伊德利米糕",
+        "title": "纪念伊德利米糕",
         "share_text": "纪念 伊德利米糕的 Google Doodle 纪念作品。"
       }
     },
