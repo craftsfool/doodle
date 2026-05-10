@@ -340,20 +340,35 @@ export default function App() {
     setLoading(true);
     setError('');
 
-    fetch('/api/doodle/history')
+    fetch('/doodles/manifest.json')
       .then(res => {
         if (!res.ok) throw new Error(copy[language].archiveError);
         return res.json();
       })
-      .then((data: Doodle[]) => {
-        setDoodles(data);
+      .then((data: { doodles?: Doodle[] }) => {
+        if (!Array.isArray(data.doodles) || !data.doodles.length) {
+          throw new Error(copy[language].archiveError);
+        }
+
+        setDoodles(data.doodles);
         setActiveIndex(0);
         setLoading(false);
       })
+      .catch(() => fetch('/api/doodle/history')
+        .then(res => {
+          if (!res.ok) throw new Error(copy[language].archiveError);
+          return res.json();
+        })
+        .then((data: Doodle[]) => {
+          setDoodles(data);
+          setActiveIndex(0);
+          setLoading(false);
+        })
+      )
       .catch(err => {
         setError(err.message);
         setLoading(false);
-      });
+      })
   };
 
   useEffect(() => {
