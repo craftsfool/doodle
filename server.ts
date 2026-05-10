@@ -4,12 +4,9 @@ import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, readdir, writeFile } from 'fs/promises';
-import { localDoodleArchive, localDoodleFiles } from './doodleArchive';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const bundledLocalDoodleFileSet = new Set<string>(localDoodleFiles);
 
 export async function createApp() {
   const app = express();
@@ -25,6 +22,7 @@ export async function createApp() {
     path.join(__dirname, 'public', 'doodles'),
     path.join(__dirname, 'dist', 'doodles')
   ]));
+  const localManifestPaths = Array.from(new Set(localImageDirs.map(directory => path.join(directory, 'manifest.json'))));
   const translationCache = new Map<string, string>();
   const timeZoneCache = new Map<string, { timeZone: string | null; fetchedAt: number }>();
 
@@ -276,12 +274,35 @@ export async function createApp() {
     return filePath;
   }
 
+  async function readLocalDoodleManifest() {
+    for (const manifestPath of localManifestPaths) {
+      try {
+        const raw = await readFile(manifestPath, 'utf8');
+        const payload = JSON.parse(raw);
+        const doodles = Array.isArray(payload?.doodles) ? payload.doodles : [];
+
+        if (doodles.length) {
+          return doodles.map((doodle: any) => {
+            const fileName = typeof doodle.fileName === 'string' ? doodle.fileName : '';
+            const localUrl = fileName ? `/doodles/${fileName}` : doodle.url;
+
+            return {
+              ...doodle,
+              url: localUrl,
+              high_res_url: localUrl || doodle.high_res_url
+            };
+          });
+        }
+      } catch {
+        // The manifest is generated in production and may not exist in older local checkouts.
+      }
+    }
+
+    return [];
+  }
+
   async function localDoodleImageFiles() {
     const files = new Map<string, string>();
-
-    for (const fileName of localDoodleFiles) {
-      files.set(path.basename(fileName, path.extname(fileName)), fileName);
-    }
 
     for (const directory of localImageDirs) {
       try {
@@ -303,7 +324,7 @@ export async function createApp() {
     if (!value.startsWith('/doodles/')) return null;
 
     const fileName = path.basename(value);
-    if (!bundledLocalDoodleFileSet.has(fileName)) return null;
+    if (!/^[a-z0-9._-]+\.(png|jpe?g|webp|gif|svg)$/i.test(fileName)) return null;
 
     return `/doodles/${fileName}`;
   }
@@ -320,15 +341,18 @@ export async function createApp() {
   }
 
   async function localDoodleFallback() {
+    const manifestDoodles = await readLocalDoodleManifest();
+    if (manifestDoodles.length) {
+      return manifestDoodles
+        .sort((a: any, b: any) => {
+          const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
+          const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
+          return dateB.localeCompare(dateA);
+        })
+        .slice(0, RECENT_DOODLE_LIMIT);
+    }
+
     const files = await localDoodleImageFiles();
-    const generatedDoodles = localDoodleArchive
-      .filter(doodle => files.has(path.basename(doodle.fileName, path.extname(doodle.fileName))))
-      .map(doodle => ({
-        ...doodle,
-        url: `/doodles/${doodle.fileName}`,
-        high_res_url: `/doodles/${doodle.fileName}`
-      }));
-    const knownNames = new Set(generatedDoodles.map(doodle => doodle.name));
     const scannedDoodles = Array.from(files.entries())
       .map(([baseName, fileName]) => {
         const match = baseName.match(/^(\d{4})-(\d{2})-(\d{2})_(.+)$/);
@@ -357,10 +381,9 @@ export async function createApp() {
           }
         };
       })
-      .filter(Boolean)
-      .filter((doodle: any) => !knownNames.has(doodle.name));
+      .filter(Boolean);
 
-    const doodles = [...generatedDoodles, ...scannedDoodles]
+    const doodles = scannedDoodles
       .sort((a: any, b: any) => {
         const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
         const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
