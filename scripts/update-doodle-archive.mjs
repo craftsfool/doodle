@@ -1,0 +1,281 @@
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
+const rootDir = process.cwd();
+const doodleDir = path.join(rootDir, 'public', 'doodles');
+const manifestPath = path.join(doodleDir, 'manifest.json');
+const archiveModulePath = path.join(rootDir, 'doodleArchive.ts');
+const monthsToFetch = Number(process.env.DOODLE_MONTHS || 12);
+const maxEntries = Number(process.env.DOODLE_LIMIT || 120);
+const offlineOnly = process.env.DOODLE_OFFLINE === '1';
+
+const headers = {
+  'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125 Safari/537.36',
+  Accept: 'application/json,text/plain,*/*',
+  'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7'
+};
+
+function decodeHtml(value = '') {
+  return value
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .replace(/&rsquo;/g, '’')
+    .replace(/&lsquo;/g, '‘')
+    .replace(/&ldquo;/g, '“')
+    .replace(/&rdquo;/g, '”');
+}
+
+function safeFilePart(value = '') {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/giu, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 96) || 'doodle';
+}
+
+function absoluteDoodleImageUrl(value = '') {
+  if (!value) return null;
+  if (value.startsWith('//')) return `https:${value}`;
+  if (value.startsWith('/')) return `https://www.google.com${value}`;
+  return value;
+}
+
+function extensionFromUrl(url) {
+  const extension = path.extname(new URL(url).pathname).toLowerCase();
+  return ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'].includes(extension) ? extension : '.png';
+}
+
+function localDateFromDoodle(doodle) {
+  const [year, month, day] = doodle.run_date_array || [];
+  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
+
+function titleFromLocalImageName(name) {
+  return name
+    .split('-')
+    .filter(Boolean)
+    .map(part => (/^\d+$/.test(part) ? part : part.charAt(0).toUpperCase() + part.slice(1)))
+    .join(' ');
+}
+
+function previousMonth({ year, month }) {
+  return month === 1 ? { year: year - 1, month: 12 } : { year, month: month - 1 };
+}
+
+function recentMonths(count) {
+  const months = [];
+  const now = new Date();
+  let current = { year: now.getUTCFullYear(), month: now.getUTCMonth() + 1 };
+
+  while (months.length < count) {
+    months.push(current);
+    current = previousMonth(current);
+  }
+
+  return months;
+}
+
+async function readExistingManifest() {
+  try {
+    const raw = await readFile(manifestPath, 'utf8');
+    const payload = JSON.parse(raw);
+    return Array.isArray(payload?.doodles) ? payload.doodles : [];
+  } catch {
+    return [];
+  }
+}
+
+async function readExistingManifestPayload() {
+  try {
+    const raw = await readFile(manifestPath, 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+async function scanLocalImages() {
+  await mkdir(doodleDir, { recursive: true });
+  const files = await readdir(doodleDir);
+
+  return files
+    .filter(fileName => /\.(png|jpe?g|webp|gif|svg)$/i.test(fileName))
+    .map(fileName => {
+      const baseName = path.basename(fileName, path.extname(fileName));
+      const match = baseName.match(/^(\d{4})-(\d{2})-(\d{2})_(.+)$/);
+      if (!match) return null;
+
+      const [, year, month, day, name] = match;
+      const title = titleFromLocalImageName(name);
+      return {
+        name,
+        title,
+        url: `/doodles/${fileName}`,
+        high_res_url: `/doodles/${fileName}`,
+        share_text: title,
+        run_date_array: [Number(year), Number(month), Number(day)],
+        fileName,
+        source_url: null,
+        localized: {
+          en: { title, share_text: title },
+          'zh-CN': { title, share_text: title }
+        }
+      };
+    })
+    .filter(Boolean);
+}
+
+async function fetchArchiveMonth(year, month, language) {
+  const response = await fetch(`https://www.google.com/doodles/json/${year}/${month}?hl=${language}`, { headers });
+  if (!response.ok) {
+    throw new Error(`Google archive ${year}-${month} ${language} returned ${response.status}`);
+  }
+
+  const contentType = response.headers.get('content-type') || '';
+  const text = await response.text();
+  if (!contentType.includes('json') && text.trim().startsWith('<')) {
+    throw new Error(`Google archive ${year}-${month} ${language} returned HTML`);
+  }
+
+  const payload = JSON.parse(text);
+  return Array.isArray(payload) ? payload : [];
+}
+
+async function fetchRemoteDoodles() {
+  const collected = new Map();
+  const settled = await Promise.allSettled(
+    recentMonths(monthsToFetch).map(async ({ year, month }) => {
+      const [enArchive, zhArchive] = await Promise.all([
+        fetchArchiveMonth(year, month, 'en'),
+        fetchArchiveMonth(year, month, 'zh-CN')
+      ]);
+      return { enArchive, zhArchive };
+    })
+  );
+
+  for (const result of settled) {
+    if (result.status === 'rejected') {
+      console.warn(result.reason instanceof Error ? result.reason.message : result.reason);
+      continue;
+    }
+
+    const zhByName = new Map();
+    for (const doodle of result.value.zhArchive) {
+      if (doodle?.name) zhByName.set(doodle.name, doodle);
+    }
+
+    for (const doodle of result.value.enArchive) {
+      if (!doodle?.name || collected.has(doodle.name)) continue;
+
+      const imageUrl = absoluteDoodleImageUrl(doodle.high_res_url || doodle.url || doodle.alternate_url || '');
+      if (!imageUrl) continue;
+
+      const zh = zhByName.get(doodle.name);
+      collected.set(doodle.name, {
+        name: doodle.name,
+        title: decodeHtml(doodle.title || doodle.name),
+        share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || ''),
+        run_date_array: doodle.run_date_array,
+        source_url: imageUrl,
+        localized: {
+          en: {
+            title: decodeHtml(doodle.title || doodle.name),
+            share_text: decodeHtml(doodle.share_text || doodle.translated_blog_posts?.[0]?.title || '')
+          },
+          'zh-CN': {
+            title: decodeHtml(zh?.title || doodle.title || doodle.name),
+            share_text: decodeHtml(zh?.share_text || zh?.translated_blog_posts?.[0]?.title || doodle.share_text || '')
+          }
+        }
+      });
+    }
+  }
+
+  return Array.from(collected.values());
+}
+
+async function downloadImage(doodle) {
+  if (!doodle.source_url) return doodle;
+
+  const date = localDateFromDoodle(doodle);
+  const extension = extensionFromUrl(doodle.source_url);
+  const fileName = `${safeFilePart(date)}_${safeFilePart(doodle.name)}${extension}`;
+  const filePath = path.join(doodleDir, fileName);
+
+  try {
+    await readFile(filePath);
+  } catch {
+    const response = await fetch(doodle.source_url, {
+      headers: {
+        ...headers,
+        Accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Image ${doodle.source_url} returned ${response.status}`);
+    }
+
+    const body = Buffer.from(await response.arrayBuffer());
+    await writeFile(filePath, body);
+  }
+
+  return {
+    ...doodle,
+    fileName,
+    url: `/doodles/${fileName}`,
+    high_res_url: `/doodles/${fileName}`
+  };
+}
+
+function sortDoodles(doodles) {
+  return doodles
+    .filter(doodle => Array.isArray(doodle.run_date_array) && doodle.fileName)
+    .sort((a, b) => b.run_date_array.join('').localeCompare(a.run_date_array.join('')))
+    .slice(0, maxEntries);
+}
+
+async function writeArchive(doodles) {
+  const sorted = sortDoodles(doodles);
+  const existing = await readExistingManifestPayload();
+  const unchanged = JSON.stringify(existing?.doodles || []) === JSON.stringify(sorted);
+  const manifest = {
+    updated_at: unchanged && existing?.updated_at ? existing.updated_at : new Date().toISOString(),
+    count: sorted.length,
+    doodles: sorted
+  };
+
+  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  await writeFile(
+    archiveModulePath,
+    `export const localDoodleArchive = ${JSON.stringify(sorted, null, 2)} as const;\n\n` +
+      `export const localDoodleFiles = localDoodleArchive.map(doodle => doodle.fileName);\n`
+  );
+
+  console.log(`Wrote ${sorted.length} doodles to public/doodles/manifest.json and doodleArchive.ts`);
+}
+
+async function main() {
+  const existing = await readExistingManifest();
+  const local = await scanLocalImages();
+  const byName = new Map([...local, ...existing].map(doodle => [doodle.name, doodle]));
+
+  if (!offlineOnly) {
+    const remote = await fetchRemoteDoodles();
+    for (const doodle of remote) {
+      try {
+        byName.set(doodle.name, await downloadImage(doodle));
+      } catch (error) {
+        console.warn(error instanceof Error ? error.message : error);
+      }
+    }
+  }
+
+  await writeArchive(Array.from(byName.values()));
+}
+
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
+});

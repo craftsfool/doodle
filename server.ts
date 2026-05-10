@@ -4,43 +4,12 @@ import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { mkdir, readFile, readdir, writeFile } from 'fs/promises';
+import { localDoodleArchive, localDoodleFiles } from './doodleArchive';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const bundledLocalDoodleFiles = [
-  '2026-02-16_freestyle-skiing-2026.gif',
-  '2026-02-20_icc-mens-t20-world-cup-super-8.gif',
-  '2026-02-21_celebrating-winter-sports-2026.gif',
-  '2026-03-01_st-davids-day-2026.png',
-  '2026-03-02_lantern-festival-2026.gif',
-  '2026-03-05_winter-sports-begin-2026-march-6.gif',
-  '2026-03-07_international-womens-day-2026.gif',
-  '2026-03-13_pi-day-2026.gif',
-  '2026-03-16_st-patricks-day-2026.png',
-  '2026-03-19_mens-college-basketball-championship-2026.gif',
-  '2026-03-19_nowruz-2026.png',
-  '2026-03-20_womens-college-basketball-championship-2026.gif',
-  '2026-03-27_mens-indian-premier-league-2026-begins.gif',
-  '2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif',
-  '2026-04-04_easter-2026.png',
-  '2026-04-13_world-quantum-day-2026.gif',
-  '2026-04-18_nba-playoffs-2026-aa.gif',
-  '2026-04-21_earth-day-2026.gif',
-  '2026-04-22_st-georges-day-2026.png',
-  '2026-04-26_south-africa-freedom-day-2026.gif',
-  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png',
-  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png',
-  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png',
-  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-4.png',
-  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-5.png',
-  '2026-04-30_celebrating-the-route-66-centennial.gif',
-  '2026-04-30_labour-day-2026.png',
-  '2026-05-05_us-teacher-appreciation-day-2026.gif',
-  '2026-05-07_the-art-of-k-pop-dance.gif',
-  '2026-05-09_mothers-day-2026-may-10.gif'
-];
-const bundledLocalDoodleFileSet = new Set(bundledLocalDoodleFiles);
+const bundledLocalDoodleFileSet = new Set<string>(localDoodleFiles);
 
 export async function createApp() {
   const app = express();
@@ -310,7 +279,7 @@ export async function createApp() {
   async function localDoodleImageFiles() {
     const files = new Map<string, string>();
 
-    for (const fileName of bundledLocalDoodleFiles) {
+    for (const fileName of localDoodleFiles) {
       files.set(path.basename(fileName, path.extname(fileName)), fileName);
     }
 
@@ -352,7 +321,15 @@ export async function createApp() {
 
   async function localDoodleFallback() {
     const files = await localDoodleImageFiles();
-    const doodles = Array.from(files.entries())
+    const generatedDoodles = localDoodleArchive
+      .filter(doodle => files.has(path.basename(doodle.fileName, path.extname(doodle.fileName))))
+      .map(doodle => ({
+        ...doodle,
+        url: `/doodles/${doodle.fileName}`,
+        high_res_url: `/doodles/${doodle.fileName}`
+      }));
+    const knownNames = new Set(generatedDoodles.map(doodle => doodle.name));
+    const scannedDoodles = Array.from(files.entries())
       .map(([baseName, fileName]) => {
         const match = baseName.match(/^(\d{4})-(\d{2})-(\d{2})_(.+)$/);
         if (!match) return null;
@@ -381,6 +358,9 @@ export async function createApp() {
         };
       })
       .filter(Boolean)
+      .filter((doodle: any) => !knownNames.has(doodle.name));
+
+    const doodles = [...generatedDoodles, ...scannedDoodles]
       .sort((a: any, b: any) => {
         const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
         const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';

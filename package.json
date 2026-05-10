@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "start": "node server.ts"
+    "start": "node server.ts",
+    "doodles:update": "node scripts/update-doodle-archive.mjs"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
