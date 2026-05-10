@@ -1,0 +1,6 @@
+{
+  "name": "Daily Doodle Mirror",
+  "description": "A mirror website that automatically fetches and seamlessly displays the latest Google Doodle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
