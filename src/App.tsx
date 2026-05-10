@@ -64,14 +64,18 @@ async function waitForShareTitleFont() {
     window.setTimeout(resolve, 1600);
   });
 
-  await Promise.race([
-    Promise.all([
-      fontSet.load(`600 72px ${shareTitleFontFamily}`),
-      fontSet.load(`400 72px ${shareTitleFontFamily}`),
-      fontSet.ready
-    ]).then(() => undefined),
-    timeout
-  ]);
+  try {
+    await Promise.race([
+      Promise.allSettled([
+        fontSet.load('600 72px "Noto Serif SC"'),
+        fontSet.load('400 72px "Noto Serif SC"'),
+        fontSet.ready
+      ]).then(() => undefined),
+      timeout
+    ]);
+  } catch {
+    // Font loading is a visual enhancement; sharing should still work with fallback fonts.
+  }
 }
 
 const copy = {
@@ -95,6 +99,7 @@ const copy = {
     copied: '已复制分享链接',
     downloadImage: '下载图片',
     preparingImage: '正在生成分享图片',
+    sharePrepareFailed: '分享图片生成失败，请重试。',
     imageShared: '已打开系统分享',
     imageDownloaded: '图片已开始下载',
     shareFallback: '当前浏览器不支持图片分享，请下载图片。',
@@ -121,6 +126,7 @@ const copy = {
     copied: 'Share link copied',
     downloadImage: 'Download image',
     preparingImage: 'Preparing image',
+    sharePrepareFailed: 'Share image failed to generate. Please try again.',
     imageShared: 'System share opened',
     imageDownloaded: 'Image download started',
     shareFallback: 'This browser cannot share image files. Download the image instead.',
@@ -815,11 +821,15 @@ export default function App() {
   ) => {
     const chars = Array.from(text);
     let x = centerX - measureCanvasText(context, text, letterSpacing) / 2;
+    const previousAlign = context.textAlign;
+    context.textAlign = 'left';
 
     for (const char of chars) {
       context.fillText(char, x, y);
       x += context.measureText(char).width + letterSpacing;
     }
+
+    context.textAlign = previousAlign;
   };
 
   const wrapCanvasText = (
@@ -926,9 +936,10 @@ export default function App() {
       if (sharePrepareId.current !== requestId) return;
       setShareImageFile(file);
       setShareStatus('');
-    } catch {
+    } catch (error) {
       if (sharePrepareId.current !== requestId) return;
-      setShareStatus(copy[language].shareFallback);
+      console.error('Failed to prepare share image', error);
+      setShareStatus(copy[language].sharePrepareFailed);
     }
   };
 
