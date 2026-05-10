@@ -1,11 +1,14 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import {
   ChevronLeft,
   ChevronRight,
+  Copy,
   ExternalLink,
   Loader2,
-  RefreshCw
+  RefreshCw,
+  Share2,
+  X
 } from 'lucide-react';
 
 interface Doodle {
@@ -64,7 +67,15 @@ const copy = {
     next: '下一张 Doodle',
     fallbackDescription: '来自 Google Doodles 的最新纪念作品。',
     languageLabel: '切换语言',
-    celebrationPrefix: '节快乐'
+    celebrationPrefix: '节快乐',
+    share: '分享',
+    shareWith: '选择分享渠道',
+    systemShare: '系统分享',
+    copyLink: '复制链接',
+    copied: '已复制分享链接',
+    shareFallback: '浏览器未打开系统分享，已复制链接。',
+    closeShare: '关闭分享',
+    weibo: '微博'
   },
   en: {
     appTitle: 'Daily Doodle',
@@ -78,7 +89,15 @@ const copy = {
     next: 'Next Doodle',
     fallbackDescription: 'A recent commemorative artwork from Google Doodles.',
     languageLabel: 'Switch language',
-    celebrationPrefix: 'Happy'
+    celebrationPrefix: 'Happy',
+    share: 'Share',
+    shareWith: 'Choose a channel',
+    systemShare: 'System share',
+    copyLink: 'Copy link',
+    copied: 'Share link copied',
+    shareFallback: 'System share is unavailable, so the link was copied.',
+    closeShare: 'Close share',
+    weibo: 'Weibo'
   }
 };
 
@@ -392,11 +411,7 @@ function celebrationMessage(doodle: Doodle, language: Language) {
 
 function excerpt(doodle: Doodle, language: Language) {
   const local = localizedText(doodle, language);
-  const text = removeTitleDate(local.share_text)
-    .replace(/^Learn more about the creation of /, '')
-    .replace(/ Doodle and discover the story behind the unique artwork\.$/, '')
-    .replace(/ and discover the story behind the unique artwork\.$/, '')
-    .trim();
+  const text = removeTitleDate(local.share_text).trim();
 
   return text || copy[language].fallbackDescription;
 }
@@ -436,6 +451,8 @@ export default function App() {
   const [visitorTimeZone, setVisitorTimeZone] = useState<string | null>(null);
   const [isMobilePortrait, setIsMobilePortrait] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
+  const [shareDoodle, setShareDoodle] = useState<Doodle | null>(null);
+  const [shareStatus, setShareStatus] = useState('');
   const gesture = useRef({
     active: false,
     start: 0,
@@ -444,6 +461,11 @@ export default function App() {
     velocity: 0,
     vibrationStep: 0
   });
+  const wheelLock = useRef(false);
+  const wheelAccumulator = useRef(0);
+  const wheelResetTimer = useRef<number | null>(null);
+  const longPressTimer = useRef<number | null>(null);
+  const longPressTriggered = useRef(false);
 
   const activeDoodle = doodles[activeIndex];
   const activeText = activeDoodle ? localizedText(activeDoodle, language) : null;
@@ -453,7 +475,7 @@ export default function App() {
     ? titleDateLabel(rawActiveTitle, language) || formatDate(activeDoodle.run_date_array, language)
     : '';
   const activeSearchText = activeDoodle
-    ? removeTitleDate(activeText?.share_text || activeText?.title || activeDoodle.share_text || activeDoodle.title)
+    ? activeTitle || removeTitleDate(activeText?.title || activeDoodle.title)
     : '';
   const activeHue = 28 + (activeIndex * 41) % 210;
   const activePalette = activeDoodle
@@ -483,8 +505,10 @@ export default function App() {
           throw new Error(copy[language].archiveError);
         }
 
+        const hashName = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+        const hashIndex = hashName ? data.doodles.findIndex(doodle => doodle.name === hashName) : -1;
         setDoodles(data.doodles);
-        setActiveIndex(0);
+        setActiveIndex(hashIndex >= 0 ? hashIndex : 0);
         setLoading(false);
       })
       .catch(() => fetch('/api/doodle/history')
@@ -493,8 +517,10 @@ export default function App() {
           return res.json();
         })
         .then((data: Doodle[]) => {
+          const hashName = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+          const hashIndex = hashName ? data.findIndex(doodle => doodle.name === hashName) : -1;
           setDoodles(data);
-          setActiveIndex(0);
+          setActiveIndex(hashIndex >= 0 ? hashIndex : 0);
           setLoading(false);
         })
       )
@@ -549,9 +575,29 @@ export default function App() {
     return () => window.clearTimeout(timeout);
   }, [doodles, visitorTimeZone]);
 
-  const vibrate = (pattern: number | number[] = 8) => {
-    if ('vibrate' in navigator) {
+  const canVibrate = () => (
+    typeof navigator !== 'undefined' &&
+    'vibrate' in navigator &&
+    typeof navigator.vibrate === 'function'
+  );
+
+  const vibrate = (pattern: number | number[] = 10) => {
+    if (canVibrate()) {
       navigator.vibrate(pattern);
+    }
+  };
+
+  const vibrateByImpulse = (impulse: number) => {
+    if (!canVibrate()) return;
+
+    if (impulse > 520) {
+      vibrate([18, 18, 24, 24, 32]);
+    } else if (impulse > 340) {
+      vibrate([14, 18, 22]);
+    } else if (impulse > 180) {
+      vibrate(16);
+    } else {
+      vibrate(8);
     }
   };
 
@@ -561,18 +607,87 @@ export default function App() {
     if (withPulse) vibrate(8);
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (shareDoodle) {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setShareDoodle(null);
+          setShareStatus('');
+        }
+        return;
+      }
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        goTo(-1, true);
+      }
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        goTo(1, true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [doodles.length, shareDoodle]);
+
+  const handlePageWheel = (event: WheelEvent<HTMLDivElement>) => {
+    if (!doodles.length || shareDoodle) return;
+
+    const rawDelta = Math.abs(event.deltaX) > Math.abs(event.deltaY)
+      ? event.deltaX
+      : event.deltaY;
+
+    if (Math.abs(rawDelta) < 3) return;
+
+    event.preventDefault();
+
+    if (wheelLock.current) return;
+
+    const direction = rawDelta > 0 ? 1 : -1;
+    const normalizedDelta = Math.min(64, Math.abs(rawDelta));
+    const previousDirection = wheelAccumulator.current >= 0 ? 1 : -1;
+
+    if (previousDirection !== direction) {
+      wheelAccumulator.current = 0;
+    }
+
+    wheelAccumulator.current += direction * normalizedDelta;
+
+    if (wheelResetTimer.current) {
+      window.clearTimeout(wheelResetTimer.current);
+    }
+
+    wheelResetTimer.current = window.setTimeout(() => {
+      wheelAccumulator.current = 0;
+    }, 160);
+
+    if (Math.abs(wheelAccumulator.current) < 96) return;
+
+    wheelLock.current = true;
+    wheelAccumulator.current = 0;
+    goTo(direction, true);
+
+    window.setTimeout(() => {
+      wheelLock.current = false;
+    }, 520);
+  };
+
   const spinTo = (direction: number, steps: number) => {
     if (!steps) return;
 
     let currentStep = 0;
     const tick = () => {
-      goTo(direction, true);
+      goTo(direction, false);
       currentStep += 1;
+      vibrate(currentStep === 1 ? 14 : 9);
 
       if (currentStep < steps) {
-        window.setTimeout(tick, 85 + currentStep * 72);
+        window.setTimeout(tick, 70 + currentStep * 58);
       } else {
-        vibrate([10, 24, 10]);
+        vibrate([18, 30, 24]);
       }
     };
 
@@ -583,11 +698,102 @@ export default function App() {
     isMobilePortrait ? event.clientY : event.clientX
   );
 
+  const clearLongPress = () => {
+    if (longPressTimer.current) {
+      window.clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+    }
+  };
+
+  const stopCardGesture = () => {
+    clearLongPress();
+    gesture.current.active = false;
+    setDragOffset(0);
+  };
+
+  const doodleTitle = (doodle: Doodle) => (
+    removeTitleDate(localizedText(doodle, language).title || doodle.title) || doodle.title
+  );
+
+  const doodleShareUrl = (doodle: Doodle) => {
+    const url = new URL(window.location.href);
+    url.hash = doodle.name;
+    return url.toString();
+  };
+
+  const doodleShareText = (doodle: Doodle) => {
+    const title = doodleTitle(doodle);
+    return {
+      title,
+      text: `${title} · ${copy[language].appTitle}`,
+      url: doodleShareUrl(doodle)
+    };
+  };
+
+  const copyToClipboard = async (value: string) => {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(value);
+      return;
+    }
+
+    const textarea = document.createElement('textarea');
+    textarea.value = value;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  };
+
+  const copyShareLink = async (doodle: Doodle) => {
+    const payload = doodleShareText(doodle);
+    await copyToClipboard(`${payload.text}\n${payload.url}`);
+    setShareStatus(copy[language].copied);
+  };
+
+  const openShareSheet = (doodle: Doodle) => {
+    setShareDoodle(doodle);
+    setShareStatus('');
+    setShowCelebration(false);
+    vibrate([12, 20, 12]);
+  };
+
+  const shareViaSystem = async (doodle: Doodle) => {
+    const payload = doodleShareText(doodle);
+
+    try {
+      if (navigator.share) {
+        await navigator.share(payload);
+        return;
+      }
+    } catch {
+      return;
+    }
+
+    await copyShareLink(doodle);
+    setShareStatus(copy[language].shareFallback);
+  };
+
+  const openShareChannel = (doodle: Doodle, target: 'weibo' | 'x') => {
+    const payload = doodleShareText(doodle);
+    const shareUrl = target === 'weibo'
+      ? `https://service.weibo.com/share/share.php?title=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}`
+      : `https://twitter.com/intent/tweet?text=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}`;
+
+    window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  };
+
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+
     event.currentTarget.setPointerCapture(event.pointerId);
     const value = axisValue(event);
     const now = performance.now();
     setIsEngaged(true);
+    clearLongPress();
+    longPressTriggered.current = false;
     gesture.current = {
       active: true,
       start: value,
@@ -596,6 +802,17 @@ export default function App() {
       velocity: 0,
       vibrationStep: 0
     };
+
+    if (activeDoodle) {
+      longPressTimer.current = window.setTimeout(() => {
+        if (!gesture.current.active) return;
+        longPressTriggered.current = true;
+        openShareSheet(activeDoodle);
+        gesture.current.active = false;
+        setIsEngaged(false);
+        setDragOffset(0);
+      }, 560);
+    }
   };
 
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
@@ -605,35 +822,47 @@ export default function App() {
     const now = performance.now();
     const elapsed = Math.max(12, now - gesture.current.lastTime);
     const delta = value - gesture.current.start;
+    if (Math.abs(delta) > 18) clearLongPress();
     gesture.current.velocity = (value - gesture.current.last) / elapsed;
     gesture.current.last = value;
     gesture.current.lastTime = now;
     setDragOffset(0);
 
     if (isMobilePortrait) {
-      const vibrationStep = Math.floor(Math.abs(delta) / 72);
+      const vibrationStep = Math.floor(Math.abs(delta) / 56);
       if (vibrationStep > gesture.current.vibrationStep) {
         gesture.current.vibrationStep = vibrationStep;
-        vibrate(5);
+        vibrate(9);
       }
     }
   };
 
   const handlePointerUp = (event: PointerEvent<HTMLElement>) => {
+    clearLongPress();
+
+    if (longPressTriggered.current) {
+      longPressTriggered.current = false;
+      return;
+    }
+
     if (!gesture.current.active) return;
 
     const value = axisValue(event);
     const distance = value - gesture.current.start;
     const velocity = gesture.current.velocity;
-    const impulse = Math.abs(distance) + Math.abs(velocity) * (isMobilePortrait ? 280 : 190);
-    const threshold = isMobilePortrait ? 46 : 42;
+    const impulse = Math.abs(distance) + Math.abs(velocity) * (isMobilePortrait ? 420 : 220);
+    const threshold = isMobilePortrait ? 42 : 42;
 
-    if (Math.abs(distance) > threshold || Math.abs(velocity) > 0.55) {
+    if (Math.abs(distance) > threshold || Math.abs(velocity) > 0.42) {
       const direction = distance < 0 ? 1 : -1;
       const steps = isMobilePortrait
-        ? Math.min(4, Math.max(1, Math.round(impulse / 128)))
+        ? Math.min(6, Math.max(1, Math.round(impulse / 110)))
         : 1;
+
+      vibrateByImpulse(impulse);
       spinTo(direction, steps);
+    } else {
+      vibrate(6);
     }
 
     gesture.current.active = false;
@@ -761,14 +990,138 @@ export default function App() {
     const cropY = Math.max(0, rawCropY - margin);
     const cropWidth = Math.min(width - cropX, rawCropWidth + margin * 2);
     const cropHeight = Math.min(height - cropY, rawCropHeight + margin * 2);
-    const palette = Array.from(buckets.values())
+    const colorDistance = (
+      a: { red: number; green: number; blue: number },
+      b: { red: number; green: number; blue: number }
+    ) => {
+      const redDiff = a.red - b.red;
+      const greenDiff = a.green - b.green;
+      const blueDiff = a.blue - b.blue;
+      return Math.sqrt(redDiff * redDiff + greenDiff * greenDiff + blueDiff * blueDiff);
+    };
+
+    const colorStats = (red: number, green: number, blue: number) => {
+      const max = Math.max(red, green, blue);
+      const min = Math.min(red, green, blue);
+      const chroma = max - min;
+      const brightness = (red + green + blue) / 3;
+      let hue = 0;
+
+      if (chroma > 0) {
+        if (max === red) {
+          hue = ((green - blue) / chroma) % 6;
+        } else if (max === green) {
+          hue = (blue - red) / chroma + 2;
+        } else {
+          hue = (red - green) / chroma + 4;
+        }
+        hue = Math.round(hue * 60);
+        if (hue < 0) hue += 360;
+      }
+
+      return { hue, chroma, brightness };
+    };
+
+    const hueDistance = (a: number, b: number) => {
+      const diff = Math.abs(a - b);
+      return Math.min(diff, 360 - diff);
+    };
+
+    const candidates = Array.from(buckets.values())
+      .map(bucket => {
+        const red = Math.round(bucket.red / bucket.count);
+        const green = Math.round(bucket.green / bucket.count);
+        const blue = Math.round(bucket.blue / bucket.count);
+        const stats = colorStats(red, green, blue);
+        const distanceFromBg = colorDistance({ red, green, blue }, bg);
+        const earthyPenalty = stats.chroma < 48 || distanceFromBg < 78 ? 0.35 : 1;
+
+        return {
+          red,
+          green,
+          blue,
+          count: bucket.count,
+          score: bucket.score * earthyPenalty + stats.chroma * 1.35 + distanceFromBg * 0.85,
+          hue: stats.hue,
+          chroma: stats.chroma,
+          brightness: stats.brightness,
+          distanceFromBg
+        };
+      })
+      .filter(color => color.chroma >= 38 && color.brightness > 34 && color.brightness < 232)
       .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map(bucket => `rgb(${Math.round(bucket.red / bucket.count)}, ${Math.round(bucket.green / bucket.count)}, ${Math.round(bucket.blue / bucket.count)})`);
+      .slice(0, 28);
+
+    const selectedColors: Array<{
+      red: number;
+      green: number;
+      blue: number;
+      score: number;
+      hue: number;
+      chroma: number;
+      brightness: number;
+      distanceFromBg: number;
+    }> = [];
+
+    for (const candidate of candidates) {
+      if (!selectedColors.length) {
+        selectedColors.push(candidate);
+        continue;
+      }
+
+      const nearestRgbDistance = Math.min(...selectedColors.map(color => colorDistance(candidate, color)));
+      const nearestHueDistance = Math.min(...selectedColors.map(color => hueDistance(candidate.hue, color.hue)));
+      const requiredRgbDistance = selectedColors.length === 1 ? 96 : 76;
+      const requiredHueDistance = selectedColors.length === 1 ? 42 : 28;
+
+      if (nearestRgbDistance >= requiredRgbDistance && nearestHueDistance >= requiredHueDistance) {
+        selectedColors.push(candidate);
+      }
+
+      if (selectedColors.length >= 3) break;
+    }
+
+    while (selectedColors.length < 3 && candidates.length) {
+      const next = candidates
+        .filter(candidate => !selectedColors.includes(candidate))
+        .sort((a, b) => {
+          const aRgbDistance = selectedColors.length
+            ? Math.min(...selectedColors.map(color => colorDistance(a, color)))
+            : 0;
+          const bRgbDistance = selectedColors.length
+            ? Math.min(...selectedColors.map(color => colorDistance(b, color)))
+            : 0;
+          const aHueDistance = selectedColors.length
+            ? Math.min(...selectedColors.map(color => hueDistance(a.hue, color.hue)))
+            : 0;
+          const bHueDistance = selectedColors.length
+            ? Math.min(...selectedColors.map(color => hueDistance(b.hue, color.hue)))
+            : 0;
+
+          return (
+            bRgbDistance * 0.75 +
+            bHueDistance * 1.35 +
+            b.chroma * 1.1 +
+            b.distanceFromBg * 0.45 +
+            b.score * 0.05
+          ) - (
+            aRgbDistance * 0.75 +
+            aHueDistance * 1.35 +
+            a.chroma * 1.1 +
+            a.distanceFromBg * 0.45 +
+            a.score * 0.05
+          );
+        })[0];
+
+      if (!next) break;
+      selectedColors.push(next);
+    }
+
+    const palette = selectedColors.map(color => `rgb(${color.red}, ${color.green}, ${color.blue})`);
     const fallbackPalette = [
-      `rgb(${Math.max(0, bg.red - 38)}, ${Math.max(0, bg.green - 28)}, ${Math.max(0, bg.blue - 18)})`,
-      '#8fb7dc',
-      '#d8b568'
+      `rgb(${Math.max(0, bg.red - 54)}, ${Math.max(0, bg.green - 38)}, ${Math.max(0, bg.blue - 24)})`,
+      '#5b8fc7',
+      '#d39b3d'
     ];
 
     return {
@@ -798,6 +1151,7 @@ export default function App() {
 
   return (
     <div
+      onWheel={handlePageWheel}
       className="min-h-screen overflow-hidden bg-[#F4F0E8] text-stone-950 selection:bg-stone-950 selection:text-white"
       style={{
         '--accent-hue': activeHue,
@@ -809,7 +1163,7 @@ export default function App() {
       <div className="ambient-bg pointer-events-none fixed inset-0" />
       <div className="grain pointer-events-none fixed inset-0 opacity-[0.18]" />
 
-      <div className={showCelebration ? 'page-blur' : ''}>
+      <div className={showCelebration || shareDoodle ? 'page-blur' : ''}>
       <header className="relative z-10 flex items-center justify-between px-5 py-5 md:px-10 md:py-8">
         <div>
           <h1 className="font-display text-3xl font-medium tracking-normal md:text-4xl">
@@ -820,39 +1174,69 @@ export default function App() {
           </p>
         </div>
         <div className="hidden h-px flex-1 bg-stone-300/80 md:mx-10 md:block" />
-        <div className="mr-3 flex rounded-full border border-stone-300/70 bg-white/60 p-1 shadow-sm backdrop-blur-md">
-          {(['zh-CN', 'en'] as Language[]).map(option => (
-            <button
-              key={option}
-              type="button"
-              aria-label={copy[language].languageLabel}
-              onClick={() => setLanguage(option)}
-              className={`h-9 rounded-full px-3 font-mono text-[10px] uppercase tracking-[0.18em] transition ${
-                language === option
-                  ? 'bg-stone-950 text-white shadow-md'
-                  : 'text-stone-500 hover:text-stone-950'
-              }`}
-            >
-              {option === 'zh-CN' ? '简' : 'EN'}
-            </button>
-          ))}
+        <div className="mr-3 flex rounded-full border border-white/70 bg-white/45 p-1.5 shadow-[0_18px_48px_rgba(68,52,35,0.16),inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-xl ring-1 ring-stone-900/5 transition duration-300 hover:-translate-y-0.5 hover:bg-white/60 hover:shadow-[0_24px_64px_rgba(68,52,35,0.22),inset_0_1px_0_rgba(255,255,255,0.9)]">
+          {(['zh-CN', 'en'] as Language[]).map(option => {
+            const isActive = language === option;
+
+            return (
+              <button
+                key={option}
+                type="button"
+                aria-label={copy[language].languageLabel}
+                onClick={() => setLanguage(option)}
+                className={`relative h-9 overflow-hidden rounded-full px-3.5 font-mono text-[10px] uppercase tracking-[0.18em] transition duration-300 ${
+                  isActive
+                    ? 'text-white'
+                    : 'text-stone-500 hover:text-stone-950'
+                }`}
+              >
+                {isActive ? (
+                  <motion.span
+                    layoutId="language-liquid-pill"
+                    className="absolute inset-0 rounded-full bg-stone-950 shadow-[0_10px_26px_rgba(28,25,23,0.34),inset_0_1px_0_rgba(255,255,255,0.2)]"
+                    initial={false}
+                    animate={{
+                      scaleX: [1, 1.32, 0.94, 1.06, 1],
+                      scaleY: [1, 0.88, 1.08, 0.98, 1],
+                      borderRadius: ['999px', '1.4rem', '999px', '1.2rem', '999px']
+                    }}
+                    transition={{
+                      layout: { type: 'spring', stiffness: 360, damping: 24, mass: 0.85 },
+                      scaleX: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
+                      scaleY: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
+                      borderRadius: { duration: 0.62, ease: [0.22, 1, 0.36, 1] }
+                    }}
+                  />
+                ) : null}
+                {isActive ? (
+                  <motion.span
+                    className="absolute inset-[-6px] rounded-full bg-stone-950/20 blur-md"
+                    initial={{ opacity: 0, scaleX: 0.72, scaleY: 0.9 }}
+                    animate={{ opacity: [0, 0.34, 0], scaleX: [0.72, 1.42, 1.08], scaleY: [0.9, 0.82, 1.04] }}
+                    transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                ) : null}
+                <span className="relative z-10">{option === 'zh-CN' ? '简' : 'EN'}</span>
+              </button>
+            );
+          })}
         </div>
         <a
           href="https://github.com/craftsfool"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open craftsfool on GitHub"
-          className="avatar-link group relative grid h-14 w-14 place-items-center rounded-full bg-[#3b2d29] shadow-[0_12px_32px_rgba(68,52,35,0.18)] transition duration-300 ease-out hover:-translate-y-1 hover:scale-125 hover:shadow-[0_24px_60px_rgba(68,52,35,0.32)] focus-visible:-translate-y-1 focus-visible:scale-125 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-4 focus-visible:ring-offset-[#F4F0E8] active:scale-110 md:h-16 md:w-16"
+          className="avatar-link group relative grid h-14 w-14 place-items-center rounded-full border border-white/55 bg-white/35 p-1 shadow-[0_18px_46px_rgba(68,52,35,0.2),inset_0_1px_0_rgba(255,255,255,0.78)] backdrop-blur-xl ring-1 ring-stone-900/5 transition duration-300 ease-out hover:-translate-y-1.5 hover:scale-110 hover:bg-white/50 hover:shadow-[0_28px_72px_rgba(68,52,35,0.28),inset_0_1px_0_rgba(255,255,255,0.92)] focus-visible:-translate-y-1 focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-4 focus-visible:ring-offset-[#F4F0E8] active:scale-105 md:h-16 md:w-16"
         >
           <img
             src="/avatar.jpeg"
             alt="craftsfool avatar"
-            className="h-full w-full rounded-full object-cover"
+            className="h-full w-full rounded-full object-cover shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]"
           />
         </a>
       </header>
 
-      <main className="relative z-10 grid h-[calc(100svh-132px)] items-start gap-4 overflow-hidden px-4 pb-14 pt-1 md:h-auto md:min-h-[calc(100vh-160px)] md:grid-cols-[minmax(330px,0.86fr)_minmax(480px,1.14fr)] md:gap-8 md:overflow-visible md:px-10 md:pb-10 md:pt-3 lg:px-16">
+      <main className="relative z-10 grid h-[calc(100svh-156px)] items-start gap-3 overflow-hidden px-4 pb-24 pt-1 md:h-[calc(100vh-160px)] md:min-h-0 md:grid-cols-[minmax(330px,0.86fr)_minmax(480px,1.14fr)] md:gap-8 md:overflow-hidden md:px-10 md:pb-10 md:pt-3 lg:px-16">
         <AnimatePresence mode="wait">
           {loading ? (
             <motion.div
@@ -889,9 +1273,9 @@ export default function App() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                className="order-2 mx-auto w-full max-w-xl min-w-0 md:order-1"
+                className="relative order-2 mx-auto flex h-full w-full max-w-xl min-w-0 flex-col md:order-1 md:max-h-[calc(100vh-205px)] md:overflow-hidden md:pb-20"
               >
-                <div className="mb-4 flex items-center gap-3 md:mb-8 md:gap-4">
+                <div className="mb-4 flex items-center gap-3 md:mb-[clamp(1rem,2.2vh,2rem)] md:gap-4">
                   <span className="h-px w-12 bg-stone-400" />
                   <span className="font-mono text-[11px] uppercase tracking-[0.32em] text-stone-500">
                     {String(activeIndex + 1).padStart(2, '0')} / {String(doodles.length).padStart(2, '0')}
@@ -905,34 +1289,35 @@ export default function App() {
                     animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                     exit={{ opacity: 0, y: -16, filter: 'blur(8px)' }}
                     transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                    className="scrollbar-hide min-h-0 md:block md:flex-1 md:overflow-y-auto md:pb-8 md:pr-3 md:[mask-image:linear-gradient(to_bottom,black_calc(100%-64px),transparent)]"
+                    onWheel={event => event.stopPropagation()}
                   >
-                    <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-stone-500 md:mb-5 md:text-xs md:tracking-[0.28em]">
+                    <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-stone-500 md:mb-[clamp(0.75rem,1.6vh,1.25rem)] md:text-[clamp(0.66rem,0.85vw,0.75rem)] md:tracking-[0.28em]">
                       {activeDateLabel}
                     </p>
-                    <h2 className="break-words font-display text-[2.05rem] font-medium leading-[1.06] tracking-normal text-stone-950 md:max-w-[11ch] md:text-[clamp(3.1rem,5.2vw,5.4rem)]">
+                    <h2 className="break-words font-display text-[2.05rem] font-medium leading-[1.04] tracking-normal text-stone-950 md:max-w-[11ch] md:text-[clamp(2.6rem,4.4vw,4.6rem)] md:leading-[1.06]">
                       {activeTitle}
-                      <a
-                        href={`https://www.bing.com/search?cc=US&setlang=en-US&q=${encodeURIComponent(activeSearchText)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={copy[language].explore}
-                        className="ml-0.5 inline-grid h-5 w-5 -translate-y-2 place-items-center rounded-full border border-stone-300/80 bg-white/75 align-super text-stone-600 shadow-sm backdrop-blur-md transition hover:-translate-y-2.5 hover:bg-white hover:text-stone-950 hover:shadow-lg md:hidden"
-                      >
-                        <ExternalLink className="h-2.5 w-2.5" />
-                      </a>
                     </h2>
-                    <p className="mt-4 max-w-lg break-words font-serif text-sm leading-6 text-stone-600 md:mt-8 md:text-[clamp(1.05rem,1.55vw,1.5rem)] md:leading-[1.68]">
+                    <a
+                      href={`https://www.bing.com/search?cc=US&setlang=en-US&q=${encodeURIComponent(activeSearchText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="scrollbar-hide mt-3 block max-h-[calc(100svh-610px)] min-h-[2.8rem] max-w-lg overflow-y-auto break-words font-serif text-[0.95rem] leading-[1.48] text-stone-600 transition [mask-image:linear-gradient(to_bottom,black_calc(100%-22px),transparent)] active:text-stone-950 md:hidden"
+                    >
+                      {excerpt(activeDoodle, language)}
+                    </a>
+                    <p className="mt-4 hidden max-w-lg min-h-0 break-words font-serif text-stone-600 md:mt-8 md:block md:text-[clamp(1.05rem,1.55vw,1.5rem)] md:leading-[1.68]">
                       {excerpt(activeDoodle, language)}
                     </p>
                   </motion.div>
                 </AnimatePresence>
 
-                <div className="mt-3 hidden items-center gap-3 md:mt-10 md:flex">
+                <div className="absolute bottom-0 left-0 z-40 hidden items-center gap-3 pt-6 md:flex">
                   <button
                     type="button"
                     onClick={() => goTo(-1)}
                     aria-label={copy[language].previous}
-                    className="grid h-12 w-12 place-items-center border border-stone-300 bg-white/75 text-stone-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-xl active:translate-y-0"
+                    className="grid h-12 w-12 place-items-center rounded-full border border-white/70 bg-white/55 text-stone-700 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-white/75 hover:text-stone-950 active:translate-y-0 active:scale-95"
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
@@ -940,7 +1325,7 @@ export default function App() {
                     type="button"
                     onClick={() => goTo(1)}
                     aria-label={copy[language].next}
-                    className="grid h-12 w-12 place-items-center border border-stone-300 bg-white/75 text-stone-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-xl active:translate-y-0"
+                    className="grid h-12 w-12 place-items-center rounded-full border border-white/70 bg-white/55 text-stone-700 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 hover:bg-white/75 hover:text-stone-950 active:translate-y-0 active:scale-95"
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
@@ -948,7 +1333,7 @@ export default function App() {
                     href={`https://www.bing.com/search?cc=US&setlang=en-US&q=${encodeURIComponent(activeSearchText)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 inline-flex h-12 items-center gap-2 border border-transparent px-3 font-mono text-[11px] uppercase tracking-[0.26em] text-stone-500 transition hover:text-stone-950"
+                    className="ml-2 inline-flex h-12 items-center gap-2 rounded-full border border-white/55 bg-white/45 px-4 font-mono text-[11px] uppercase tracking-[0.26em] text-stone-500 backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/65 hover:text-stone-950 active:translate-y-0 active:scale-95"
                   >
                     <ExternalLink className="h-4 w-4" />
                     {copy[language].explore}
@@ -961,22 +1346,20 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="order-1 -mt-2 mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
+                className="order-1 mt-6 mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
                 onMouseEnter={() => setIsEngaged(true)}
                 onMouseLeave={() => {
                   setIsEngaged(false);
-                  gesture.current.active = false;
-                  setDragOffset(0);
+                  stopCardGesture();
                 }}
                 onPointerDown={handlePointerDown}
                 onPointerMove={handlePointerMove}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={() => {
-                  gesture.current.active = false;
-                  setDragOffset(0);
+                  stopCardGesture();
                 }}
               >
-                <div className="relative h-[clamp(250px,36svh,360px)] w-full min-w-0 max-w-[760px] portrait:h-[clamp(240px,34svh,360px)] md:h-full md:max-w-none">
+                <div className="relative h-[clamp(210px,31svh,330px)] w-full min-w-0 max-w-[760px] [perspective:1200px] portrait:h-[clamp(205px,30svh,320px)] md:h-full md:max-w-none md:[perspective:1500px]">
                   <div className="absolute left-1/2 top-[43%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--accent-hue)_62%_60%/0.16)] blur-3xl transition-colors duration-700 md:top-1/2" />
 
                   {visibleCards.map(({ doodle, offset }) => {
@@ -989,20 +1372,24 @@ export default function App() {
                     return (
                       <motion.article
                         key={doodle.name}
-                        className="doodle-min-card absolute left-1/2 top-[43%] grid -translate-x-1/2 -translate-y-1/2 place-items-center p-3 shadow-[0_18px_54px_rgba(50,38,28,0.18)] md:top-1/2 md:p-4 md:shadow-[0_24px_70px_rgba(50,38,28,0.18)]"
+                        className="doodle-min-card absolute left-1/2 top-[43%] grid -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-[2.15rem] border border-white/80 bg-white/42 p-4 shadow-[0_24px_70px_rgba(50,38,28,0.2),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_0_34px_rgba(255,255,255,0.42)] backdrop-blur-xl md:top-1/2 md:rounded-[2.6rem] md:p-6 md:shadow-[0_34px_96px_rgba(50,38,28,0.24),inset_0_1px_0_rgba(255,255,255,0.94),inset_0_0_48px_rgba(255,255,255,0.46)]"
                         animate={{
-                          x: isActive ? 0 : (isMobilePortrait ? 0 : offset * 18),
-                          y: isActive ? 0 : (isMobilePortrait ? offset * 30 : 0),
-                          rotate: isActive ? 0 : offset * (isMobilePortrait ? 0.7 : 1.1),
-                          scale: isActive ? 1 : 1 - abs * (isMobilePortrait ? 0.052 : 0.022),
-                          opacity: isActive ? 1 : abs > 1 ? 0.2 : 0.46
+                          x: isActive ? 0 : (isMobilePortrait ? 0 : offset * 36),
+                          y: isActive ? 0 : (isMobilePortrait ? offset * 42 : offset * 8),
+                          rotate: isActive ? 0 : offset * (isMobilePortrait ? 1.6 : 3.2),
+                          rotateY: isActive ? 0 : offset * (isMobilePortrait ? 0 : -9),
+                          rotateX: isActive ? 0 : offset * (isMobilePortrait ? 4 : 1.5),
+                          scale: isActive ? 1 : 1 - abs * (isMobilePortrait ? 0.07 : 0.045),
+                          opacity: isActive ? 1 : abs > 1 ? 0.18 : 0.5,
+                          filter: isActive ? 'blur(0px)' : abs > 1 ? 'blur(1.8px)' : 'blur(0.4px)'
                         }}
-                        transition={{ type: 'spring', stiffness: 260, damping: 32 }}
+                        transition={{ type: 'spring', stiffness: 330, damping: 28, mass: 0.82 }}
                         style={{
                           '--edge-bg': cardColor,
                           ...imagePlacement(metrics),
                           zIndex: 10 - abs,
-                          pointerEvents: isActive ? 'auto' : 'none'
+                          pointerEvents: isActive ? 'auto' : 'none',
+                          transformStyle: 'preserve-3d'
                         } as CSSProperties}
                       >
                         <div className="doodle-crop">
@@ -1062,6 +1449,94 @@ export default function App() {
             </motion.div>
           </motion.div>
         ) : null}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {shareDoodle ? (() => {
+          const title = doodleTitle(shareDoodle);
+          const imageUrl = proxiedImageUrl(shareDoodle);
+          const metrics = cardMetrics[shareDoodle.name];
+
+          return (
+            <motion.div
+              key="share-overlay"
+              className="share-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => {
+                setShareDoodle(null);
+                setShareStatus('');
+              }}
+              onWheel={event => event.stopPropagation()}
+            >
+              <motion.div
+                className="share-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-label={copy[language].share}
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 18, scale: 0.97 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                onClick={event => event.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  aria-label={copy[language].closeShare}
+                  onClick={() => {
+                    setShareDoodle(null);
+                    setShareStatus('');
+                  }}
+                  className="share-close"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+
+                <div
+                  className="share-preview-card"
+                  style={{
+                    '--edge-bg': metrics?.color ?? '#ffffff',
+                    ...imagePlacement(metrics)
+                  } as CSSProperties}
+                >
+                  <div className="share-preview-frame">
+                    <div className="doodle-crop share-preview-crop">
+                      <img
+                        src={imageUrl}
+                        alt={title}
+                        draggable={false}
+                        className="doodle-image"
+                      />
+                    </div>
+                  </div>
+                  <h2>{title}</h2>
+                </div>
+
+                <p className="share-channel-title">{copy[language].shareWith}</p>
+                <div className="share-actions">
+                  <button type="button" onClick={() => shareViaSystem(shareDoodle)} className="share-action">
+                    <Share2 className="h-4 w-4" />
+                    <span>{copy[language].systemShare}</span>
+                  </button>
+                  <button type="button" onClick={() => copyShareLink(shareDoodle)} className="share-action">
+                    <Copy className="h-4 w-4" />
+                    <span>{copy[language].copyLink}</span>
+                  </button>
+                  <button type="button" onClick={() => openShareChannel(shareDoodle, 'weibo')} className="share-action">
+                    <ExternalLink className="h-4 w-4" />
+                    <span>{copy[language].weibo}</span>
+                  </button>
+                  <button type="button" onClick={() => openShareChannel(shareDoodle, 'x')} className="share-action">
+                    <ExternalLink className="h-4 w-4" />
+                    <span>X</span>
+                  </button>
+                </div>
+                {shareStatus ? <p className="share-status">{shareStatus}</p> : null}
+              </motion.div>
+            </motion.div>
+          );
+        })() : null}
       </AnimatePresence>
     </div>
   );
