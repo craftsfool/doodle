@@ -983,7 +983,7 @@ export default function App() {
     setDragOffset(0);
 
     if (isMobilePortrait) {
-      const vibrationStep = Math.floor(Math.abs(delta) / 56);
+      const vibrationStep = Math.floor(Math.abs(delta) / 86);
       if (vibrationStep > gesture.current.vibrationStep) {
         gesture.current.vibrationStep = vibrationStep;
         vibrate(9);
@@ -1004,13 +1004,13 @@ export default function App() {
     const value = axisValue(event);
     const distance = value - gesture.current.start;
     const velocity = gesture.current.velocity;
-    const impulse = Math.abs(distance) + Math.abs(velocity) * (isMobilePortrait ? 420 : 220);
-    const threshold = isMobilePortrait ? 42 : 42;
+    const impulse = Math.abs(distance) + Math.abs(velocity) * (isMobilePortrait ? 260 : 220);
+    const threshold = isMobilePortrait ? 78 : 42;
 
-    if (Math.abs(distance) > threshold || Math.abs(velocity) > 0.42) {
+    if (Math.abs(distance) > threshold || Math.abs(velocity) > (isMobilePortrait ? 0.72 : 0.42)) {
       const direction = distance < 0 ? 1 : -1;
       const steps = isMobilePortrait
-        ? Math.min(6, Math.max(1, Math.round(impulse / 110)))
+        ? Math.min(3, Math.max(1, Math.round(impulse / 190)))
         : 1;
 
       vibrateByImpulse(impulse);
@@ -1500,7 +1500,7 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="order-1 mt-6 mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
+                className="order-1 mt-10 mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
                 onMouseEnter={() => setIsEngaged(true)}
                 onMouseLeave={() => {
                   setIsEngaged(false);
@@ -1514,7 +1514,7 @@ export default function App() {
                 }}
               >
                 <div className="relative h-[clamp(210px,31svh,330px)] w-full min-w-0 max-w-[760px] [perspective:1200px] portrait:h-[clamp(205px,30svh,320px)] md:h-full md:max-w-none md:[perspective:1500px]">
-                  <div className="absolute left-1/2 top-[43%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--accent-hue)_62%_60%/0.16)] blur-3xl transition-colors duration-700 md:top-1/2" />
+                  <div className="absolute left-1/2 top-[50%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--accent-hue)_62%_60%/0.16)] blur-3xl transition-colors duration-700 md:top-1/2" />
 
                   {visibleCards.map(({ doodle, offset }) => {
                     const abs = Math.abs(offset);
@@ -1526,7 +1526,7 @@ export default function App() {
                     return (
                       <motion.article
                         key={doodle.name}
-                        className="doodle-min-card absolute left-1/2 top-[43%] grid -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-[2.15rem] border border-white/80 bg-white/42 p-4 shadow-[0_24px_70px_rgba(50,38,28,0.2),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_0_34px_rgba(255,255,255,0.42)] backdrop-blur-xl md:top-1/2 md:rounded-[2.6rem] md:p-6 md:shadow-[0_34px_96px_rgba(50,38,28,0.24),inset_0_1px_0_rgba(255,255,255,0.94),inset_0_0_48px_rgba(255,255,255,0.46)]"
+                        className="doodle-min-card absolute left-1/2 top-[50%] grid -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-[2.15rem] border border-white/80 bg-white/42 p-4 shadow-[0_24px_70px_rgba(50,38,28,0.2),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_0_34px_rgba(255,255,255,0.42)] backdrop-blur-xl md:top-1/2 md:rounded-[2.6rem] md:p-6 md:shadow-[0_34px_96px_rgba(50,38,28,0.24),inset_0_1px_0_rgba(255,255,255,0.94),inset_0_0_48px_rgba(255,255,255,0.46)]"
                         animate={{
                           x: isActive ? 0 : (isMobilePortrait ? 0 : offset * 36),
                           y: isActive ? 0 : (isMobilePortrait ? offset * 42 : offset * 8),

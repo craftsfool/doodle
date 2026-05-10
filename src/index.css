@@ -4,6 +4,7 @@
 @theme {
   --font-sans: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
