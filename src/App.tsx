@@ -1576,7 +1576,7 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="order-1 mt-[clamp(3.25rem,8svh,5.5rem)] mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
+                className="order-1 mt-[clamp(3.25rem,8svh,5.5rem)] mb-[clamp(2.75rem,7svh,4.75rem)] mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:mb-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
                 onMouseEnter={() => setIsEngaged(true)}
                 onMouseLeave={() => {
                   setIsEngaged(false);
