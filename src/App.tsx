@@ -602,6 +602,18 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (!isMobilePortrait) return;
+
+    const preventPageDrag = (event: TouchEvent) => {
+      if (shareDoodle) return;
+      event.preventDefault();
+    };
+
+    document.addEventListener('touchmove', preventPageDrag, { passive: false });
+    return () => document.removeEventListener('touchmove', preventPageDrag);
+  }, [isMobilePortrait, shareDoodle]);
+
+  useEffect(() => {
     const firstDoodle = doodles[0];
     if (!firstDoodle || !shouldCelebrate(firstDoodle, visitorTimeZone)) return;
 
@@ -1003,6 +1015,7 @@ export default function App() {
 
   const handlePointerDown = (event: PointerEvent<HTMLElement>) => {
     if (event.pointerType === 'mouse' && event.button !== 0) return;
+    if (isMobilePortrait) event.preventDefault();
 
     event.currentTarget.setPointerCapture(event.pointerId);
     const value = axisValue(event);
@@ -1033,6 +1046,7 @@ export default function App() {
 
   const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
     if (!gesture.current.active) return;
+    if (isMobilePortrait) event.preventDefault();
 
     const value = axisValue(event);
     const now = performance.now();
@@ -1368,7 +1382,7 @@ export default function App() {
   return (
     <div
       onWheel={handlePageWheel}
-      className="min-h-screen overflow-hidden bg-[#F4F0E8] text-stone-950 selection:bg-stone-950 selection:text-white"
+      className="h-[100svh] max-h-[100svh] overflow-hidden overscroll-none bg-[#F4F0E8] text-stone-950 selection:bg-stone-950 selection:text-white md:min-h-screen md:h-auto md:max-h-none"
       style={{
         '--accent-hue': activeHue,
         '--bg-color-1': activePalette[0],
@@ -1511,7 +1525,7 @@ export default function App() {
                     <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.24em] text-stone-500 md:mb-[clamp(0.75rem,1.6vh,1.25rem)] md:text-[clamp(0.66rem,0.85vw,0.75rem)] md:tracking-[0.28em]">
                       {activeDateLabel}
                     </p>
-                    <h2 className="break-words font-display text-[2.05rem] font-medium leading-[1.04] tracking-normal text-stone-950 md:max-w-[11ch] md:text-[clamp(2.6rem,4.4vw,4.6rem)] md:leading-[1.06]">
+                    <h2 className={`break-words text-[2.05rem] font-medium leading-[1.04] tracking-normal text-stone-950 md:max-w-[11ch] md:text-[clamp(2.6rem,4.4vw,4.6rem)] md:leading-[1.06] ${language === 'zh-CN' ? 'font-title' : 'font-display'}`}>
                       {activeTitle}
                     </h2>
                     <a
@@ -1562,7 +1576,7 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="order-1 mt-12 mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
+                className="order-1 mt-[clamp(3.25rem,8svh,5.5rem)] mx-auto flex w-full max-w-3xl touch-none select-none items-start justify-center md:fixed md:left-[clamp(410px,44vw,700px)] md:right-10 md:top-1/2 md:z-20 md:mx-0 md:mt-0 md:h-[clamp(260px,36vw,520px)] md:w-auto md:max-w-none md:-translate-y-1/2 md:items-center lg:right-16"
                 onMouseEnter={() => setIsEngaged(true)}
                 onMouseLeave={() => {
                   setIsEngaged(false);
@@ -1576,7 +1590,7 @@ export default function App() {
                 }}
               >
                 <div className="relative h-[clamp(210px,31svh,330px)] w-full min-w-0 max-w-[760px] [perspective:1200px] portrait:h-[clamp(205px,30svh,320px)] md:h-full md:max-w-none md:[perspective:1500px]">
-                  <div className="absolute left-1/2 top-[55%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--accent-hue)_62%_60%/0.16)] blur-3xl transition-colors duration-700 md:top-1/2" />
+                  <div className="absolute left-1/2 top-[68%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[hsl(var(--accent-hue)_62%_60%/0.16)] blur-3xl transition-colors duration-700 md:top-1/2" />
 
                   {visibleCards.map(({ doodle, offset }) => {
                     const abs = Math.abs(offset);
@@ -1588,10 +1602,10 @@ export default function App() {
                     return (
                       <motion.article
                         key={doodle.name}
-                        className="doodle-min-card absolute left-1/2 top-[55%] grid -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-[2.15rem] border border-white/80 bg-white/42 p-4 shadow-[0_24px_70px_rgba(50,38,28,0.2),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_0_34px_rgba(255,255,255,0.42)] backdrop-blur-xl md:top-1/2 md:rounded-[2.6rem] md:p-6 md:shadow-[0_34px_96px_rgba(50,38,28,0.24),inset_0_1px_0_rgba(255,255,255,0.94),inset_0_0_48px_rgba(255,255,255,0.46)]"
+                        className="doodle-min-card absolute left-1/2 top-[68%] grid -translate-x-1/2 -translate-y-1/2 place-items-center overflow-hidden rounded-[2.15rem] border border-white/80 bg-white/42 p-4 shadow-[0_24px_70px_rgba(50,38,28,0.2),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_0_34px_rgba(255,255,255,0.42)] backdrop-blur-xl md:top-1/2 md:rounded-[2.6rem] md:p-6 md:shadow-[0_34px_96px_rgba(50,38,28,0.24),inset_0_1px_0_rgba(255,255,255,0.94),inset_0_0_48px_rgba(255,255,255,0.46)]"
                         animate={{
                           x: isActive ? 0 : (isMobilePortrait ? 0 : offset * 36),
-                          y: isActive ? 0 : (isMobilePortrait ? offset * 42 : offset * 8),
+                          y: isActive ? 0 : (isMobilePortrait ? offset * 32 : offset * 8),
                           rotate: isActive ? 0 : offset * (isMobilePortrait ? 1.6 : 3.2),
                           rotateY: isActive ? 0 : offset * (isMobilePortrait ? 0 : -9),
                           rotateX: isActive ? 0 : offset * (isMobilePortrait ? 4 : 1.5),

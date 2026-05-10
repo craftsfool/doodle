@@ -5,15 +5,18 @@
   --font-sans: "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-display: "Libre Baskerville", "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-serif: "Libre Baskerville", "Noto Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
+  --font-title: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
   background: #f4f0e8;
+  overscroll-behavior: none;
 }
 
 body {
   min-width: 320px;
+  overscroll-behavior: none;
 }
 
 button,
@@ -96,6 +99,21 @@ a {
 
 
 @media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    height: 100svh;
+    max-height: 100svh;
+    overflow: hidden;
+  }
+
+  body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    touch-action: none;
+  }
+
   .doodle-min-card {
     width: min(86vw, calc((100svh - 390px) * 1.86), 390px);
     min-width: min(300px, 82vw);
