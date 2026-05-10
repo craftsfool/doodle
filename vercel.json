@@ -5,10 +5,7 @@
   "functions": {
     "api/index.ts": {
       "maxDuration": 30,
-      "includeFiles": [
-        "public/doodles/**",
-        "dist/doodles/**"
-      ]
+      "includeFiles": "public/doodles/**"
     }
   },
   "rewrites": [
