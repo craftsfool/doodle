@@ -3,3 +3,4 @@ node_modules/
 data/latest-doodle.json
 public/mirror/*
 !public/mirror/.gitkeep
+dist/doodles/
