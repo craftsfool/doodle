@@ -8,6 +8,40 @@ import { mkdir, readFile, readdir, writeFile } from 'fs/promises';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const bundledLocalDoodleFiles = [
+  '2026-02-16_freestyle-skiing-2026.gif',
+  '2026-02-20_icc-mens-t20-world-cup-super-8.gif',
+  '2026-02-21_celebrating-winter-sports-2026.gif',
+  '2026-03-01_st-davids-day-2026.png',
+  '2026-03-02_lantern-festival-2026.gif',
+  '2026-03-05_winter-sports-begin-2026-march-6.gif',
+  '2026-03-07_international-womens-day-2026.gif',
+  '2026-03-13_pi-day-2026.gif',
+  '2026-03-16_st-patricks-day-2026.png',
+  '2026-03-19_mens-college-basketball-championship-2026.gif',
+  '2026-03-19_nowruz-2026.png',
+  '2026-03-20_womens-college-basketball-championship-2026.gif',
+  '2026-03-27_mens-indian-premier-league-2026-begins.gif',
+  '2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif',
+  '2026-04-04_easter-2026.png',
+  '2026-04-13_world-quantum-day-2026.gif',
+  '2026-04-18_nba-playoffs-2026-aa.gif',
+  '2026-04-21_earth-day-2026.gif',
+  '2026-04-22_st-georges-day-2026.png',
+  '2026-04-26_south-africa-freedom-day-2026.gif',
+  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png',
+  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png',
+  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png',
+  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-4.png',
+  '2026-04-28_celebrating-the-2026-doodle-for-google-finalists-5.png',
+  '2026-04-30_celebrating-the-route-66-centennial.gif',
+  '2026-04-30_labour-day-2026.png',
+  '2026-05-05_us-teacher-appreciation-day-2026.gif',
+  '2026-05-07_the-art-of-k-pop-dance.gif',
+  '2026-05-09_mothers-day-2026-may-10.gif'
+];
+const bundledLocalDoodleFileSet = new Set(bundledLocalDoodleFiles);
+
 export async function createApp() {
   const app = express();
   // Doodle Cache Strategy
@@ -276,6 +310,10 @@ export async function createApp() {
   async function localDoodleImageFiles() {
     const files = new Map<string, string>();
 
+    for (const fileName of bundledLocalDoodleFiles) {
+      files.set(path.basename(fileName, path.extname(fileName)), fileName);
+    }
+
     for (const directory of localImageDirs) {
       try {
         const entries = await readdir(directory);
@@ -290,6 +328,15 @@ export async function createApp() {
     }
 
     return files;
+  }
+
+  function localDoodleStaticPath(value: string) {
+    if (!value.startsWith('/doodles/')) return null;
+
+    const fileName = path.basename(value);
+    if (!bundledLocalDoodleFileSet.has(fileName)) return null;
+
+    return `/doodles/${fileName}`;
   }
 
   function titleFromLocalImageName(name: string) {
@@ -761,6 +808,14 @@ export async function createApp() {
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
         res.setHeader('X-Doodle-Image-Source', 'local-file');
         res.send(localImage.body);
+        return;
+      }
+
+      const staticDoodlePath = localDoodleStaticPath(imageUrl);
+      if (staticDoodlePath) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.setHeader('X-Doodle-Image-Source', 'static-redirect');
+        res.redirect(307, staticDoodlePath);
         return;
       }
 
