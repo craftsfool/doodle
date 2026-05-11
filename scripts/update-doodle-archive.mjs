@@ -62,6 +62,36 @@ function englishShareText(value = '', title = '') {
   return meaningfulShareText(value, title) || fallbackShareText(title);
 }
 
+function hasText(value) {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function mergeLocalizedText(incoming = {}, existing = {}) {
+  return {
+    ...incoming,
+    ...existing,
+    en: {
+      ...(incoming.en || {}),
+      ...(existing.en || {})
+    },
+    'zh-CN': {
+      ...(incoming['zh-CN'] || {}),
+      ...(existing['zh-CN'] || {})
+    }
+  };
+}
+
+function preserveEditorialFields(incoming, existing) {
+  if (!existing) return incoming;
+
+  return {
+    ...incoming,
+    title: hasText(existing.title) ? existing.title : incoming.title,
+    share_text: hasText(existing.share_text) ? existing.share_text : incoming.share_text,
+    localized: mergeLocalizedText(incoming.localized, existing.localized)
+  };
+}
+
 function safeFilePart(value = '') {
   return value
     .toLowerCase()
@@ -307,6 +337,15 @@ async function translateDoodleZh(doodle) {
 }
 
 async function withLocalZhFallback(doodle) {
+  const existingZh = doodle.localized?.['zh-CN'];
+  if (
+    !refreshTranslations &&
+    hasChinese(existingZh?.title || '') &&
+    hasText(existingZh?.share_text)
+  ) {
+    return doodle;
+  }
+
   const zh = await translateDoodleZh(doodle);
 
   return {
@@ -602,9 +641,10 @@ function sortDoodles(doodles) {
 }
 
 async function writeArchive(doodles) {
+  const candidates = sortDoodles(doodles);
   const localized = [];
 
-  for (const doodle of doodles) {
+  for (const doodle of candidates) {
     localized.push(await withLocalZhFallback(doodle));
   }
 
@@ -638,7 +678,9 @@ async function main() {
     const remote = await fetchRemoteDoodles();
     for (const doodle of remote) {
       try {
-        byName.set(doodle.name, await downloadImage(doodle));
+        const current = byName.get(doodle.name);
+        const downloaded = await downloadImage(doodle);
+        byName.set(doodle.name, preserveEditorialFields(downloaded, current));
       } catch (error) {
         console.warn(error instanceof Error ? error.message : error);
       }
