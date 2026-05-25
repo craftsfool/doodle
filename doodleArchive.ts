@@ -72,6 +72,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-05-05_us-teacher-appreciation-day-2026.gif"
   },
   {
+    "name": "memorial-day-2026",
+    "title": "Memorial Day 2026",
+    "share_text": "Learn more about the creation of Memorial Day 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      5,
+      25
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/memorial-day-2026-6753651837111174.2-2x.png",
+    "localized": {
+      "en": {
+        "title": "Memorial Day 2026",
+        "share_text": "Learn more about the creation of Memorial Day 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年阵亡将士纪念日",
+        "share_text": "了解有关 2026 年阵亡将士纪念日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-05-25_memorial-day-2026.png",
+    "url": "/doodles/2026-05-25_memorial-day-2026.png",
+    "high_res_url": "/doodles/2026-05-25_memorial-day-2026.png"
+  },
+  {
     "name": "fathers-day-2026-may-14",
     "title": "Father's Day 2026 (May 14)",
     "share_text": "Learn more about the creation of Father's Day 2026 (May 14) Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-02-09_ski-jumping-2026.gif",
     "url": "/doodles/2026-02-09_ski-jumping-2026.gif",
     "high_res_url": "/doodles/2026-02-09_ski-jumping-2026.gif"
-  },
-  {
-    "name": "figure-skating-2026",
-    "title": "Figure Skating 2026",
-    "share_text": "Learn more about the creation of Figure Skating 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      2,
-      8
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/figure-skating-2026-feb-9-o-6753651837111040-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Figure Skating 2026",
-        "share_text": "Learn more about the creation of Figure Skating 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年花样滑冰",
-        "share_text": "了解有关花样滑冰 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-02-08_figure-skating-2026.gif",
-    "url": "/doodles/2026-02-08_figure-skating-2026.gif",
-    "high_res_url": "/doodles/2026-02-08_figure-skating-2026.gif"
   }
 ] as const;
 
