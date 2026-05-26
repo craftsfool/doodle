@@ -96,6 +96,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-05-25_memorial-day-2026.png"
   },
   {
+    "name": "mens-ipl-2026-playoffs",
+    "title": "Men's IPL 2026 - Playoffs",
+    "share_text": "Learn more about the creation of Men's IPL 2026 - Playoffs Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      5,
+      25
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/mens-ipl-2026-semi-final-6753651837111070.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Men's IPL 2026 - Playoffs",
+        "share_text": "Learn more about the creation of Men's IPL 2026 - Playoffs Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "男子 IPL 2026 - 季后赛",
+        "share_text": "了解有关男子 IPL 2026 - 季后赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-05-25_mens-ipl-2026-playoffs.gif",
+    "url": "/doodles/2026-05-25_mens-ipl-2026-playoffs.gif",
+    "high_res_url": "/doodles/2026-05-25_mens-ipl-2026-playoffs.gif"
+  },
+  {
     "name": "fathers-day-2026-may-14",
     "title": "Father's Day 2026 (May 14)",
     "share_text": "Learn more about the creation of Father's Day 2026 (May 14) Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-03-01_st-davids-day-2026.png",
     "url": "/doodles/2026-03-01_st-davids-day-2026.png",
     "high_res_url": "/doodles/2026-03-01_st-davids-day-2026.png"
-  },
-  {
-    "name": "ski-jumping-2026",
-    "title": "Ski Jumping 2026",
-    "share_text": "Learn more about the creation of Ski Jumping 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      2,
-      9
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/ski-jumping-2026-feb-10-o-6753651837111041-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Ski Jumping 2026",
-        "share_text": "Learn more about the creation of Ski Jumping 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年跳台滑雪",
-        "share_text": "了解有关 Ski Jumping 2026 Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-02-09_ski-jumping-2026.gif",
-    "url": "/doodles/2026-02-09_ski-jumping-2026.gif",
-    "high_res_url": "/doodles/2026-02-09_ski-jumping-2026.gif"
   }
 ] as const;
 
