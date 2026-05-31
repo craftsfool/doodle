@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-26T06:55:24.803Z",
+  "updated_at": "2026-05-31T07:06:05.861Z",
   "count": 30,
   "doodles": [
     {
@@ -73,6 +73,30 @@
       "fileName": "2026-05-05_us-teacher-appreciation-day-2026.gif",
       "url": "/doodles/2026-05-05_us-teacher-appreciation-day-2026.gif",
       "high_res_url": "/doodles/2026-05-05_us-teacher-appreciation-day-2026.gif"
+    },
+    {
+      "name": "mens-ipl-2026-final",
+      "title": "Men's IPL 2026 - Final",
+      "share_text": "Learn more about the creation of Men's IPL 2026 - Final Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        5,
+        30
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/mens-ipl-2026-final-6753651837111071.2-2xa.gif",
+      "localized": {
+        "en": {
+          "title": "Men's IPL 2026 - Final",
+          "share_text": "Learn more about the creation of Men's IPL 2026 - Final Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "2026年男子 IPL - 决赛",
+          "share_text": "了解有关男子 IPL 2026 - Final Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-05-30_mens-ipl-2026-final.gif",
+      "url": "/doodles/2026-05-30_mens-ipl-2026-final.gif",
+      "high_res_url": "/doodles/2026-05-30_mens-ipl-2026-final.gif"
     },
     {
       "name": "memorial-day-2026",
@@ -697,30 +721,6 @@
       "fileName": "2026-03-13_pi-day-2026.gif",
       "url": "/doodles/2026-03-13_pi-day-2026.gif",
       "high_res_url": "/doodles/2026-03-13_pi-day-2026.gif"
-    },
-    {
-      "name": "st-davids-day-2026",
-      "title": "St. David's Day 2026",
-      "share_text": "Learn more about the creation of St. David's Day 2026 Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        3,
-        1
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/st-davids-day-2026-6753651837111001-2x.png",
-      "localized": {
-        "en": {
-          "title": "St. David's Day 2026",
-          "share_text": "Learn more about the creation of St. David's Day 2026 Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "2026年圣大卫节",
-          "share_text": "了解有关 2026 年圣大卫节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-03-01_st-davids-day-2026.png",
-      "url": "/doodles/2026-03-01_st-davids-day-2026.png",
-      "high_res_url": "/doodles/2026-03-01_st-davids-day-2026.png"
     }
   ]
 }
