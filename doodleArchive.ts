@@ -1,5 +1,29 @@
 export const localDoodleArchive = [
   {
+    "name": "the-art-of-disco",
+    "title": "The Art of Disco",
+    "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      1
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/the-art-of-disco-6753651837111009.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "The Art of Disco",
+        "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "迪斯科艺术",
+        "share_text": "了解有关迪斯科涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-01_the-art-of-disco.gif",
+    "url": "/doodles/2026-06-01_the-art-of-disco.gif",
+    "high_res_url": "/doodles/2026-06-01_the-art-of-disco.gif"
+  },
+  {
     "name": "mothers-day-2026-may-10",
     "title": "Mother's Day 2026 (May 10)",
     "share_text": "Learn more about the creation of Mother's Day 2026 (May 10) Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-03-16_st-patricks-day-2026.png",
     "url": "/doodles/2026-03-16_st-patricks-day-2026.png",
     "high_res_url": "/doodles/2026-03-16_st-patricks-day-2026.png"
-  },
-  {
-    "name": "pi-day-2026",
-    "title": "Pi Day 2026",
-    "share_text": "Learn more about the creation of Pi Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      13
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/pi-day-2026-6753651837111068.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Pi Day 2026",
-        "share_text": "Learn more about the creation of Pi Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年圆周率日",
-        "share_text": "了解有关 2026 年 Pi Day 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-13_pi-day-2026.gif",
-    "url": "/doodles/2026-03-13_pi-day-2026.gif",
-    "high_res_url": "/doodles/2026-03-13_pi-day-2026.gif"
   }
 ] as const;
 
