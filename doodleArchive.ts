@@ -1,5 +1,29 @@
 export const localDoodleArchive = [
   {
+    "name": "nba-finals-2026",
+    "title": "NBA Finals",
+    "share_text": "Learn more about the creation of NBA Finals Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      3
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/nba-finals-a-6753651837111245.2-2x.png",
+    "localized": {
+      "en": {
+        "title": "NBA Finals",
+        "share_text": "Learn more about the creation of NBA Finals Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "NBA总决赛",
+        "share_text": "了解有关 NBA 总决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-03_nba-finals-2026.png",
+    "url": "/doodles/2026-06-03_nba-finals-2026.png",
+    "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
+  },
+  {
     "name": "the-art-of-disco",
     "title": "The Art of Disco",
     "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-03-19_nowruz-2026.png",
     "url": "/doodles/2026-03-19_nowruz-2026.png",
     "high_res_url": "/doodles/2026-03-19_nowruz-2026.png"
-  },
-  {
-    "name": "st-patricks-day-2026",
-    "title": "St. Patrick's Day 2026",
-    "share_text": "Learn more about the creation of St. Patrick's Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      16
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/st-patricks-day-2026-6753651837111004-2x.png",
-    "localized": {
-      "en": {
-        "title": "St. Patrick's Day 2026",
-        "share_text": "Learn more about the creation of St. Patrick's Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年圣帕特里克节",
-        "share_text": "了解有关 2026 年圣帕特里克节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-16_st-patricks-day-2026.png",
-    "url": "/doodles/2026-03-16_st-patricks-day-2026.png",
-    "high_res_url": "/doodles/2026-03-16_st-patricks-day-2026.png"
   }
 ] as const;
 
