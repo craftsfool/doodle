@@ -1,7 +1,31 @@
 {
-  "updated_at": "2026-06-04T07:59:46.912Z",
+  "updated_at": "2026-06-05T07:17:15.417Z",
   "count": 30,
   "doodles": [
+    {
+      "name": "doodle-for-google-2025-2026-us-winner",
+      "title": "Doodle for Google 2025-2026 - US Winner",
+      "share_text": "Learn more about the creation of Doodle for Google 2025-2026 - US Winner Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        6,
+        4
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-2026-doodle-for-google-finalists-5-copy-6753651837111313-2x.png",
+      "localized": {
+        "en": {
+          "title": "Doodle for Google 2025-2026 - US Winner",
+          "share_text": "Learn more about the creation of Doodle for Google 2025-2026 - US Winner Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "Doodle for Google 2025-2026 - 美国获胜者",
+          "share_text": "详细了解 Doodle for Google 2025-2026 - US Winner Doodle 的创作，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-06-04_doodle-for-google-2025-2026-us-winner.png",
+      "url": "/doodles/2026-06-04_doodle-for-google-2025-2026-us-winner.png",
+      "high_res_url": "/doodles/2026-06-04_doodle-for-google-2025-2026-us-winner.png"
+    },
     {
       "name": "nba-finals-2026",
       "title": "NBA Finals",
@@ -697,30 +721,6 @@
       "fileName": "2026-03-19_mens-college-basketball-championship-2026.gif",
       "url": "/doodles/2026-03-19_mens-college-basketball-championship-2026.gif",
       "high_res_url": "/doodles/2026-03-19_mens-college-basketball-championship-2026.gif"
-    },
-    {
-      "name": "nowruz-2026",
-      "title": "Nowruz 2026",
-      "share_text": "Learn more about the creation of Nowruz 2026 Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        3,
-        19
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/nowruz-2026-6753651837111005.2-2x.png",
-      "localized": {
-        "en": {
-          "title": "Nowruz 2026",
-          "share_text": "Learn more about the creation of Nowruz 2026 Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "2026年诺鲁孜节",
-          "share_text": "了解有关 Nowruz 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-03-19_nowruz-2026.png",
-      "url": "/doodles/2026-03-19_nowruz-2026.png",
-      "high_res_url": "/doodles/2026-03-19_nowruz-2026.png"
     }
   ]
 }
