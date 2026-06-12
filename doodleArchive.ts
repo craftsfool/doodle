@@ -48,6 +48,102 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
+    "name": "dia-dos-namorados-2026",
+    "title": "Dia dos Namorados 2026",
+    "share_text": "Learn more about the creation of Dia dos Namorados 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      12
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/dia-dos-namorados-2026-6753651837111010-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Dia dos Namorados 2026",
+        "share_text": "Learn more about the creation of Dia dos Namorados 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年南摩拉多节",
+        "share_text": "了解有关 Dia dos Namorados 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-12_dia-dos-namorados-2026.gif",
+    "url": "/doodles/2026-06-12_dia-dos-namorados-2026.gif",
+    "high_res_url": "/doodles/2026-06-12_dia-dos-namorados-2026.gif"
+  },
+  {
+    "name": "world-cup-2026-begins-june-11",
+    "title": "World Cup 2026 Begins (June 11)",
+    "share_text": "Learn more about the creation of World Cup 2026 Begins (June 11) Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      11
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-begins-6753651837111091.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026 Begins (June 11)",
+        "share_text": "Learn more about the creation of World Cup 2026 Begins (June 11) Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯开幕（6月11日）",
+        "share_text": "了解有关 2026 年世界杯开始（6 月 11 日）涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-11_world-cup-2026-begins-june-11.gif",
+    "url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif",
+    "high_res_url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif"
+  },
+  {
+    "name": "world-cup-2026-mexico-match-day-june-11",
+    "title": "World Cup 2026: Mexico Match Day",
+    "share_text": "Learn more about the creation of World Cup 2026: Mexico Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      11
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-mexico-match-day-june-11-6753651837111090.2-2x.png",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Mexico Match Day",
+        "share_text": "Learn more about the creation of World Cup 2026: Mexico Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：墨西哥比赛日",
+        "share_text": "了解有关 2026 年世界杯：墨西哥比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
+    "url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
+    "high_res_url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png"
+  },
+  {
+    "name": "icc-womens-t20-world-cup-begins",
+    "title": "ICC Women's T20 World Cup Begins",
+    "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      11
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-begins-6753651837111129.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "ICC Women's T20 World Cup Begins",
+        "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "ICC女子T20世界杯开赛",
+        "share_text": "了解有关 ICC 女子 T20 世界杯开始涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-11_icc-womens-t20-world-cup-begins.gif",
+    "url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif",
+    "high_res_url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif"
+  },
+  {
     "name": "the-art-of-disco",
     "title": "The Art of Disco",
     "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork.",
@@ -622,102 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-03-05_winter-sports-begin-2026-march-6.gif",
     "url": "/doodles/2026-03-05_winter-sports-begin-2026-march-6.gif",
     "high_res_url": "/doodles/2026-03-05_winter-sports-begin-2026-march-6.gif"
-  },
-  {
-    "name": "mens-indian-premier-league-2026-begins",
-    "title": "Men's Indian Premier League 2026 Begins",
-    "share_text": "Learn more about the creation of Men's Indian Premier League 2026 Begins Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      27
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/mens-indian-premier-league-2026-begins-6753651837111069.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Men's Indian Premier League 2026 Begins",
-        "share_text": "Learn more about the creation of Men's Indian Premier League 2026 Begins Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年男子印度超级联赛开赛",
-        "share_text": "了解有关男子印度超级联赛 2026 Begins Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-27_mens-indian-premier-league-2026-begins.gif",
-    "url": "/doodles/2026-03-27_mens-indian-premier-league-2026-begins.gif",
-    "high_res_url": "/doodles/2026-03-27_mens-indian-premier-league-2026-begins.gif"
-  },
-  {
-    "name": "womens-college-basketball-championship-2026",
-    "title": "Women's College Basketball Championship 2026",
-    "share_text": "Learn more about the creation of Women's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      20
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/womens-college-basketball-championship-2026-6753651837111073.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Women's College Basketball Championship 2026",
-        "share_text": "Learn more about the creation of Women's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年女子大学篮球锦标赛",
-        "share_text": "了解有关 2026 年女子大学篮球锦标赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-20_womens-college-basketball-championship-2026.gif",
-    "url": "/doodles/2026-03-20_womens-college-basketball-championship-2026.gif",
-    "high_res_url": "/doodles/2026-03-20_womens-college-basketball-championship-2026.gif"
-  },
-  {
-    "name": "lantern-festival-2026",
-    "title": "Lantern Festival 2026",
-    "share_text": "Learn more about the creation of Lantern Festival 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      2
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/lantern-festival-2026-6753651837111002-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Lantern Festival 2026",
-        "share_text": "Learn more about the creation of Lantern Festival 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年元宵节",
-        "share_text": "了解有关 2026 年元宵节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-02_lantern-festival-2026.gif",
-    "url": "/doodles/2026-03-02_lantern-festival-2026.gif",
-    "high_res_url": "/doodles/2026-03-02_lantern-festival-2026.gif"
-  },
-  {
-    "name": "mens-college-basketball-championship-2026",
-    "title": "Men's College Basketball Championship 2026",
-    "share_text": "Learn more about the creation of Men's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      19
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/mens-college-basketball-championship-2026-6753651837111072.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Men's College Basketball Championship 2026",
-        "share_text": "Learn more about the creation of Men's College Basketball Championship 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年男子大学生篮球锦标赛",
-        "share_text": "了解有关 2026 年男子大学篮球锦标赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-19_mens-college-basketball-championship-2026.gif",
-    "url": "/doodles/2026-03-19_mens-college-basketball-championship-2026.gif",
-    "high_res_url": "/doodles/2026-03-19_mens-college-basketball-championship-2026.gif"
   }
 ] as const;
 
