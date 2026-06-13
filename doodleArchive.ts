@@ -72,6 +72,102 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-12_dia-dos-namorados-2026.gif"
   },
   {
+    "name": "world-cup-2026-the-art-of-the-nutmeg-612",
+    "title": "World Cup 2026: The Art of the Nutmeg",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Nutmeg Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      12
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-nutmeg-618-6753651837111110-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Nutmeg",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Nutmeg Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：肉豆蔻的艺术",
+        "share_text": "了解有关 2026 年世界杯：肉豆蔻涂鸦艺术的创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
+    "url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
+    "high_res_url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif"
+  },
+  {
+    "name": "world-cup-2026-united-states-match-day-june-12",
+    "title": "World Cup 2026: United States Match Day",
+    "share_text": "Learn more about the creation of World Cup 2026: United States Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      12
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-united-states-match-day-612-6753651837111093-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: United States Match Day",
+        "share_text": "Learn more about the creation of World Cup 2026: United States Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：美国比赛日",
+        "share_text": "了解有关 2026 年世界杯：美国比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
+    "url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
+    "high_res_url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif"
+  },
+  {
+    "name": "world-cup-2026-canada-match-day-june-12",
+    "title": " World Cup 2026: Canada Match Day",
+    "share_text": "Learn more about the creation of World Cup 2026: Canada Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      12
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-canada-match-day-612-6753651837111092-2xa.gif",
+    "localized": {
+      "en": {
+        "title": " World Cup 2026: Canada Match Day",
+        "share_text": "Learn more about the creation of World Cup 2026: Canada Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：加拿大比赛日",
+        "share_text": "了解有关 2026 年世界杯：加拿大比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
+    "url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
+    "high_res_url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif"
+  },
+  {
+    "name": "icc-womens-t20-world-cup-begins",
+    "title": "ICC Women's T20 World Cup Begins",
+    "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      11
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-begins-6753651837111129.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "ICC Women's T20 World Cup Begins",
+        "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "ICC女子T20世界杯开赛",
+        "share_text": "了解有关 ICC 女子 T20 世界杯开始涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-11_icc-womens-t20-world-cup-begins.gif",
+    "url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif",
+    "high_res_url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif"
+  },
+  {
     "name": "world-cup-2026-begins-june-11",
     "title": "World Cup 2026 Begins (June 11)",
     "share_text": "Learn more about the creation of World Cup 2026 Begins (June 11) Doodle and discover the story behind the unique artwork.",
@@ -118,30 +214,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
     "url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
     "high_res_url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png"
-  },
-  {
-    "name": "icc-womens-t20-world-cup-begins",
-    "title": "ICC Women's T20 World Cup Begins",
-    "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      11
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-begins-6753651837111129.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "ICC Women's T20 World Cup Begins",
-        "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "ICC女子T20世界杯开赛",
-        "share_text": "了解有关 ICC 女子 T20 世界杯开始涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-11_icc-womens-t20-world-cup-begins.gif",
-    "url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif",
-    "high_res_url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif"
   },
   {
     "name": "the-art-of-disco",
@@ -646,78 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-04-13_world-quantum-day-2026.gif",
     "url": "/doodles/2026-04-13_world-quantum-day-2026.gif",
     "high_res_url": "/doodles/2026-04-13_world-quantum-day-2026.gif"
-  },
-  {
-    "name": "nasas-artemis-ii-mission-around-the-moon",
-    "title": "NASA's Artemis II Mission Around the Moon",
-    "share_text": "Learn more about the creation of NASA's Artemis II Mission Around the Moon Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      4,
-      1
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/artemis-ii-spaceflight-around-the-moon-6753651837111248.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "NASA's Artemis II Mission Around the Moon",
-        "share_text": "Learn more about the creation of NASA's Artemis II Mission Around the Moon Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "美国宇航局阿耳忒弥斯二号绕月任务",
-        "share_text": "了解有关 NASA 阿尔忒弥斯二号绕月任务涂鸦创作的更多信息，并探索这件独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif",
-    "url": "/doodles/2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif",
-    "high_res_url": "/doodles/2026-04-01_nasas-artemis-ii-mission-around-the-moon.gif"
-  },
-  {
-    "name": "international-womens-day-2026",
-    "title": "International Women's Day 2026",
-    "share_text": "Learn more about the creation of International Women's Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      7
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/international-womens-day-2026-6753651837111003-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "International Women's Day 2026",
-        "share_text": "Learn more about the creation of International Women's Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年国际妇女节",
-        "share_text": "了解有关 2026 年国际妇女节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-07_international-womens-day-2026.gif",
-    "url": "/doodles/2026-03-07_international-womens-day-2026.gif",
-    "high_res_url": "/doodles/2026-03-07_international-womens-day-2026.gif"
-  },
-  {
-    "name": "winter-sports-begin-2026-march-6",
-    "title": "Winter Sports Begin 2026 (March 6) ",
-    "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6) Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      3,
-      5
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/winter-sports-begin-2026-march-6-6753651837111060.5-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Winter Sports Begin 2026 (March 6) ",
-        "share_text": "Learn more about the creation of Winter Sports Begin 2026 (March 6) Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年冬季运动开始（3月6日）",
-        "share_text": "了解有关 Winter Sports Begin 2026（3 月 6 日）涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-03-05_winter-sports-begin-2026-march-6.gif",
-    "url": "/doodles/2026-03-05_winter-sports-begin-2026-march-6.gif",
-    "high_res_url": "/doodles/2026-03-05_winter-sports-begin-2026-march-6.gif"
   }
 ] as const;
 
