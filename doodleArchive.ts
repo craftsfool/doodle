@@ -48,28 +48,76 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
-    "name": "world-cup-2026-the-art-of-the-save-615",
-    "title": "World Cup 2026: The Art of the Save",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork.",
+    "name": "world-cup-2026-the-art-of-the-penalty-kick-616",
+    "title": "World Cup 2026: The Art of the Penalty Kick",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       6,
-      15
+      16
     ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-save-615-6753651837111101-2xa.gif",
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-penalty-kick-616-6753651837111104.2-2xa.gif",
     "localized": {
       "en": {
-        "title": "World Cup 2026: The Art of the Save",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork."
+        "title": "World Cup 2026: The Art of the Penalty Kick",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "2026年世界杯：扑救的艺术",
-        "share_text": "了解有关 2026 年世界杯：拯救涂鸦的艺术的更多信息，并探索独特艺术作品背后的故事。"
+        "title": "2026年世界杯：点球艺术",
+        "share_text": "了解有关 2026 年世界杯：点球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
-    "url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
-    "high_res_url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif"
+    "fileName": "2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
+    "url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
+    "high_res_url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif"
+  },
+  {
+    "name": "world-cup-2026-argentina-match-day-616",
+    "title": "World Cup 2026: Argentina Match Day",
+    "share_text": "Learn more about the creation of World Cup 2026: Argentina Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      16
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-argentina-match-day-616-6753651837111103-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Argentina Match Day",
+        "share_text": "Learn more about the creation of World Cup 2026: Argentina Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：阿根廷比赛日",
+        "share_text": "了解有关 2026 年世界杯：阿根廷比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-16_world-cup-2026-argentina-match-day-616.gif",
+    "url": "/doodles/2026-06-16_world-cup-2026-argentina-match-day-616.gif",
+    "high_res_url": "/doodles/2026-06-16_world-cup-2026-argentina-match-day-616.gif"
+  },
+  {
+    "name": "world-cup-2026-france-match-day-616",
+    "title": " World Cup 2026: France Match Day",
+    "share_text": "Learn more about the creation of World Cup 2026: France Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      16
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-france-match-day-616-6753651837111102-2xa.gif",
+    "localized": {
+      "en": {
+        "title": " World Cup 2026: France Match Day",
+        "share_text": "Learn more about the creation of World Cup 2026: France Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：法国比赛日",
+        "share_text": "了解有关 2026 年世界杯：法国比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-16_world-cup-2026-france-match-day-616.gif",
+    "url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif",
+    "high_res_url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif"
   },
   {
     "name": "world-cup-2026-spain-match-day-615",
@@ -94,6 +142,30 @@ export const localDoodleArchive = [
     "fileName": "2026-06-15_world-cup-2026-spain-match-day-615.gif",
     "url": "/doodles/2026-06-15_world-cup-2026-spain-match-day-615.gif",
     "high_res_url": "/doodles/2026-06-15_world-cup-2026-spain-match-day-615.gif"
+  },
+  {
+    "name": "world-cup-2026-the-art-of-the-save-615",
+    "title": "World Cup 2026: The Art of the Save",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      15
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-save-615-6753651837111101-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Save",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：扑救的艺术",
+        "share_text": "了解有关 2026 年世界杯：拯救涂鸦的艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
+    "url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
+    "high_res_url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif"
   },
   {
     "name": "world-cup-2026-japan-match-day-614",
@@ -646,78 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-04-30_labour-day-2026.png",
     "url": "/doodles/2026-04-30_labour-day-2026.png",
     "high_res_url": "/doodles/2026-04-30_labour-day-2026.png"
-  },
-  {
-    "name": "celebrating-the-2026-doodle-for-google-finalists-1",
-    "title": "Celebrating the Doodle for Google Finalists: David",
-    "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: David Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      4,
-      28
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-2026-doodle-for-google-finalists-1-6753651837111213-2x.png",
-    "localized": {
-      "en": {
-        "title": "Celebrating the Doodle for Google Finalists: David",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: David Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "庆祝 Google 涂鸦入围决赛：David",
-        "share_text": "详细了解“庆祝 Google 决赛入围者涂鸦：David Doodle”的创作，并了解这件独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png",
-    "url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png",
-    "high_res_url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-1.png"
-  },
-  {
-    "name": "celebrating-the-2026-doodle-for-google-finalists-2",
-    "title": "Celebrating the Doodle for Google Finalists: Eric",
-    "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Eric Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      4,
-      28
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-2026-doodle-for-google-finalists-2-6753651837111265-2x.png",
-    "localized": {
-      "en": {
-        "title": "Celebrating the Doodle for Google Finalists: Eric",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Eric Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "庆祝 Google 涂鸦入围决赛：Eric",
-        "share_text": "详细了解为 Google 决赛入围者庆祝涂鸦：Eric Doodle 的创作，并了解独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png",
-    "url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png",
-    "high_res_url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-2.png"
-  },
-  {
-    "name": "celebrating-the-2026-doodle-for-google-finalists-3",
-    "title": "Celebrating the Doodle for Google Finalists: Lerui",
-    "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Lerui Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      4,
-      28
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-2026-doodle-for-google-finalists-3-6753651837111266-2x.png",
-    "localized": {
-      "en": {
-        "title": "Celebrating the Doodle for Google Finalists: Lerui",
-        "share_text": "Learn more about the creation of Celebrating the Doodle for Google Finalists: Lerui Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "庆祝 Google 涂鸦入围决赛：Lerui",
-        "share_text": "详细了解为 Google 入围者庆祝涂鸦：Lerui Doodle 的创作，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png",
-    "url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png",
-    "high_res_url": "/doodles/2026-04-28_celebrating-the-2026-doodle-for-google-finalists-3.png"
   }
 ] as const;
 
