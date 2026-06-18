@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-17T08:36:05.418Z",
+  "updated_at": "2026-06-18T08:18:54.756Z",
   "count": 30,
   "doodles": [
     {
@@ -51,28 +51,76 @@
       "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
     },
     {
-      "name": "world-cup-2026-the-art-of-the-penalty-kick-616",
-      "title": "World Cup 2026: The Art of the Penalty Kick",
-      "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork.",
+      "name": "world-cup-2026-the-art-of-the-bicycle-kick-617",
+      "title": "World Cup 2026: The Art of the Bicycle Kick ",
+      "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork.",
       "run_date_array": [
         2026,
         6,
-        16
+        17
       ],
-      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-penalty-kick-616-6753651837111104.2-2xa.gif",
+      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-bicycle-kick-617-6753651837111107-2xa.gif",
       "localized": {
         "en": {
-          "title": "World Cup 2026: The Art of the Penalty Kick",
-          "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork."
+          "title": "World Cup 2026: The Art of the Bicycle Kick ",
+          "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork."
         },
         "zh-CN": {
-          "title": "2026年世界杯：点球艺术",
-          "share_text": "了解有关 2026 年世界杯：点球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+          "title": "2026年世界杯：自行车踢球的艺术",
+          "share_text": "了解有关 2026 年世界杯：自行车踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
         }
       },
-      "fileName": "2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
-      "url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
-      "high_res_url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif"
+      "fileName": "2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
+      "url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
+      "high_res_url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif"
+    },
+    {
+      "name": "world-cup-2026-england-match-day-617",
+      "title": "World Cup 2026: England Match Day",
+      "share_text": "Learn more about the creation of World Cup 2026: England Match Day Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        6,
+        17
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-england-match-day-617-6753651837111106-2xa.gif",
+      "localized": {
+        "en": {
+          "title": "World Cup 2026: England Match Day",
+          "share_text": "Learn more about the creation of World Cup 2026: England Match Day Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "2026年世界杯：英格兰比赛日",
+          "share_text": "了解有关 2026 年世界杯：英格兰比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-06-17_world-cup-2026-england-match-day-617.gif",
+      "url": "/doodles/2026-06-17_world-cup-2026-england-match-day-617.gif",
+      "high_res_url": "/doodles/2026-06-17_world-cup-2026-england-match-day-617.gif"
+    },
+    {
+      "name": "world-cup-2026-portugal-match-day-617",
+      "title": "World Cup 2026: Portugal Match Day",
+      "share_text": "Learn more about the creation of World Cup 2026: Portugal Match Day Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        6,
+        17
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-portugal-match-day-617-6753651837111105.2-2xa.gif",
+      "localized": {
+        "en": {
+          "title": "World Cup 2026: Portugal Match Day",
+          "share_text": "Learn more about the creation of World Cup 2026: Portugal Match Day Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "2026年世界杯：葡萄牙比赛日",
+          "share_text": "了解有关 2026 年世界杯：葡萄牙比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-06-17_world-cup-2026-portugal-match-day-617.gif",
+      "url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif",
+      "high_res_url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif"
     },
     {
       "name": "world-cup-2026-argentina-match-day-616",
@@ -121,6 +169,30 @@
       "fileName": "2026-06-16_world-cup-2026-france-match-day-616.gif",
       "url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif",
       "high_res_url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif"
+    },
+    {
+      "name": "world-cup-2026-the-art-of-the-penalty-kick-616",
+      "title": "World Cup 2026: The Art of the Penalty Kick",
+      "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        6,
+        16
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-penalty-kick-616-6753651837111104.2-2xa.gif",
+      "localized": {
+        "en": {
+          "title": "World Cup 2026: The Art of the Penalty Kick",
+          "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "2026年世界杯：点球艺术",
+          "share_text": "了解有关 2026 年世界杯：点球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
+      "url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
+      "high_res_url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif"
     },
     {
       "name": "world-cup-2026-spain-match-day-615",
@@ -649,78 +721,6 @@
       "fileName": "2026-05-13_fathers-day-2026-may-14.png",
       "url": "/doodles/2026-05-13_fathers-day-2026-may-14.png",
       "high_res_url": "/doodles/2026-05-13_fathers-day-2026-may-14.png"
-    },
-    {
-      "name": "easter-2026",
-      "title": "Easter 2026",
-      "share_text": "Learn more about the creation of Easter 2026 Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        4,
-        4
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/easter-2026-6753651837111171.4-2x.png",
-      "localized": {
-        "en": {
-          "title": "Easter 2026",
-          "share_text": "Learn more about the creation of Easter 2026 Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "2026年复活节",
-          "share_text": "了解有关 2026 年复活节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-04-04_easter-2026.png",
-      "url": "/doodles/2026-04-04_easter-2026.png",
-      "high_res_url": "/doodles/2026-04-04_easter-2026.png"
-    },
-    {
-      "name": "celebrating-the-route-66-centennial",
-      "title": "Celebrating the Route 66 Centennial",
-      "share_text": "Learn more about the creation of Celebrating the Route 66 Centennial Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        4,
-        30
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-route-66-centennial-6753651837111083-2xa.gif",
-      "localized": {
-        "en": {
-          "title": "Celebrating the Route 66 Centennial",
-          "share_text": "Learn more about the creation of Celebrating the Route 66 Centennial Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "庆祝66号公路一百周年",
-          "share_text": "了解有关庆祝 66 号公路百年纪念涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-04-30_celebrating-the-route-66-centennial.gif",
-      "url": "/doodles/2026-04-30_celebrating-the-route-66-centennial.gif",
-      "high_res_url": "/doodles/2026-04-30_celebrating-the-route-66-centennial.gif"
-    },
-    {
-      "name": "labour-day-2026",
-      "title": "Labour Day 2026",
-      "share_text": "Learn more about the creation of Labour Day 2026 Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        4,
-        30
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/labour-day-2026-6753651837111008-2x.png",
-      "localized": {
-        "en": {
-          "title": "Labour Day 2026",
-          "share_text": "Learn more about the creation of Labour Day 2026 Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "2026年劳动节",
-          "share_text": "了解有关 2026 年劳动节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-04-30_labour-day-2026.png",
-      "url": "/doodles/2026-04-30_labour-day-2026.png",
-      "high_res_url": "/doodles/2026-04-30_labour-day-2026.png"
     }
   ]
 }
