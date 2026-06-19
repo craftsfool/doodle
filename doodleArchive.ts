@@ -48,28 +48,76 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
-    "name": "world-cup-2026-the-art-of-the-bicycle-kick-617",
-    "title": "World Cup 2026: The Art of the Bicycle Kick ",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork.",
+    "name": "juneteenth-2026",
+    "title": "Juneteenth 2026",
+    "share_text": "Learn more about the creation of Juneteenth 2026 Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       6,
-      17
+      19
     ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-bicycle-kick-617-6753651837111107-2xa.gif",
+    "source_url": "https://www.google.com/logos/doodles/2026/juneteenth-2026-6753651837111175-2x.png",
     "localized": {
       "en": {
-        "title": "World Cup 2026: The Art of the Bicycle Kick ",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork."
+        "title": "Juneteenth 2026",
+        "share_text": "Learn more about the creation of Juneteenth 2026 Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "2026年世界杯：自行车踢球的艺术",
-        "share_text": "了解有关 2026 年世界杯：自行车踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+        "title": "2026年6月",
+        "share_text": "了解有关 2026 年六月节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
-    "url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
-    "high_res_url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif"
+    "fileName": "2026-06-19_juneteenth-2026.png",
+    "url": "/doodles/2026-06-19_juneteenth-2026.png",
+    "high_res_url": "/doodles/2026-06-19_juneteenth-2026.png"
+  },
+  {
+    "name": "dragon-boat-festival-2026",
+    "title": "Dragon Boat Festival 2026",
+    "share_text": "Learn more about the creation of Dragon Boat Festival 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/dragon-boat-festival-2026-6753651837111011.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Dragon Boat Festival 2026",
+        "share_text": "Learn more about the creation of Dragon Boat Festival 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年端午节",
+        "share_text": "了解有关 2026 年端午节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-18_dragon-boat-festival-2026.gif",
+    "url": "/doodles/2026-06-18_dragon-boat-festival-2026.gif",
+    "high_res_url": "/doodles/2026-06-18_dragon-boat-festival-2026.gif"
+  },
+  {
+    "name": "world-cup-2026-the-art-of-the-diving-header-june-18",
+    "title": " World Cup 2026: The Art of the Diving Header",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Diving Header Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-diving-header-june-12-6753651837111094.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": " World Cup 2026: The Art of the Diving Header",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Diving Header Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：鱼跃头球的艺术",
+        "share_text": "了解有关 2026 年世界杯：跳水头球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif",
+    "url": "/doodles/2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif",
+    "high_res_url": "/doodles/2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif"
   },
   {
     "name": "world-cup-2026-england-match-day-617",
@@ -118,6 +166,30 @@ export const localDoodleArchive = [
     "fileName": "2026-06-17_world-cup-2026-portugal-match-day-617.gif",
     "url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif",
     "high_res_url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif"
+  },
+  {
+    "name": "world-cup-2026-the-art-of-the-bicycle-kick-617",
+    "title": "World Cup 2026: The Art of the Bicycle Kick ",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      17
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-bicycle-kick-617-6753651837111107-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Bicycle Kick ",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：自行车踢球的艺术",
+        "share_text": "了解有关 2026 年世界杯：自行车踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
+    "url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
+    "high_res_url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif"
   },
   {
     "name": "world-cup-2026-argentina-match-day-616",
@@ -646,78 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-05-30_mens-ipl-2026-final.gif",
     "url": "/doodles/2026-05-30_mens-ipl-2026-final.gif",
     "high_res_url": "/doodles/2026-05-30_mens-ipl-2026-final.gif"
-  },
-  {
-    "name": "memorial-day-2026",
-    "title": "Memorial Day 2026",
-    "share_text": "Learn more about the creation of Memorial Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      5,
-      25
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/memorial-day-2026-6753651837111174.2-2x.png",
-    "localized": {
-      "en": {
-        "title": "Memorial Day 2026",
-        "share_text": "Learn more about the creation of Memorial Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年阵亡将士纪念日",
-        "share_text": "了解有关 2026 年阵亡将士纪念日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-05-25_memorial-day-2026.png",
-    "url": "/doodles/2026-05-25_memorial-day-2026.png",
-    "high_res_url": "/doodles/2026-05-25_memorial-day-2026.png"
-  },
-  {
-    "name": "mens-ipl-2026-playoffs",
-    "title": "Men's IPL 2026 - Playoffs",
-    "share_text": "Learn more about the creation of Men's IPL 2026 - Playoffs Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      5,
-      25
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/mens-ipl-2026-semi-final-6753651837111070.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Men's IPL 2026 - Playoffs",
-        "share_text": "Learn more about the creation of Men's IPL 2026 - Playoffs Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "男子 IPL 2026 - 季后赛",
-        "share_text": "了解有关男子 IPL 2026 - 季后赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-05-25_mens-ipl-2026-playoffs.gif",
-    "url": "/doodles/2026-05-25_mens-ipl-2026-playoffs.gif",
-    "high_res_url": "/doodles/2026-05-25_mens-ipl-2026-playoffs.gif"
-  },
-  {
-    "name": "fathers-day-2026-may-14",
-    "title": "Father's Day 2026 (May 14)",
-    "share_text": "Learn more about the creation of Father's Day 2026 (May 14) Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      5,
-      13
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/fathers-day-2026-may-14-6753651837110936-2x.png",
-    "localized": {
-      "en": {
-        "title": "Father's Day 2026 (May 14)",
-        "share_text": "Learn more about the creation of Father's Day 2026 (May 14) Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年父亲节（5月14日）",
-        "share_text": "了解有关 2026 年父亲节（5 月 14 日）涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-05-13_fathers-day-2026-may-14.png",
-    "url": "/doodles/2026-05-13_fathers-day-2026-may-14.png",
-    "high_res_url": "/doodles/2026-05-13_fathers-day-2026-may-14.png"
   }
 ] as const;
 
