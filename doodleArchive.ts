@@ -72,28 +72,52 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-21_indigenous-peoples-day-2026.png"
   },
   {
-    "name": "la-fete-de-la-musique-2026",
-    "title": "La Fête de la Musique 2026",
-    "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork.",
+    "name": "world-cup-2026-the-art-of-the-long-ball-621",
+    "title": "World Cup 2026: The Art of the Long Ball",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork.",
     "run_date_array": [
       2026,
       6,
-      20
+      21
     ],
-    "source_url": "https://www.google.com/logos/doodles/2026/la-fete-de-la-musique-2026-6753651837111133-2xa.gif",
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-long-ball-6753651837111116-2xa.gif",
     "localized": {
       "en": {
-        "title": "La Fête de la Musique 2026",
-        "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork."
+        "title": "World Cup 2026: The Art of the Long Ball",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork."
       },
       "zh-CN": {
-        "title": "2026年音乐节",
-        "share_text": "了解有关 La Fête de la Musique 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+        "title": "2026年世界杯：长传的艺术",
+        "share_text": "了解有关 2026 年世界杯：长球涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-06-20_la-fete-de-la-musique-2026.gif",
-    "url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif",
-    "high_res_url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif"
+    "fileName": "2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
+    "url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
+    "high_res_url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif"
+  },
+  {
+    "name": "world-cup-2026-spain-match-day-621",
+    "title": "World Cup 2026: Spain Match Day (6/21)",
+    "share_text": "Learn more about the creation of World Cup 2026: Spain Match Day (6/21) Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      21
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-spain-match-day-621-6753651837111115-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Spain Match Day (6/21)",
+        "share_text": "Learn more about the creation of World Cup 2026: Spain Match Day (6/21) Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：西班牙比赛日 (6/21)",
+        "share_text": "了解有关 2026 年世界杯：西班牙比赛日 (6/21) 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-21_world-cup-2026-spain-match-day-621.gif",
+    "url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif",
+    "high_res_url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif"
   },
   {
     "name": "celebrating-dangdut",
@@ -142,6 +166,30 @@ export const localDoodleArchive = [
     "fileName": "2026-06-20_fathers-day-2026-june-21.gif",
     "url": "/doodles/2026-06-20_fathers-day-2026-june-21.gif",
     "high_res_url": "/doodles/2026-06-20_fathers-day-2026-june-21.gif"
+  },
+  {
+    "name": "la-fete-de-la-musique-2026",
+    "title": "La Fête de la Musique 2026",
+    "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      20
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/la-fete-de-la-musique-2026-6753651837111133-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "La Fête de la Musique 2026",
+        "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年音乐节",
+        "share_text": "了解有关 La Fête de la Musique 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-20_la-fete-de-la-musique-2026.gif",
+    "url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif",
+    "high_res_url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif"
   },
   {
     "name": "juneteenth-2026",
@@ -670,54 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-11_world-cup-2026-begins-june-11.gif",
     "url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif",
     "high_res_url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif"
-  },
-  {
-    "name": "world-cup-2026-mexico-match-day-june-11",
-    "title": "World Cup 2026: Mexico Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: Mexico Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      11
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-mexico-match-day-june-11-6753651837111090.2-2x.png",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Mexico Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: Mexico Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：墨西哥比赛日",
-        "share_text": "了解有关 2026 年世界杯：墨西哥比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
-    "url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png",
-    "high_res_url": "/doodles/2026-06-11_world-cup-2026-mexico-match-day-june-11.png"
-  },
-  {
-    "name": "the-art-of-disco",
-    "title": "The Art of Disco",
-    "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      1
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/the-art-of-disco-6753651837111009.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "The Art of Disco",
-        "share_text": "Learn more about the creation of The Art of Disco Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "迪斯科艺术",
-        "share_text": "了解有关迪斯科涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-01_the-art-of-disco.gif",
-    "url": "/doodles/2026-06-01_the-art-of-disco.gif",
-    "high_res_url": "/doodles/2026-06-01_the-art-of-disco.gif"
   }
 ] as const;
 
