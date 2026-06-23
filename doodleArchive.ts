@@ -72,30 +72,6 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-21_indigenous-peoples-day-2026.png"
   },
   {
-    "name": "world-cup-2026-the-art-of-the-long-ball-621",
-    "title": "World Cup 2026: The Art of the Long Ball",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      21
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-long-ball-6753651837111116-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Long Ball",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：长传的艺术",
-        "share_text": "了解有关 2026 年世界杯：长球涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
-    "url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
-    "high_res_url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif"
-  },
-  {
     "name": "world-cup-2026-spain-match-day-621",
     "title": "World Cup 2026: Spain Match Day (6/21)",
     "share_text": "Learn more about the creation of World Cup 2026: Spain Match Day (6/21) Doodle and discover the story behind the unique artwork.",
@@ -118,6 +94,30 @@ export const localDoodleArchive = [
     "fileName": "2026-06-21_world-cup-2026-spain-match-day-621.gif",
     "url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif",
     "high_res_url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif"
+  },
+  {
+    "name": "world-cup-2026-the-art-of-the-long-ball-621",
+    "title": "World Cup 2026: The Art of the Long Ball",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      21
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-long-ball-6753651837111116-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Long Ball",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：长传的艺术",
+        "share_text": "了解有关 2026 年世界杯：长球涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
+    "url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
+    "high_res_url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif"
   },
   {
     "name": "celebrating-dangdut",
