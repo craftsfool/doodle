@@ -48,6 +48,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
+    "name": "world-cup-2026-the-art-of-the-curler-623",
+    "title": "World Cup 2026: The Art of the Curler",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Curler Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      23
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-curler-623-6753651837111123.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Curler",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Curler Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：冰壶的艺术",
+        "share_text": "了解有关 2026 年世界杯：卷发器涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-23_world-cup-2026-the-art-of-the-curler-623.gif",
+    "url": "/doodles/2026-06-23_world-cup-2026-the-art-of-the-curler-623.gif",
+    "high_res_url": "/doodles/2026-06-23_world-cup-2026-the-art-of-the-curler-623.gif"
+  },
+  {
     "name": "indigenous-peoples-day-2026",
     "title": "Indigenous Peoples Day 2026",
     "share_text": "Learn more about the creation of Indigenous Peoples Day 2026 Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-11_icc-womens-t20-world-cup-begins.gif",
     "url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif",
     "high_res_url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif"
-  },
-  {
-    "name": "world-cup-2026-begins-june-11",
-    "title": "World Cup 2026 Begins (June 11)",
-    "share_text": "Learn more about the creation of World Cup 2026 Begins (June 11) Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      11
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-begins-6753651837111091.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026 Begins (June 11)",
-        "share_text": "Learn more about the creation of World Cup 2026 Begins (June 11) Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯开幕（6月11日）",
-        "share_text": "了解有关 2026 年世界杯开始（6 月 11 日）涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-11_world-cup-2026-begins-june-11.gif",
-    "url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif",
-    "high_res_url": "/doodles/2026-06-11_world-cup-2026-begins-june-11.gif"
   }
 ] as const;
 
