@@ -48,6 +48,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
+    "name": "world-cup-2026-knee-slide",
+    "title": "World Cup 2026: Knee Slide",
+    "share_text": "Learn more about the creation of World Cup 2026: Knee Slide Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      24
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-knee-slide-6753651837111127-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Knee Slide",
+        "share_text": "Learn more about the creation of World Cup 2026: Knee Slide Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：膝盖滑行",
+        "share_text": "了解有关 2026 年世界杯：膝滑涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-06-24_world-cup-2026-knee-slide.gif",
+    "url": "/doodles/2026-06-24_world-cup-2026-knee-slide.gif",
+    "high_res_url": "/doodles/2026-06-24_world-cup-2026-knee-slide.gif"
+  },
+  {
     "name": "world-cup-2026-the-art-of-the-curler-623",
     "title": "World Cup 2026: The Art of the Curler",
     "share_text": "Learn more about the creation of World Cup 2026: The Art of the Curler Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
     "url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
     "high_res_url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif"
-  },
-  {
-    "name": "icc-womens-t20-world-cup-begins",
-    "title": "ICC Women's T20 World Cup Begins",
-    "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      11
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-begins-6753651837111129.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "ICC Women's T20 World Cup Begins",
-        "share_text": "Learn more about the creation of ICC Women's T20 World Cup Begins Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "ICC女子T20世界杯开赛",
-        "share_text": "了解有关 ICC 女子 T20 世界杯开始涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-11_icc-womens-t20-world-cup-begins.gif",
-    "url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif",
-    "high_res_url": "/doodles/2026-06-11_icc-womens-t20-world-cup-begins.gif"
   }
 ] as const;
 
