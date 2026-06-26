@@ -240,6 +240,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif"
   },
   {
+    "name": "world-cup-2026-germany-match-day-620",
+    "title": "World Cup 2026: Germany Match Day ",
+    "share_text": "Learn more about the creation of World Cup 2026: Germany Match Day Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      20
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-germany-match-day-620-6753651837111113.2-2x.png",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Germany Match Day ",
+        "share_text": "Learn more about the creation of World Cup 2026: Germany Match Day Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "世界 Cup 2026: 德国 Match 日",
+        "share_text": "世界 Cup 2026: 德国 Match 日的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2026-06-20_world-cup-2026-germany-match-day-620.png",
+    "url": "/doodles/2026-06-20_world-cup-2026-germany-match-day-620.png",
+    "high_res_url": "/doodles/2026-06-20_world-cup-2026-germany-match-day-620.png"
+  },
+  {
     "name": "juneteenth-2026",
     "title": "Juneteenth 2026",
     "share_text": "Learn more about the creation of Juneteenth 2026 Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
     "url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
     "high_res_url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif"
-  },
-  {
-    "name": "world-cup-2026-united-states-match-day-june-12",
-    "title": "World Cup 2026: United States Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: United States Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      12
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-united-states-match-day-612-6753651837111093-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: United States Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: United States Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：美国比赛日",
-        "share_text": "了解有关 2026 年世界杯：美国比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
-    "url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif",
-    "high_res_url": "/doodles/2026-06-12_world-cup-2026-united-states-match-day-june-12.gif"
   }
 ] as const;
 
