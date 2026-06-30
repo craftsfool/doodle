@@ -48,6 +48,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
+    "name": "icc-womens-t20-world-cup-2026-semi-final-1",
+    "title": "ICC Women's T20 World Cup 2026: Semi-Final 1",
+    "share_text": "Learn more about the creation of ICC Women's T20 World Cup 2026: Semi-Final 1 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      6,
+      29
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-2026-semi-final-1-6753651837111181.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "ICC Women's T20 World Cup 2026: Semi-Final 1",
+        "share_text": "Learn more about the creation of ICC Women's T20 World Cup 2026: Semi-Final 1 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "ICC Women's T20世界 Cup 2026: Semi-Final 1",
+        "share_text": "ICC Women's T20世界 Cup 2026: Semi-Final 1的 Google Doodle 纪念作品。"
+      }
+    },
+    "fileName": "2026-06-29_icc-womens-t20-world-cup-2026-semi-final-1.gif",
+    "url": "/doodles/2026-06-29_icc-womens-t20-world-cup-2026-semi-final-1.gif",
+    "high_res_url": "/doodles/2026-06-29_icc-womens-t20-world-cup-2026-semi-final-1.gif"
+  },
+  {
     "name": "world-cup-2026-knee-slide",
     "title": "World Cup 2026: Knee Slide",
     "share_text": "Learn more about the creation of World Cup 2026: Knee Slide Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
     "url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
     "high_res_url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-nutmeg-612",
-    "title": "World Cup 2026: The Art of the Nutmeg",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Nutmeg Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      12
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-nutmeg-618-6753651837111110-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Nutmeg",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Nutmeg Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：肉豆蔻的艺术",
-        "share_text": "了解有关 2026 年世界杯：肉豆蔻涂鸦艺术的创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
-    "url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif",
-    "high_res_url": "/doodles/2026-06-12_world-cup-2026-the-art-of-the-nutmeg-612.gif"
   }
 ] as const;
 
