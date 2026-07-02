@@ -1,5 +1,29 @@
 export const localDoodleArchive = [
   {
+    "name": "world-cup-2026-the-art-of-the-sliding-tackle-71",
+    "title": "World Cup 2026: The Art of the Sliding Tackle",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Sliding Tackle Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      1
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-sliding-tackle-71-6753651837111289-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Sliding Tackle",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Sliding Tackle Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：滑铲的艺术",
+        "share_text": "了解有关 2026 年世界杯：滑具涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif",
+    "url": "/doodles/2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif",
+    "high_res_url": "/doodles/2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif"
+  },
+  {
     "name": "doodle-for-google-2025-2026-us-winner",
     "title": "Doodle for Google 2025-2026 - US Winner",
     "share_text": "Learn more about the creation of Doodle for Google 2025-2026 - US Winner Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-12_dia-dos-namorados-2026.gif",
     "url": "/doodles/2026-06-12_dia-dos-namorados-2026.gif",
     "high_res_url": "/doodles/2026-06-12_dia-dos-namorados-2026.gif"
-  },
-  {
-    "name": "world-cup-2026-canada-match-day-june-12",
-    "title": " World Cup 2026: Canada Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: Canada Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      12
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-canada-match-day-612-6753651837111092-2xa.gif",
-    "localized": {
-      "en": {
-        "title": " World Cup 2026: Canada Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: Canada Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：加拿大比赛日",
-        "share_text": "了解有关 2026 年世界杯：加拿大比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
-    "url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif",
-    "high_res_url": "/doodles/2026-06-12_world-cup-2026-canada-match-day-june-12.gif"
   }
 ] as const;
 
