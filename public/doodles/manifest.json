@@ -1,7 +1,31 @@
 {
-  "updated_at": "2026-07-03T06:41:37.063Z",
+  "updated_at": "2026-07-05T06:49:42.825Z",
   "count": 30,
   "doodles": [
+    {
+      "name": "icc-womens-t20-world-cup-2026-final",
+      "title": "ICC Women's T20 World Cup 2026: Final",
+      "share_text": "Learn more about the creation of ICC Women's T20 World Cup 2026: Final Doodle and discover the story behind the unique artwork.",
+      "run_date_array": [
+        2026,
+        7,
+        4
+      ],
+      "source_url": "https://www.google.com/logos/doodles/2026/icc-womens-t20-world-cup-2026-final-6753651837111183.2-2xa.gif",
+      "localized": {
+        "en": {
+          "title": "ICC Women's T20 World Cup 2026: Final",
+          "share_text": "Learn more about the creation of ICC Women's T20 World Cup 2026: Final Doodle and discover the story behind the unique artwork."
+        },
+        "zh-CN": {
+          "title": "2026年 ICC 女子 T20世界杯：决赛",
+          "share_text": "了解有关 2026 年 ICC 女子 T20 世界杯：决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+        }
+      },
+      "fileName": "2026-07-04_icc-womens-t20-world-cup-2026-final.gif",
+      "url": "/doodles/2026-07-04_icc-womens-t20-world-cup-2026-final.gif",
+      "high_res_url": "/doodles/2026-07-04_icc-womens-t20-world-cup-2026-final.gif"
+    },
     {
       "name": "fourth-of-july-2026",
       "title": "Fourth of July 2026",
@@ -697,30 +721,6 @@
       "fileName": "2026-06-13_world-cup-2026-brazil-match-day-613.gif",
       "url": "/doodles/2026-06-13_world-cup-2026-brazil-match-day-613.gif",
       "high_res_url": "/doodles/2026-06-13_world-cup-2026-brazil-match-day-613.gif"
-    },
-    {
-      "name": "world-cup-2026-scotland-match-day-613",
-      "title": "World Cup 2026: Scotland Match Day",
-      "share_text": "Learn more about the creation of World Cup 2026: Scotland Match Day Doodle and discover the story behind the unique artwork.",
-      "run_date_array": [
-        2026,
-        6,
-        13
-      ],
-      "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-scotland-match-day-613-6753651837111305-2xa.gif",
-      "localized": {
-        "en": {
-          "title": "World Cup 2026: Scotland Match Day",
-          "share_text": "Learn more about the creation of World Cup 2026: Scotland Match Day Doodle and discover the story behind the unique artwork."
-        },
-        "zh-CN": {
-          "title": "2026年世界杯：苏格兰比赛日",
-          "share_text": "了解有关 2026 年世界杯：苏格兰比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-        }
-      },
-      "fileName": "2026-06-13_world-cup-2026-scotland-match-day-613.gif",
-      "url": "/doodles/2026-06-13_world-cup-2026-scotland-match-day-613.gif",
-      "high_res_url": "/doodles/2026-06-13_world-cup-2026-scotland-match-day-613.gif"
     }
   ]
 }
