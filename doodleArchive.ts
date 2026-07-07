@@ -1,5 +1,29 @@
 export const localDoodleArchive = [
   {
+    "name": "tanabata-2026",
+    "title": "Tanabata 2026",
+    "share_text": "Learn more about the creation of Tanabata 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      6
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/tanabata-2026-6753651837111186-2x.png",
+    "localized": {
+      "en": {
+        "title": "Tanabata 2026",
+        "share_text": "Learn more about the creation of Tanabata 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年七夕",
+        "share_text": "了解有关七夕 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-06_tanabata-2026.png",
+    "url": "/doodles/2026-07-06_tanabata-2026.png",
+    "high_res_url": "/doodles/2026-07-06_tanabata-2026.png"
+  },
+  {
     "name": "icc-womens-t20-world-cup-2026-final",
     "title": "ICC Women's T20 World Cup 2026: Final",
     "share_text": "Learn more about the creation of ICC Women's T20 World Cup 2026: Final Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif",
     "url": "/doodles/2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif",
     "high_res_url": "/doodles/2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif"
-  },
-  {
-    "name": "world-cup-2026-brazil-match-day-613",
-    "title": "World Cup 2026: Brazil Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: Brazil Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      13
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-brazil-match-day-613-6753651837111095.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Brazil Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: Brazil Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：巴西比赛日",
-        "share_text": "了解有关 2026 年世界杯：巴西比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-13_world-cup-2026-brazil-match-day-613.gif",
-    "url": "/doodles/2026-06-13_world-cup-2026-brazil-match-day-613.gif",
-    "high_res_url": "/doodles/2026-06-13_world-cup-2026-brazil-match-day-613.gif"
   }
 ] as const;
 
