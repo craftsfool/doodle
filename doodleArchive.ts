@@ -96,6 +96,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-07-02_world-cup-2026-the-art-of-the-step-over-72.gif"
   },
   {
+    "name": "world-cup-2026-the-art-of-the-scorpion-kick-710",
+    "title": "World Cup 2026: The Art of the Scorpion Kick",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      10
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-scorpion-kick-6753651837111298-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Scorpion Kick",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：蝎子踢的艺术",
+        "share_text": "了解有关 2026 年世界杯：蝎子踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
+    "url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
+    "high_res_url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif"
+  },
+  {
     "name": "world-cup-2026-the-art-of-the-sliding-tackle-71",
     "title": "World Cup 2026: The Art of the Sliding Tackle",
     "share_text": "Learn more about the creation of World Cup 2026: The Art of the Sliding Tackle Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-14_world-cup-2026-japan-match-day-614.png",
     "url": "/doodles/2026-06-14_world-cup-2026-japan-match-day-614.png",
     "high_res_url": "/doodles/2026-06-14_world-cup-2026-japan-match-day-614.png"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-elastico-614",
-    "title": "World Cup 2026: The Art of the Elástico",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Elástico Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      14
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-elastico-614-6753651837111099-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Elástico",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Elástico Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：Elástico 的艺术",
-        "share_text": "了解有关 2026 年世界杯创作的更多信息：Elástico 涂鸦的艺术，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif",
-    "url": "/doodles/2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif",
-    "high_res_url": "/doodles/2026-06-14_world-cup-2026-the-art-of-the-elastico-614.gif"
   }
 ] as const;
 
