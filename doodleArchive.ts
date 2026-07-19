@@ -96,6 +96,30 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-07-02_world-cup-2026-the-art-of-the-step-over-72.gif"
   },
   {
+    "name": "world-cup-2026-finals",
+    "title": "World Cup 2026: Finals ",
+    "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      19
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-finals-6753651837111357.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Finals ",
+        "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：决赛",
+        "share_text": "了解有关 2026 年世界杯：决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-19_world-cup-2026-finals.gif",
+    "url": "/doodles/2026-07-19_world-cup-2026-finals.gif",
+    "high_res_url": "/doodles/2026-07-19_world-cup-2026-finals.gif"
+  },
+  {
     "name": "world-cup-2026-france-match-day-714",
     "title": "Bastille Day 2026",
     "share_text": "Learn more about the creation of Bastille Day 2026 Doodle and discover the story behind the unique artwork.",
@@ -694,30 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-15_world-cup-2026-spain-match-day-615.gif",
     "url": "/doodles/2026-06-15_world-cup-2026-spain-match-day-615.gif",
     "high_res_url": "/doodles/2026-06-15_world-cup-2026-spain-match-day-615.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-save-615",
-    "title": "World Cup 2026: The Art of the Save",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      15
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-save-615-6753651837111101-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Save",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Save Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：扑救的艺术",
-        "share_text": "了解有关 2026 年世界杯：拯救涂鸦的艺术的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
-    "url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif",
-    "high_res_url": "/doodles/2026-06-15_world-cup-2026-the-art-of-the-save-615.gif"
   }
 ] as const;
 
