@@ -363,15 +363,19 @@ export async function createApp() {
       .join(' ');
   }
 
+  function doodleDateSortKey(doodle: any) {
+    const [year = 0, month = 0, day = 0] = Array.isArray(doodle?.run_date_array)
+      ? doodle.run_date_array
+      : [];
+
+    return year * 10000 + month * 100 + day;
+  }
+
   async function localDoodleFallback() {
     const manifestDoodles = await readLocalDoodleManifest();
     if (manifestDoodles.length) {
       return manifestDoodles
-        .sort((a: any, b: any) => {
-          const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
-          const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
-          return dateB.localeCompare(dateA);
-        })
+        .sort((a: any, b: any) => doodleDateSortKey(b) - doodleDateSortKey(a))
         .slice(0, RECENT_DOODLE_LIMIT);
     }
 
@@ -408,11 +412,7 @@ export async function createApp() {
       .filter(Boolean);
 
     const doodles = scannedDoodles
-      .sort((a: any, b: any) => {
-        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
-        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
-        return dateB.localeCompare(dateA);
-      })
+      .sort((a: any, b: any) => doodleDateSortKey(b) - doodleDateSortKey(a))
       .slice(0, RECENT_DOODLE_LIMIT);
 
     return doodles as any[];
@@ -446,11 +446,7 @@ export async function createApp() {
       }
     }
 
-    doodleCache = Array.from(merged.values()).sort((a, b) => {
-      const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
-      const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
-      return dateB.localeCompare(dateA);
-    });
+    doodleCache = Array.from(merged.values()).sort((a, b) => doodleDateSortKey(b) - doodleDateSortKey(a));
   }
 
   function absoluteDoodleImageUrl(value = '') {
@@ -565,11 +561,7 @@ export async function createApp() {
     }
 
     return Array.from(collected.values())
-      .sort((a, b) => {
-        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
-        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
-        return dateB.localeCompare(dateA);
-      })
+      .sort((a, b) => doodleDateSortKey(b) - doodleDateSortKey(a))
       .slice(0, RECENT_DOODLE_LIMIT);
   }
 
@@ -650,11 +642,7 @@ export async function createApp() {
       .filter(result => result.status === 'fulfilled')
       .map(result => result.value)
       .filter(doodle => doodle.url)
-      .sort((a, b) => {
-        const dateA = Array.isArray(a.run_date_array) ? a.run_date_array.join('') : '';
-        const dateB = Array.isArray(b.run_date_array) ? b.run_date_array.join('') : '';
-        return dateB.localeCompare(dateA);
-      })
+      .sort((a, b) => doodleDateSortKey(b) - doodleDateSortKey(a))
       .slice(0, RECENT_DOODLE_LIMIT);
   }
 

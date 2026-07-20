@@ -1,5 +1,125 @@
 export const localDoodleArchive = [
   {
+    "name": "world-cup-2026-finals",
+    "title": "World Cup 2026: Finals ",
+    "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      19
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-finals-6753651837111357.3-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Finals ",
+        "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：决赛",
+        "share_text": "了解有关 2026 年世界杯：决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-19_world-cup-2026-finals.gif",
+    "url": "/doodles/2026-07-19_world-cup-2026-finals.gif",
+    "high_res_url": "/doodles/2026-07-19_world-cup-2026-finals.gif"
+  },
+  {
+    "name": "world-cup-2026-a-celebration",
+    "title": "World Cup 2026: A Celebration ",
+    "share_text": "Learn more about the creation of World Cup 2026: A Celebration Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      19
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-a-celebration-6753651837111349.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: A Celebration ",
+        "share_text": "Learn more about the creation of World Cup 2026: A Celebration Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：庆祝活动",
+        "share_text": "了解有关 2026 年世界杯：庆祝涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-19_world-cup-2026-a-celebration.gif",
+    "url": "/doodles/2026-07-19_world-cup-2026-a-celebration.gif",
+    "high_res_url": "/doodles/2026-07-19_world-cup-2026-a-celebration.gif"
+  },
+  {
+    "name": "world-cup-2026-congratulations-spain",
+    "title": "World Cup 2026: Congratulations Spain",
+    "share_text": "Learn more about the creation of World Cup 2026: Congratulations Spain Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      19
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-congratulations-spain-6753651837111308.2-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: Congratulations Spain",
+        "share_text": "Learn more about the creation of World Cup 2026: Congratulations Spain Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：祝贺西班牙",
+        "share_text": "了解有关 2026 年世界杯：祝贺西班牙涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-19_world-cup-2026-congratulations-spain.gif",
+    "url": "/doodles/2026-07-19_world-cup-2026-congratulations-spain.gif",
+    "high_res_url": "/doodles/2026-07-19_world-cup-2026-congratulations-spain.gif"
+  },
+  {
+    "name": "world-cup-2026-france-match-day-714",
+    "title": "Bastille Day 2026",
+    "share_text": "Learn more about the creation of Bastille Day 2026 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      13
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-france-match-day-74-copy-6753651837111350-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "Bastille Day 2026",
+        "share_text": "Learn more about the creation of Bastille Day 2026 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年巴士底日",
+        "share_text": "了解有关 2026 年巴士底日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-13_world-cup-2026-france-match-day-714.gif",
+    "url": "/doodles/2026-07-13_world-cup-2026-france-match-day-714.gif",
+    "high_res_url": "/doodles/2026-07-13_world-cup-2026-france-match-day-714.gif"
+  },
+  {
+    "name": "world-cup-2026-the-art-of-the-scorpion-kick-710",
+    "title": "World Cup 2026: The Art of the Scorpion Kick",
+    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      7,
+      10
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-scorpion-kick-6753651837111298-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "World Cup 2026: The Art of the Scorpion Kick",
+        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "2026年世界杯：蝎子踢的艺术",
+        "share_text": "了解有关 2026 年世界杯：蝎子踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
+    "url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
+    "high_res_url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif"
+  },
+  {
     "name": "tanabata-2026",
     "title": "Tanabata 2026",
     "share_text": "Learn more about the creation of Tanabata 2026 Doodle and discover the story behind the unique artwork.",
@@ -96,78 +216,6 @@ export const localDoodleArchive = [
     "high_res_url": "/doodles/2026-07-02_world-cup-2026-the-art-of-the-step-over-72.gif"
   },
   {
-    "name": "world-cup-2026-finals",
-    "title": "World Cup 2026: Finals ",
-    "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      7,
-      19
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-finals-6753651837111357.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Finals ",
-        "share_text": "Learn more about the creation of World Cup 2026: Finals Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：决赛",
-        "share_text": "了解有关 2026 年世界杯：决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-07-19_world-cup-2026-finals.gif",
-    "url": "/doodles/2026-07-19_world-cup-2026-finals.gif",
-    "high_res_url": "/doodles/2026-07-19_world-cup-2026-finals.gif"
-  },
-  {
-    "name": "world-cup-2026-france-match-day-714",
-    "title": "Bastille Day 2026",
-    "share_text": "Learn more about the creation of Bastille Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      7,
-      13
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-france-match-day-74-copy-6753651837111350-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Bastille Day 2026",
-        "share_text": "Learn more about the creation of Bastille Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年巴士底日",
-        "share_text": "了解有关 2026 年巴士底日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-07-13_world-cup-2026-france-match-day-714.gif",
-    "url": "/doodles/2026-07-13_world-cup-2026-france-match-day-714.gif",
-    "high_res_url": "/doodles/2026-07-13_world-cup-2026-france-match-day-714.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-scorpion-kick-710",
-    "title": "World Cup 2026: The Art of the Scorpion Kick",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      7,
-      10
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-scorpion-kick-6753651837111298-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Scorpion Kick",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Scorpion Kick Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：蝎子踢的艺术",
-        "share_text": "了解有关 2026 年世界杯：蝎子踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
-    "url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif",
-    "high_res_url": "/doodles/2026-07-10_world-cup-2026-the-art-of-the-scorpion-kick-710.gif"
-  },
-  {
     "name": "world-cup-2026-the-art-of-the-sliding-tackle-71",
     "title": "World Cup 2026: The Art of the Sliding Tackle",
     "share_text": "Learn more about the creation of World Cup 2026: The Art of the Sliding Tackle Doodle and discover the story behind the unique artwork.",
@@ -190,54 +238,6 @@ export const localDoodleArchive = [
     "fileName": "2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif",
     "url": "/doodles/2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif",
     "high_res_url": "/doodles/2026-07-01_world-cup-2026-the-art-of-the-sliding-tackle-71.gif"
-  },
-  {
-    "name": "doodle-for-google-2025-2026-us-winner",
-    "title": "Doodle for Google 2025-2026 - US Winner",
-    "share_text": "Learn more about the creation of Doodle for Google 2025-2026 - US Winner Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      4
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/celebrating-the-2026-doodle-for-google-finalists-5-copy-6753651837111313-2x.png",
-    "localized": {
-      "en": {
-        "title": "Doodle for Google 2025-2026 - US Winner",
-        "share_text": "Learn more about the creation of Doodle for Google 2025-2026 - US Winner Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "Doodle for Google 2025-2026 - 美国获胜者",
-        "share_text": "详细了解 Doodle for Google 2025-2026 - US Winner Doodle 的创作，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-04_doodle-for-google-2025-2026-us-winner.png",
-    "url": "/doodles/2026-06-04_doodle-for-google-2025-2026-us-winner.png",
-    "high_res_url": "/doodles/2026-06-04_doodle-for-google-2025-2026-us-winner.png"
-  },
-  {
-    "name": "nba-finals-2026",
-    "title": "NBA Finals",
-    "share_text": "Learn more about the creation of NBA Finals Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      3
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/nba-finals-a-6753651837111245.2-2x.png",
-    "localized": {
-      "en": {
-        "title": "NBA Finals",
-        "share_text": "Learn more about the creation of NBA Finals Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "NBA总决赛",
-        "share_text": "了解有关 NBA 总决赛涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-03_nba-finals-2026.png",
-    "url": "/doodles/2026-06-03_nba-finals-2026.png",
-    "high_res_url": "/doodles/2026-06-03_nba-finals-2026.png"
   },
   {
     "name": "icc-womens-t20-world-cup-2026-semi-final-1",

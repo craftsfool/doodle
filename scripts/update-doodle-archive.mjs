@@ -117,6 +117,14 @@ function localDateFromDoodle(doodle) {
   return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 }
 
+function doodleDateSortKey(doodle) {
+  const [year = 0, month = 0, day = 0] = Array.isArray(doodle.run_date_array)
+    ? doodle.run_date_array
+    : [];
+
+  return year * 10000 + month * 100 + day;
+}
+
 function titleFromLocalImageName(name) {
   return name
     .split('-')
@@ -636,7 +644,7 @@ async function downloadImage(doodle) {
 function sortDoodles(doodles) {
   return doodles
     .filter(doodle => Array.isArray(doodle.run_date_array) && doodle.fileName)
-    .sort((a, b) => b.run_date_array.join('').localeCompare(a.run_date_array.join('')))
+    .sort((a, b) => doodleDateSortKey(b) - doodleDateSortKey(a))
     .slice(0, maxEntries);
 }
 
