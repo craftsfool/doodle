@@ -1,5 +1,341 @@
 export const localDoodleArchive = [
   {
+    "name": "090909-090909",
+    "title": "09/09/09 09:09:09",
+    "share_text": "Learn more about the creation of 09/09/09 09:09:09 Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/2009/090909.gif",
+    "localized": {
+      "en": {
+        "title": "09/09/09 09:09:09",
+        "share_text": "Learn more about the creation of 09/09/09 09:09:09 Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "09/09/09 09:09:09",
+        "share_text": "了解有关 09/09/09 09:09:09 Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_090909-090909.gif",
+    "url": "/doodles/2026-08-18_090909-090909.gif",
+    "high_res_url": "/doodles/2026-08-18_090909-090909.gif"
+  },
+  {
+    "name": "100th-anniversary-of-bauhaus",
+    "title": "100th Anniversary of Bauhaus",
+    "share_text": "Learn more about the creation of 100th Anniversary of Bauhaus Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2019/100th-anniversary-of-bauhaus-6324716921946112-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of Bauhaus",
+        "share_text": "Learn more about the creation of 100th Anniversary of Bauhaus Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "包豪斯一百周年",
+        "share_text": "了解有关包豪斯 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-bauhaus.gif",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-bauhaus.gif",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-bauhaus.gif"
+  },
+  {
+    "name": "100th-anniversary-of-completion-of-the-trans-siberian-railway",
+    "title": "100th Anniversary of completion of the Trans-Siberian Railway",
+    "share_text": "Learn more about the creation of 100th Anniversary of completion of the Trans-Siberian Railway Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2016/100th-anniversary-of-completion-of-the-trans-siberian-railway-6269398706814976-hp2x.jpg",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of completion of the Trans-Siberian Railway",
+        "share_text": "Learn more about the creation of 100th Anniversary of completion of the Trans-Siberian Railway Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "西伯利亚大铁路建成100周年",
+        "share_text": "了解有关西伯利亚铁路建成 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg"
+  },
+  {
+    "name": "100th-anniversary-of-czechoslovakia",
+    "title": "100th Anniversary of Czechoslovakia",
+    "share_text": "Learn more about the creation of 100th Anniversary of Czechoslovakia Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2018/100th-anniversary-of-czechoslovakia-6615958876585984-2x.png",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of Czechoslovakia",
+        "share_text": "Learn more about the creation of 100th Anniversary of Czechoslovakia Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "捷克斯洛伐克成立100周年",
+        "share_text": "了解有关捷克斯洛伐克 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-czechoslovakia.png",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-czechoslovakia.png",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-czechoslovakia.png"
+  },
+  {
+    "name": "100th-anniversary-of-giro-ditalia",
+    "title": "100th Anniversary of Giro d'Italia",
+    "share_text": "Learn more about the creation of 100th Anniversary of Giro d'Italia Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-giro-ditalia-6325612032557056.4-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of Giro d'Italia",
+        "share_text": "Learn more about the creation of 100th Anniversary of Giro d'Italia Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "环意自行车赛100周年",
+        "share_text": "了解有关环意 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-giro-ditalia.gif",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-giro-ditalia.gif",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-giro-ditalia.gif"
+  },
+  {
+    "name": "100th-anniversary-of-metro-de-madrid",
+    "title": "100th Anniversary of Metro de Madrid",
+    "share_text": "Learn more about the creation of 100th Anniversary of Metro de Madrid Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2019/100th-anniversary-of-metro-de-madrid-4917146550272000-2xa.gif",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of Metro de Madrid",
+        "share_text": "Learn more about the creation of 100th Anniversary of Metro de Madrid Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "马德里地铁100周年",
+        "share_text": "了解有关马德里地铁 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-metro-de-madrid.gif",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-metro-de-madrid.gif",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-metro-de-madrid.gif"
+  },
+  {
+    "name": "100th-anniversary-of-pelo-telefone",
+    "title": "100th Anniversary of “Pelo Telefone”",
+    "share_text": "Learn more about the creation of 100th Anniversary of “Pelo Telefone” Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2016/100th-anniversary-of-pelo-telefone-6299225399754752-hp2x.gif",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of “Pelo Telefone”",
+        "share_text": "Learn more about the creation of 100th Anniversary of “Pelo Telefone” Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "“Pelo Telefone”问世100周年",
+        "share_text": "了解有关“Pelo Telefone”涂鸦 100 周年纪念创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-pelo-telefone.gif",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-pelo-telefone.gif",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-pelo-telefone.gif"
+  },
+  {
+    "name": "100th-anniversary-of-the-mexican-constitution",
+    "title": "100th Anniversary of the Mexican Constitution",
+    "share_text": "Learn more about the creation of 100th Anniversary of the Mexican Constitution Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-mexican-constitution-5721234126929920-hp2x.jpg",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of the Mexican Constitution",
+        "share_text": "Learn more about the creation of 100th Anniversary of the Mexican Constitution Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "墨西哥宪法颁布100周年",
+        "share_text": "了解有关墨西哥宪法 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-the-mexican-constitution.jpg",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-the-mexican-constitution.jpg",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-the-mexican-constitution.jpg"
+  },
+  {
+    "name": "100th-anniversary-of-the-russian-nature-reserves",
+    "title": "100th Anniversary of The Russian Nature Reserves",
+    "share_text": "Learn more about the creation of 100th Anniversary of The Russian Nature Reserves Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-the-russian-nature-reserves-5699541589295104.3-hp2x.png",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of The Russian Nature Reserves",
+        "share_text": "Learn more about the creation of 100th Anniversary of The Russian Nature Reserves Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "俄罗斯自然保护区成立100周年",
+        "share_text": "了解有关俄罗斯自然保护区 100 周年纪念涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-the-russian-nature-reserves.png",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-the-russian-nature-reserves.png",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-the-russian-nature-reserves.png"
+  },
+  {
+    "name": "100th-anniversary-of-the-silent-parade",
+    "title": "100th Anniversary of the Silent Parade",
+    "share_text": "Learn more about the creation of 100th Anniversary of the Silent Parade Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-the-silent-parade-4623481009340416-2x.jpg",
+    "localized": {
+      "en": {
+        "title": "100th Anniversary of the Silent Parade",
+        "share_text": "Learn more about the creation of 100th Anniversary of the Silent Parade Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "无声游行100周年",
+        "share_text": "了解有关《无声游行 100 周年》涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-anniversary-of-the-silent-parade.jpg",
+    "url": "/doodles/2026-08-18_100th-anniversary-of-the-silent-parade.jpg",
+    "high_res_url": "/doodles/2026-08-18_100th-anniversary-of-the-silent-parade.jpg"
+  },
+  {
+    "name": "100th-birthday-of-vaclav-ctvrtek",
+    "title": "100th Birthday of Vaclav Ctvrtek",
+    "share_text": "Learn more about the creation of 100th Birthday of Vaclav Ctvrtek Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/2011/ctvrtek11-hp.jpg",
+    "localized": {
+      "en": {
+        "title": "100th Birthday of Vaclav Ctvrtek",
+        "share_text": "Learn more about the creation of 100th Birthday of Vaclav Ctvrtek Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "瓦茨拉夫·Ctvrtek 诞辰100周年",
+        "share_text": "了解有关 Vaclav Ctvrtek 100 岁生日涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_100th-birthday-of-vaclav-ctvrtek.jpg",
+    "url": "/doodles/2026-08-18_100th-birthday-of-vaclav-ctvrtek.jpg",
+    "high_res_url": "/doodles/2026-08-18_100th-birthday-of-vaclav-ctvrtek.jpg"
+  },
+  {
+    "name": "101st-anniversary-of-the-first-electric-traffic-signal-system",
+    "title": "101st Anniversary of the First Electric Traffic Signal System",
+    "share_text": "Learn more about the creation of 101st Anniversary of the First Electric Traffic Signal System Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2015/101st-anniversary-of-the-first-electric-traffic-signal-system-5751092593819648-hp2x.gif",
+    "localized": {
+      "en": {
+        "title": "101st Anniversary of the First Electric Traffic Signal System",
+        "share_text": "Learn more about the creation of 101st Anniversary of the First Electric Traffic Signal System Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "第一个电子交通信号系统诞生101周年",
+        "share_text": "了解有关首个电子交通信号系统 101 周年涂鸦创作的更多信息，并探索独特艺术品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
+    "url": "/doodles/2026-08-18_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
+    "high_res_url": "/doodles/2026-08-18_101st-anniversary-of-the-first-electric-traffic-signal-system.gif"
+  },
+  {
+    "name": "103rd-anniversary-of-hua-lamphong",
+    "title": "103rd Anniversary of Hua Lamphong",
+    "share_text": "Learn more about the creation of 103rd Anniversary of Hua Lamphong Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2019/103rd-anniversary-of-hua-lamphong-5947094270476288.2-2x.jpg",
+    "localized": {
+      "en": {
+        "title": "103rd Anniversary of Hua Lamphong",
+        "share_text": "Learn more about the creation of 103rd Anniversary of Hua Lamphong Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "华南蓬成立103周年",
+        "share_text": "了解有关华南蓬 103 周年涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_103rd-anniversary-of-hua-lamphong.jpg",
+    "url": "/doodles/2026-08-18_103rd-anniversary-of-hua-lamphong.jpg",
+    "high_res_url": "/doodles/2026-08-18_103rd-anniversary-of-hua-lamphong.jpg"
+  },
+  {
+    "name": "105th-anniversary-of-first-expedition-to-reach-the-south-pole",
+    "title": "105th Anniversary of First Expedition to Reach the South Pole",
+    "share_text": "Learn more about the creation of 105th Anniversary of First Expedition to Reach the South Pole Doodle and discover the story behind the unique artwork.",
+    "run_date_array": [
+      2026,
+      8,
+      18
+    ],
+    "source_url": "https://www.google.com/logos/doodles/2016/105th-anniversary-of-first-expedition-to-reach-the-south-pole-5150098246860800-hp2x.gif",
+    "localized": {
+      "en": {
+        "title": "105th Anniversary of First Expedition to Reach the South Pole",
+        "share_text": "Learn more about the creation of 105th Anniversary of First Expedition to Reach the South Pole Doodle and discover the story behind the unique artwork."
+      },
+      "zh-CN": {
+        "title": "首次探险到达南极105周年",
+        "share_text": "了解有关首次探险到达南极 105 周年涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
+      }
+    },
+    "fileName": "2026-08-18_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
+    "url": "/doodles/2026-08-18_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
+    "high_res_url": "/doodles/2026-08-18_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif"
+  },
+  {
     "name": "indonesia-independence-day-2026",
     "title": "Indonesia Independence Day 2026",
     "share_text": "Learn more about the creation of Indonesia Independence Day 2026 Doodle and discover the story behind the unique artwork.",
@@ -382,342 +718,6 @@ export const localDoodleArchive = [
     "fileName": "2026-06-21_world-cup-2026-spain-match-day-621.gif",
     "url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif",
     "high_res_url": "/doodles/2026-06-21_world-cup-2026-spain-match-day-621.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-long-ball-621",
-    "title": "World Cup 2026: The Art of the Long Ball",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      21
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-long-ball-6753651837111116-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Long Ball",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Long Ball Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：长传的艺术",
-        "share_text": "了解有关 2026 年世界杯：长球涂鸦艺术创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
-    "url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif",
-    "high_res_url": "/doodles/2026-06-21_world-cup-2026-the-art-of-the-long-ball-621.gif"
-  },
-  {
-    "name": "celebrating-dangdut",
-    "title": "Celebrating Dangdut ",
-    "share_text": "Learn more about the creation of Celebrating Dangdut Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      20
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/celebrating-dangdut-6753651837111201-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Celebrating Dangdut ",
-        "share_text": "Learn more about the creation of Celebrating Dangdut Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "庆祝当杜特",
-        "share_text": "了解有关庆祝 Dangdut Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-20_celebrating-dangdut.gif",
-    "url": "/doodles/2026-06-20_celebrating-dangdut.gif",
-    "high_res_url": "/doodles/2026-06-20_celebrating-dangdut.gif"
-  },
-  {
-    "name": "fathers-day-2026-june-21",
-    "title": "Father's Day 2026",
-    "share_text": "Learn more about the creation of Father's Day 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      20
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/fathers-day-2026-june-21-6753651837110939-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Father's Day 2026",
-        "share_text": "Learn more about the creation of Father's Day 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年父亲节",
-        "share_text": "了解有关 2026 年父亲节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-20_fathers-day-2026-june-21.gif",
-    "url": "/doodles/2026-06-20_fathers-day-2026-june-21.gif",
-    "high_res_url": "/doodles/2026-06-20_fathers-day-2026-june-21.gif"
-  },
-  {
-    "name": "la-fete-de-la-musique-2026",
-    "title": "La Fête de la Musique 2026",
-    "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      20
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/la-fete-de-la-musique-2026-6753651837111133-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "La Fête de la Musique 2026",
-        "share_text": "Learn more about the creation of La Fête de la Musique 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年音乐节",
-        "share_text": "了解有关 La Fête de la Musique 2026 涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-20_la-fete-de-la-musique-2026.gif",
-    "url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif",
-    "high_res_url": "/doodles/2026-06-20_la-fete-de-la-musique-2026.gif"
-  },
-  {
-    "name": "world-cup-2026-germany-match-day-620",
-    "title": "World Cup 2026: Germany Match Day ",
-    "share_text": "Learn more about the creation of World Cup 2026: Germany Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      20
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-germany-match-day-620-6753651837111113.2-2x.png",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Germany Match Day ",
-        "share_text": "Learn more about the creation of World Cup 2026: Germany Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "世界 Cup 2026: 德国 Match 日",
-        "share_text": "世界 Cup 2026: 德国 Match 日的 Google Doodle 纪念作品。"
-      }
-    },
-    "fileName": "2026-06-20_world-cup-2026-germany-match-day-620.png",
-    "url": "/doodles/2026-06-20_world-cup-2026-germany-match-day-620.png",
-    "high_res_url": "/doodles/2026-06-20_world-cup-2026-germany-match-day-620.png"
-  },
-  {
-    "name": "juneteenth-2026",
-    "title": "Juneteenth 2026",
-    "share_text": "Learn more about the creation of Juneteenth 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      19
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/juneteenth-2026-6753651837111175-2x.png",
-    "localized": {
-      "en": {
-        "title": "Juneteenth 2026",
-        "share_text": "Learn more about the creation of Juneteenth 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年6月",
-        "share_text": "了解有关 2026 年六月节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-19_juneteenth-2026.png",
-    "url": "/doodles/2026-06-19_juneteenth-2026.png",
-    "high_res_url": "/doodles/2026-06-19_juneteenth-2026.png"
-  },
-  {
-    "name": "dragon-boat-festival-2026",
-    "title": "Dragon Boat Festival 2026",
-    "share_text": "Learn more about the creation of Dragon Boat Festival 2026 Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      18
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/dragon-boat-festival-2026-6753651837111011.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "Dragon Boat Festival 2026",
-        "share_text": "Learn more about the creation of Dragon Boat Festival 2026 Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年端午节",
-        "share_text": "了解有关 2026 年端午节涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-18_dragon-boat-festival-2026.gif",
-    "url": "/doodles/2026-06-18_dragon-boat-festival-2026.gif",
-    "high_res_url": "/doodles/2026-06-18_dragon-boat-festival-2026.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-diving-header-june-18",
-    "title": " World Cup 2026: The Art of the Diving Header",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Diving Header Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      18
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-diving-header-june-12-6753651837111094.3-2xa.gif",
-    "localized": {
-      "en": {
-        "title": " World Cup 2026: The Art of the Diving Header",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Diving Header Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：鱼跃头球的艺术",
-        "share_text": "了解有关 2026 年世界杯：跳水头球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif",
-    "url": "/doodles/2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif",
-    "high_res_url": "/doodles/2026-06-18_world-cup-2026-the-art-of-the-diving-header-june-18.gif"
-  },
-  {
-    "name": "world-cup-2026-england-match-day-617",
-    "title": "World Cup 2026: England Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: England Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      17
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-england-match-day-617-6753651837111106-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: England Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: England Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：英格兰比赛日",
-        "share_text": "了解有关 2026 年世界杯：英格兰比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-17_world-cup-2026-england-match-day-617.gif",
-    "url": "/doodles/2026-06-17_world-cup-2026-england-match-day-617.gif",
-    "high_res_url": "/doodles/2026-06-17_world-cup-2026-england-match-day-617.gif"
-  },
-  {
-    "name": "world-cup-2026-portugal-match-day-617",
-    "title": "World Cup 2026: Portugal Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: Portugal Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      17
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-portugal-match-day-617-6753651837111105.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Portugal Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: Portugal Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：葡萄牙比赛日",
-        "share_text": "了解有关 2026 年世界杯：葡萄牙比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-17_world-cup-2026-portugal-match-day-617.gif",
-    "url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif",
-    "high_res_url": "/doodles/2026-06-17_world-cup-2026-portugal-match-day-617.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-bicycle-kick-617",
-    "title": "World Cup 2026: The Art of the Bicycle Kick ",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      17
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-bicycle-kick-617-6753651837111107-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Bicycle Kick ",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Bicycle Kick Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：自行车踢球的艺术",
-        "share_text": "了解有关 2026 年世界杯：自行车踢涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
-    "url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif",
-    "high_res_url": "/doodles/2026-06-17_world-cup-2026-the-art-of-the-bicycle-kick-617.gif"
-  },
-  {
-    "name": "world-cup-2026-argentina-match-day-616",
-    "title": "World Cup 2026: Argentina Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: Argentina Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      16
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-argentina-match-day-616-6753651837111103-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: Argentina Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: Argentina Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：阿根廷比赛日",
-        "share_text": "了解有关 2026 年世界杯：阿根廷比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-16_world-cup-2026-argentina-match-day-616.gif",
-    "url": "/doodles/2026-06-16_world-cup-2026-argentina-match-day-616.gif",
-    "high_res_url": "/doodles/2026-06-16_world-cup-2026-argentina-match-day-616.gif"
-  },
-  {
-    "name": "world-cup-2026-france-match-day-616",
-    "title": " World Cup 2026: France Match Day",
-    "share_text": "Learn more about the creation of World Cup 2026: France Match Day Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      16
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-france-match-day-616-6753651837111102-2xa.gif",
-    "localized": {
-      "en": {
-        "title": " World Cup 2026: France Match Day",
-        "share_text": "Learn more about the creation of World Cup 2026: France Match Day Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：法国比赛日",
-        "share_text": "了解有关 2026 年世界杯：法国比赛日涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-16_world-cup-2026-france-match-day-616.gif",
-    "url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif",
-    "high_res_url": "/doodles/2026-06-16_world-cup-2026-france-match-day-616.gif"
-  },
-  {
-    "name": "world-cup-2026-the-art-of-the-penalty-kick-616",
-    "title": "World Cup 2026: The Art of the Penalty Kick",
-    "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork.",
-    "run_date_array": [
-      2026,
-      6,
-      16
-    ],
-    "source_url": "https://www.google.com/logos/doodles/2026/world-cup-2026-the-art-of-the-penalty-kick-616-6753651837111104.2-2xa.gif",
-    "localized": {
-      "en": {
-        "title": "World Cup 2026: The Art of the Penalty Kick",
-        "share_text": "Learn more about the creation of World Cup 2026: The Art of the Penalty Kick Doodle and discover the story behind the unique artwork."
-      },
-      "zh-CN": {
-        "title": "2026年世界杯：点球艺术",
-        "share_text": "了解有关 2026 年世界杯：点球涂鸦艺术的更多信息，并探索独特艺术作品背后的故事。"
-      }
-    },
-    "fileName": "2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
-    "url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif",
-    "high_res_url": "/doodles/2026-06-16_world-cup-2026-the-art-of-the-penalty-kick-616.gif"
   }
 ] as const;
 
