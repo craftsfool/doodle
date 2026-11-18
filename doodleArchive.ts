@@ -6,7 +6,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/2009/090909.gif",
     "localized": {
@@ -19,9 +19,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关 09/09/09 09:09:09 Doodle 创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_090909-090909.gif",
-    "url": "/doodles/2026-11-02_090909-090909.gif",
-    "high_res_url": "/doodles/2026-11-02_090909-090909.gif"
+    "fileName": "2026-11-16_090909-090909.gif",
+    "url": "/doodles/2026-11-16_090909-090909.gif",
+    "high_res_url": "/doodles/2026-11-16_090909-090909.gif"
   },
   {
     "name": "100th-anniversary-of-bauhaus",
@@ -30,7 +30,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2019/100th-anniversary-of-bauhaus-6324716921946112-2xa.gif",
     "localized": {
@@ -43,9 +43,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关包豪斯 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-bauhaus.gif",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-bauhaus.gif",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-bauhaus.gif"
+    "fileName": "2026-11-16_100th-anniversary-of-bauhaus.gif",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-bauhaus.gif",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-bauhaus.gif"
   },
   {
     "name": "100th-anniversary-of-completion-of-the-trans-siberian-railway",
@@ -54,7 +54,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2016/100th-anniversary-of-completion-of-the-trans-siberian-railway-6269398706814976-hp2x.jpg",
     "localized": {
@@ -67,9 +67,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关西伯利亚铁路建成 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg"
+    "fileName": "2026-11-16_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-completion-of-the-trans-siberian-railway.jpg"
   },
   {
     "name": "100th-anniversary-of-czechoslovakia",
@@ -78,7 +78,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2018/100th-anniversary-of-czechoslovakia-6615958876585984-2x.png",
     "localized": {
@@ -91,9 +91,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关捷克斯洛伐克 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-czechoslovakia.png",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-czechoslovakia.png",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-czechoslovakia.png"
+    "fileName": "2026-11-16_100th-anniversary-of-czechoslovakia.png",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-czechoslovakia.png",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-czechoslovakia.png"
   },
   {
     "name": "100th-anniversary-of-giro-ditalia",
@@ -102,7 +102,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-giro-ditalia-6325612032557056.4-2xa.gif",
     "localized": {
@@ -115,9 +115,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关环意 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-giro-ditalia.gif",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-giro-ditalia.gif",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-giro-ditalia.gif"
+    "fileName": "2026-11-16_100th-anniversary-of-giro-ditalia.gif",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-giro-ditalia.gif",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-giro-ditalia.gif"
   },
   {
     "name": "100th-anniversary-of-metro-de-madrid",
@@ -126,7 +126,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2019/100th-anniversary-of-metro-de-madrid-4917146550272000-2xa.gif",
     "localized": {
@@ -139,9 +139,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关马德里地铁 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-metro-de-madrid.gif",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-metro-de-madrid.gif",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-metro-de-madrid.gif"
+    "fileName": "2026-11-16_100th-anniversary-of-metro-de-madrid.gif",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-metro-de-madrid.gif",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-metro-de-madrid.gif"
   },
   {
     "name": "100th-anniversary-of-pelo-telefone",
@@ -150,7 +150,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2016/100th-anniversary-of-pelo-telefone-6299225399754752-hp2x.gif",
     "localized": {
@@ -163,9 +163,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关“Pelo Telefone”涂鸦 100 周年纪念创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-pelo-telefone.gif",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-pelo-telefone.gif",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-pelo-telefone.gif"
+    "fileName": "2026-11-16_100th-anniversary-of-pelo-telefone.gif",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-pelo-telefone.gif",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-pelo-telefone.gif"
   },
   {
     "name": "100th-anniversary-of-the-mexican-constitution",
@@ -174,7 +174,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-mexican-constitution-5721234126929920-hp2x.jpg",
     "localized": {
@@ -187,9 +187,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关墨西哥宪法 100 周年涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-the-mexican-constitution.jpg",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-the-mexican-constitution.jpg",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-the-mexican-constitution.jpg"
+    "fileName": "2026-11-16_100th-anniversary-of-the-mexican-constitution.jpg",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-the-mexican-constitution.jpg",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-the-mexican-constitution.jpg"
   },
   {
     "name": "100th-anniversary-of-the-russian-nature-reserves",
@@ -198,7 +198,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-the-russian-nature-reserves-5699541589295104.3-hp2x.png",
     "localized": {
@@ -211,9 +211,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关俄罗斯自然保护区 100 周年纪念涂鸦创作的更多信息，并探索独特艺术作品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-the-russian-nature-reserves.png",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-the-russian-nature-reserves.png",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-the-russian-nature-reserves.png"
+    "fileName": "2026-11-16_100th-anniversary-of-the-russian-nature-reserves.png",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-the-russian-nature-reserves.png",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-the-russian-nature-reserves.png"
   },
   {
     "name": "100th-anniversary-of-the-silent-parade",
@@ -222,7 +222,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2017/100th-anniversary-of-the-silent-parade-4623481009340416-2x.jpg",
     "localized": {
@@ -235,9 +235,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关《无声游行 100 周年》涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-anniversary-of-the-silent-parade.jpg",
-    "url": "/doodles/2026-11-02_100th-anniversary-of-the-silent-parade.jpg",
-    "high_res_url": "/doodles/2026-11-02_100th-anniversary-of-the-silent-parade.jpg"
+    "fileName": "2026-11-16_100th-anniversary-of-the-silent-parade.jpg",
+    "url": "/doodles/2026-11-16_100th-anniversary-of-the-silent-parade.jpg",
+    "high_res_url": "/doodles/2026-11-16_100th-anniversary-of-the-silent-parade.jpg"
   },
   {
     "name": "100th-birthday-of-vaclav-ctvrtek",
@@ -246,7 +246,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/2011/ctvrtek11-hp.jpg",
     "localized": {
@@ -259,9 +259,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关 Vaclav Ctvrtek 100 岁生日涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_100th-birthday-of-vaclav-ctvrtek.jpg",
-    "url": "/doodles/2026-11-02_100th-birthday-of-vaclav-ctvrtek.jpg",
-    "high_res_url": "/doodles/2026-11-02_100th-birthday-of-vaclav-ctvrtek.jpg"
+    "fileName": "2026-11-16_100th-birthday-of-vaclav-ctvrtek.jpg",
+    "url": "/doodles/2026-11-16_100th-birthday-of-vaclav-ctvrtek.jpg",
+    "high_res_url": "/doodles/2026-11-16_100th-birthday-of-vaclav-ctvrtek.jpg"
   },
   {
     "name": "101st-anniversary-of-the-first-electric-traffic-signal-system",
@@ -270,7 +270,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2015/101st-anniversary-of-the-first-electric-traffic-signal-system-5751092593819648-hp2x.gif",
     "localized": {
@@ -283,9 +283,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关首个电子交通信号系统 101 周年涂鸦创作的更多信息，并探索独特艺术品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
-    "url": "/doodles/2026-11-02_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
-    "high_res_url": "/doodles/2026-11-02_101st-anniversary-of-the-first-electric-traffic-signal-system.gif"
+    "fileName": "2026-11-16_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
+    "url": "/doodles/2026-11-16_101st-anniversary-of-the-first-electric-traffic-signal-system.gif",
+    "high_res_url": "/doodles/2026-11-16_101st-anniversary-of-the-first-electric-traffic-signal-system.gif"
   },
   {
     "name": "103rd-anniversary-of-hua-lamphong",
@@ -294,7 +294,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2019/103rd-anniversary-of-hua-lamphong-5947094270476288.2-2x.jpg",
     "localized": {
@@ -307,9 +307,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关华南蓬 103 周年涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_103rd-anniversary-of-hua-lamphong.jpg",
-    "url": "/doodles/2026-11-02_103rd-anniversary-of-hua-lamphong.jpg",
-    "high_res_url": "/doodles/2026-11-02_103rd-anniversary-of-hua-lamphong.jpg"
+    "fileName": "2026-11-16_103rd-anniversary-of-hua-lamphong.jpg",
+    "url": "/doodles/2026-11-16_103rd-anniversary-of-hua-lamphong.jpg",
+    "high_res_url": "/doodles/2026-11-16_103rd-anniversary-of-hua-lamphong.jpg"
   },
   {
     "name": "105th-anniversary-of-first-expedition-to-reach-the-south-pole",
@@ -318,7 +318,7 @@ export const localDoodleArchive = [
     "run_date_array": [
       2026,
       11,
-      2
+      16
     ],
     "source_url": "https://www.google.com/logos/doodles/2016/105th-anniversary-of-first-expedition-to-reach-the-south-pole-5150098246860800-hp2x.gif",
     "localized": {
@@ -331,9 +331,9 @@ export const localDoodleArchive = [
         "share_text": "了解有关首次探险到达南极 105 周年涂鸦创作的更多信息，并探索这件独特艺术品背后的故事。"
       }
     },
-    "fileName": "2026-11-02_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
-    "url": "/doodles/2026-11-02_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
-    "high_res_url": "/doodles/2026-11-02_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif"
+    "fileName": "2026-11-16_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
+    "url": "/doodles/2026-11-16_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif",
+    "high_res_url": "/doodles/2026-11-16_105th-anniversary-of-first-expedition-to-reach-the-south-pole.gif"
   },
   {
     "name": "indonesia-independence-day-2026",
